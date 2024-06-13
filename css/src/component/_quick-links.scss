@@ -1,0 +1,99 @@
+
+
+.quick-links-container {
+    .quick-links {
+        @include padding-tall;
+
+        .quick-links-title h2 {
+            @include large-title;
+            padding-bottom: 30px;
+        }
+
+        a {
+            .row {
+                background: $tan;
+                
+                @include respond-to( $bp-m ) {
+                    display: flex;
+                    flex-direction: row;
+
+                    &.even {
+                        flex-direction: row-reverse;
+                    }
+                }
+
+                .column {
+
+                    &.photo {
+                        min-height: 180px;
+                        background: center center no-repeat;
+                        background-size: cover;
+                        transition: all 400ms ease-in-out;
+
+                        @include respond-to( $bp-m ) {
+                            flex: 1;
+                            flex-basis: 55%;
+                            min-height: auto;
+                            align-self: stretch;
+                        }
+                    }
+
+                    &.content {
+                        padding: 30px 20px;
+                        transition: all 400ms ease-in-out;
+
+                        .cta {
+                            @include font-bold;
+                        }
+
+                        @include respond-to( $bp-m ) {
+                            flex: 1;
+                            flex-basis: 45%;
+                            align-self: flex-start;
+                            flex-direction: column;
+                            padding: 30px 4%;
+                        }
+                    }
+                }
+            }
+
+            &:hover {
+                .row {
+                    .column {
+                        &.photo {
+                            min-height: 200px;
+                        }
+
+                        &.content {
+                            padding: 20px;
+                            background: $red;
+                            color: white;
+                        }
+                    }
+
+                    @include respond-to( $bp-m ) {
+                        &.odd {
+                            .photo {
+                                flex-basis: 56%;    
+                            }
+                            .content {
+                                flex-basis: 44%;    
+                                padding: 30px 4% 30px 3%;
+                            }
+                        }
+                        &.even {
+                            .photo {
+                                flex-basis: 56%;    
+                            }
+                            .content {
+                                flex-basis: 44%;    
+                                padding: 30px 3% 30px 4%;
+                            }
+                        }
+                    }
+                }
+            }
+        }   
+    }
+}
+

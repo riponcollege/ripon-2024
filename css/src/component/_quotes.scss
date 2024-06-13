@@ -1,0 +1,183 @@
+
+
+.quotes-container {
+    background: $tan;
+
+    .quotes {
+        @include padding-tall;
+
+        .quotes-title {
+            border-top: 1px solid black;
+            padding-bottom: 10px;
+            padding-top: 30px;
+
+            p.supertitle {
+                @include font-semi;
+                font-size: .75em;
+                padding: 0;
+                color: $blue;
+                border-bottom: 1px solid black;
+                display: inline-block;
+            }
+
+            h2 {
+                @include large-title;
+                padding: 10px 0 30px;
+            }
+        }
+        
+        .quotes-inner {
+            @include respond-to( $bp-m ) {
+                display: flex;
+            }
+
+            .quote {
+                padding-bottom: 25px;
+
+                @include respond-to( $bp-m ) {
+                    flex: 1;
+                    margin-right: 5%;
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+
+                .quote-bubble {
+                    position: relative;
+                    background: white;
+                    font-size: .9em;
+                    border-radius: 20px;
+                    padding: 20px;
+                    margin-bottom: 35px;
+                    margin-top: 50px;
+
+                    @include respond-to( $bp-l ) {
+                        padding: 30px 40px;
+                    }
+
+                    p {
+                        @include font-semi;
+                    }
+
+                    &:before {
+                        @include font-termina-bold;
+                        position: absolute;
+                        content: '\201C  \201D';
+                        font-size: 50px;
+                        color: $blue;
+                        top: -25px;
+                        left: 0;
+                    }
+
+                    &:after {
+                        position: absolute;
+                        content: '';
+                        bottom: -25px;
+                        left: 50px;
+                        width: 0;
+                        height: 0;
+                        border: 25px solid transparent;
+                        border-left: 50px solid white;
+                    }
+                }
+
+                h4 {
+                    @include font-termina-bold;
+                    text-transform: uppercase;
+                    color: $blue;
+                    display: inline-block;
+                    padding: 10px 25px 10px 0;
+                    border-right: 1px solid black;
+                    font-size: 1.2em;
+                }
+
+                .subtitle {
+                    border-top: 1px solid black;
+                    font-size: .9em;
+                }
+            }
+        }
+        
+    }
+
+}
+
+
+.quote-large-container {
+    &.tan {
+        background: $tan;
+    }
+
+    .quote-large {
+        @include padding-tall;
+
+        @include respond-to( $bp-l ) {
+            display: flex;
+            align-items: center;
+        }
+
+        .quote-photo {
+            img {
+                border-radius: 30px;
+            }
+
+            @include respond-to( $bp-l ) {
+                flex: 1;
+                margin-right: 3%;
+            }
+
+            @include respond-to( $bp-xl ) {
+                margin-right: 5%;
+            }
+        }
+
+        .quote-content {
+            @include respond-to( $bp-l ) {
+                flex: 1;
+            }
+
+            .quote-content-inner {
+                position: relative;
+                margin-top: 60px;
+                margin-bottom: 20px;
+
+                p {
+                    @include font-semi;
+                    font-size: 1.1em;
+                    line-height: 1.6em;
+                }
+
+                &:before {
+                    @include font-termina-bold;
+                    position: absolute;
+                    content: '\201C  \201D';
+                    font-size: 50px;
+                    color: $blue;
+                    top: -20px;
+                    left: 0;
+                }
+
+            }
+
+            h4 {
+                @include font-termina-bold;
+                text-transform: uppercase;
+                color: $blue;
+                display: inline-block;
+                padding: 10px 25px 10px 0;
+                border-right: 1px solid black;
+                font-size: 1.2em;
+            }
+
+            .subtitle {
+                border-top: 1px solid black;
+                font-size: .9em;
+            }
+
+        }
+        
+    }
+
+}
+

@@ -1,0 +1,134 @@
+
+
+.content-one {
+    @extend .content-style;
+    @include padding;
+    background: white;
+    color: black;
+
+    &.red {
+        @extend .white-links;
+        background: $red;
+        color: white;
+    }
+
+    &.tan {
+        background: $tan;
+    }
+
+    &.narrow {
+        .content-one-inner {
+            max-width: $bp-l;
+            margin: 0 auto;
+        }
+    }
+}
+
+
+.content-two-container {
+    background: white;
+    color: black;
+
+    &.red {
+        @extend .white-links;
+        background: $red;
+        color: white;
+    }
+
+    &.tan {
+        background: $tan;
+    }
+
+    .content-two {
+        @extend .content-style;
+        @include padding;
+
+        &.vcenter {
+            align-items: center;
+        }
+
+        @include respond-to( $bp-m ) {
+            display: flex;
+
+            .column {
+                flex: 1;
+            }
+
+            &.reverse {
+                flex-direction: row-reverse;
+
+                &.equal .column.one {
+                    margin-right: 0;
+                    margin-left: 5%;
+                }
+            }
+
+            &.equal {
+                .column.one {
+                    margin-right: 5%;
+                }
+            }
+
+            &.right {
+                .column {
+                    &:first-child {
+                        flex-basis: 30%;
+                        margin-right: 5%;
+                    }
+
+                    &:nth-child(2) {
+                        flex-basis: 65%;
+                    }
+                }
+            }
+
+            &.left {
+                .column {
+                    &:first-child {
+                        flex-basis: 65%;
+                        margin-right: 5%;
+                    }
+
+                    &:nth-child(2) {
+                        flex-basis: 30%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.content-three-container {
+    background: white;
+    color: black;
+
+    &.red {
+        @extend .white-links;
+        background: $red;
+        color: white;
+    }
+
+    .content-three {
+        @extend .content-style;
+        @include padding;
+        background: white;
+        color: black;
+
+        @include respond-to( $bp-m ) {
+            display: flex;
+        }
+
+        &.red {
+            background: $red;
+            color: white;
+        }
+
+        .column {
+            @include respond-to( $bp-m ) {
+                flex: 1;   
+            }
+        }
+    }
+}
+

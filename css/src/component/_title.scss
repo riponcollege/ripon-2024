@@ -1,0 +1,19 @@
+
+
+.title-container {
+    background: $red;
+    h1 { color: white; }
+
+    &.large {
+        
+    }
+
+    &.tan {
+        background: $tan;
+        h1 { color: $blue; }
+    }
+
+    .title {
+        @include padding;
+    }
+}

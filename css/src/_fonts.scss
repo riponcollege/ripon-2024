@@ -1,0 +1,78 @@
+
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url("https://use.typekit.net/yuw5jit.css");
+
+@mixin font-thin {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 300;
+}
+
+@mixin font-thin-italic {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 300;
+	font-style: italic;
+}
+
+@mixin font {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 400;
+}
+
+@mixin font-italic {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 400;
+	font-style: italic;
+}
+
+@mixin font-regular {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 500;
+}
+
+@mixin font-regular-italic {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 500;
+	font-style: italic;
+}
+
+@mixin font-semi {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 600;
+}
+
+@mixin font-semi-italic {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 600;
+	font-style: italic;
+}
+
+@mixin font-bold {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 700;
+}
+
+@mixin font-bold-italic {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 700;
+	font-style: italic;
+}
+
+@mixin font-termina {
+	font-family: "termina", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+@mixin font-termina-demi {
+	font-family: "termina", sans-serif;
+	font-weight: 600;
+	font-style: normal;
+}
+
+@mixin font-termina-bold {
+	font-family: "termina", sans-serif;
+	font-weight: 700;
+	font-style: normal;
+}
+

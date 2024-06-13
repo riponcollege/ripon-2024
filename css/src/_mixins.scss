@@ -1,0 +1,60 @@
+
+
+// responsive mixin
+@mixin respond-to( $breakpoint ) {
+    @media only screen and ( min-width: $breakpoint ) { @content; }
+}
+
+
+// clearfix mixin
+@mixin clearfix {
+	zoom: 1;
+
+	&:before, &:after { 
+		content: ""; 
+		display: table;
+	}
+
+	&, &:before, &:after { clear: both; }
+}
+
+
+@mixin wrap( $max-width ) {
+	max-width: $max-width;
+	margin: 0 auto;
+}
+
+
+@mixin wrap-main {
+	@include wrap( $bp-xl );
+}
+
+
+@mixin padding {
+	padding: 20px;
+	@include respond-to( $bp-m ) { padding: 25px 30px; }
+	@include respond-to( $bp-l ) { padding: 25px 40px; }
+	@include respond-to( $bp-xl ) { padding: 30px 50px; }
+	@include respond-to( $bp-xxl ) { padding: 35px 65px; }
+	@include respond-to( $bp-xxxl ) { padding: 45px 80px; }
+}
+
+
+@mixin padding-tall {
+	padding: 20px;
+	@include respond-to( $bp-m ) { padding: 40px 30px; }
+	@include respond-to( $bp-l ) { padding: 50px 40px; }
+	@include respond-to( $bp-xl ) { padding: 60px 50px; }
+	@include respond-to( $bp-xxl ) { padding: 70px 65px; }
+	@include respond-to( $bp-xxxl ) { padding: 80px 80px; }
+}
+
+
+@mixin padding-side( $top: 20px, $bottom: 20px ) {
+	padding: 20px;
+	@include respond-to( $bp-m ) { padding: $top 30px $bottom; }
+	@include respond-to( $bp-l ) { padding: $top 40px $bottom; }
+	@include respond-to( $bp-xl ) { padding: $top 50px $bottom; }
+	@include respond-to( $bp-xxl ) { padding: $top 65px $bottom; }
+	@include respond-to( $bp-xxxl ) { padding: $top 80px $bottom; }
+}
