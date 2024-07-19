@@ -24,9 +24,12 @@ function get_components() {
             elseif ( get_row_layout() == 'content-two' ): 
                 include 'component/content-two.php';                                               
 
+            elseif ( get_row_layout() == 'stats' ): 
+                include 'component/stats.php';
+
             elseif ( get_row_layout() == 'quick-links' ): 
                 include 'component/quick-links.php';
-
+            
             elseif ( get_row_layout() == 'quotes' ): 
                 include 'component/quotes.php';
             
@@ -49,6 +52,7 @@ function get_components() {
 add_filter( 'acf/load_field/name=nav-menu', 'nav_menus_load' );
 function nav_menus_load( $field ) {
     $menus = wp_get_nav_menus();
+    $field['choices'][0] = '- no menu -';
     if ( ! empty( $menus ) ) {
         foreach ( $menus as $menu ) {
             $field['choices'][ $menu->slug ] = $menu->name;

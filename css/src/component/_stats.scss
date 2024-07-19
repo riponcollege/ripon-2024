@@ -1,0 +1,92 @@
+
+
+.stats-container {
+    @include padding-tall;
+
+    .stats-title-container {
+        padding-bottom: 30px;
+
+        @include respond-to( $bp-m ) {
+            display: flex;
+        }
+
+        .stats-title, .stats-intro {
+            @include respond-to( $bp-m ) {
+                flex: 1;
+                flex-basis: 50%;
+                margin-right: 5%;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+            
+            p.supertitle {
+                @include font-semi;
+                font-size: .75em;
+                padding: 0;
+                color: $blue;
+                border-bottom: 1px solid black;
+                display: inline-block;
+                margin-bottom: 15px;
+            }
+
+            h2 {
+                @include large-title;
+            }
+        }
+
+        .stats-intro {
+            font-size: .85em;
+        }
+    }
+
+    .statistics {
+        border-top: 1px solid black;
+        padding-top: 40px;
+
+        @include respond-to( $bp-m ) {
+            display: flex;
+
+            .stat {
+                flex: 1;
+                padding: 20px;
+            }
+        }
+
+        .stat {
+            text-align: center;
+
+            .stat-icon {
+                max-width: 150px;
+                padding: 30px;
+                margin: 0 auto;
+                border-radius: 50%;
+                background: $tan;
+
+                img {
+                    display: block;
+                }
+            }
+
+            h3 {
+                padding-top: 20px;
+                @include font-termina-bold;
+                text-transform: uppercase;
+                font-size: 1.6em;
+                line-height: 1em;
+                color: $blue;
+                text-decoration: none;
+            
+                span {
+                    opacity: .7;
+                }
+            
+                @include respond-to( $bp-m ) {
+                    font-size: 2em;
+                }
+            }
+        }
+    }
+}
+

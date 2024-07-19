@@ -31,8 +31,11 @@
 		</div>
 
 		<div class="header-inner">
-			<nav>
-				<?php wp_nav_menu( array( 'theme_location' => 'header-main', 'menu_class' => 'nav-menu main' ) ); ?>
+			<nav class="main">
+				<?php 
+				//wp_nav_menu( array( 'theme_location' => 'header-main', 'menu_class' => 'nav-menu main' ) ); 
+				main_menu();
+				?>
 			</nav>
 
 			<div class="search">
@@ -43,9 +46,6 @@
 				<img src="<?php bloginfo( 'template_url' ) ?>/img/icon/menu-white.svg" class="mobile-only" />
 			</a>
 
-			<!--<nav class="aux">
-				<?php wp_nav_menu( array( 'theme_location' => 'header-aux', 'menu_class' => 'nav-menu aux' ) ); ?>
-			</nav>-->
 		</div>
 	</div>
 </header>
