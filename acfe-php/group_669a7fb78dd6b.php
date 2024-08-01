@@ -16,7 +16,7 @@ acf_add_local_field_group(array(
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
-				'width' => '',
+				'width' => '90',
 				'class' => '',
 				'id' => '',
 			),
@@ -32,6 +32,54 @@ acf_add_local_field_group(array(
 			'max_size' => '',
 			'mime_types' => '',
 			'preview_size' => 'full',
+		),
+		array(
+			'key' => 'field_66a1515db60db',
+			'label' => 'Add Content',
+			'name' => 'add-content',
+			'aria-label' => '',
+			'type' => 'true_false',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '10',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => '',
+			'default_value' => 0,
+			'ui_on_text' => '',
+			'ui_off_text' => '',
+			'ui' => 1,
+		),
+		array(
+			'key' => 'field_66a1516cb60dc',
+			'label' => 'Content',
+			'name' => 'content',
+			'aria-label' => '',
+			'type' => 'wysiwyg',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => 'field_66a1515db60db',
+						'operator' => '==',
+						'value' => '1',
+					),
+				),
+			),
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'tabs' => 'all',
+			'toolbar' => 'full',
+			'media_upload' => 1,
+			'delay' => 0,
 		),
 	),
 	'location' => array(
@@ -59,7 +107,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1721401534,
+	'modified' => 1721848226,
 ));
 
 endif;

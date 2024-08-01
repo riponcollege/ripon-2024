@@ -1,0 +1,120 @@
+
+@property --p {
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 0;
+}
+
+.pie {
+    --p: 20;
+    --b: 35px;
+    --c: $red;
+    --w: 200px;
+
+    @include respond-to( $bp-m ) {
+        --w: 300px;
+    }
+
+    @include respond-to( $bp-l ) {
+        --w: 375px;
+    }
+
+    width: var(--w);
+    aspect-ratio: 1;
+    position: relative;
+    display: inline-grid;
+    margin: 5px;
+    place-content: center;
+    font-size: 25px;
+    @include font-termina-bold;
+    color: $blue;
+}
+
+.pie:before, .pie:after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
+
+.pie:before {
+    inset:0;
+    background:
+        radial-gradient( farthest-side, $red 98%,#0000) top/var(--b) var(--b) no-repeat,
+        conic-gradient(var(--c) calc(var(--p)*1%),#0000 0);
+    -webkit-mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+            mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+    background-size: 0 0, auto;
+}
+
+.pie:after {
+    inset: calc(50% - var(--b)/2);
+    background: $red;
+    transform: rotate( calc( var(--p)*3.6deg ) ) translateY( calc( 50% - var(--w)/2 ) );
+    content:none;
+}
+
+.animate {
+    animation: p 600ms ease-in-out;
+}
+
+@keyframes p {
+    from{ --p: 0 }
+}
+
+
+.goals-container {
+    @include padding-tall;
+
+    &.tan {
+        background: $tan;
+    }
+
+    .statistics {
+        border-top: 1px solid black;
+        padding-top: 40px;
+
+        @include respond-to( $bp-m ) {
+            display: flex;
+
+            .stat {
+                flex: 1;
+                padding: 20px;
+            }
+        }
+
+        .stat {
+            text-align: center;
+
+            .stat-icon {
+                max-width: 150px;
+                padding: 30px;
+                margin: 0 auto;
+                border-radius: 50%;
+                background: $tan;
+
+                img {
+                    display: block;
+                }
+            }
+
+            h3 {
+                padding-top: 20px;
+                @include font-termina-bold;
+                text-transform: uppercase;
+                font-size: 1.6em;
+                line-height: 1em;
+                color: $blue;
+                text-decoration: none;
+            
+                span {
+                    opacity: .7;
+                }
+            
+                @include respond-to( $bp-m ) {
+                    font-size: 2em;
+                }
+            }
+        }
+    }
+}
+

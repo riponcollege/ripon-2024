@@ -3,44 +3,6 @@
 .stats-container {
     @include padding-tall;
 
-    .stats-title-container {
-        padding-bottom: 30px;
-
-        @include respond-to( $bp-m ) {
-            display: flex;
-        }
-
-        .stats-title, .stats-intro {
-            @include respond-to( $bp-m ) {
-                flex: 1;
-                flex-basis: 50%;
-                margin-right: 5%;
-
-                &:last-child {
-                    margin-right: 0;
-                }
-            }
-            
-            p.supertitle {
-                @include font-semi;
-                font-size: .75em;
-                padding: 0;
-                color: $blue;
-                border-bottom: 1px solid black;
-                display: inline-block;
-                margin-bottom: 15px;
-            }
-
-            h2 {
-                @include large-title;
-            }
-        }
-
-        .stats-intro {
-            font-size: .85em;
-        }
-    }
-
     .statistics {
         border-top: 1px solid black;
         padding-top: 40px;
