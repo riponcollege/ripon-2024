@@ -2,7 +2,17 @@
 
 .quick-links-container {
     .quick-links {
-        @include padding-tall;
+        &.pad-normal {
+            @include padding;
+        }
+
+        &.pad-tall { 
+            @include padding-tall;
+        }
+
+        &.pad-side {
+            @include padding-side;
+        }
 
         .quick-links-title h2 {
             @include large-title;
@@ -23,7 +33,6 @@
                 }
 
                 .column {
-
                     &.photo {
                         min-height: 180px;
                         background: center center no-repeat;

@@ -43,6 +43,10 @@
         @extend .content-style;
         @include padding;
 
+        &.pad-tall {
+            @include padding-tall;
+        }
+
         &.vcenter {
             align-items: center;
         }

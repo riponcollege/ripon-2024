@@ -9,7 +9,7 @@ function get_components() {
         while ( have_rows('components') ) : the_row();
 
             // include the specific layout
-            include 'component/' . get_row_layout() . '.php';
+            get_template_part( 'library/component/' . get_row_layout() );
 
         endwhile;
 

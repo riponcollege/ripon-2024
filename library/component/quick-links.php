@@ -1,12 +1,13 @@
 <?php
     
 $large_title = get_sub_field( 'quick-links-title' );
+$padding = get_sub_field( 'padding' );
 
 if ( have_rows('rows') ): 
     ?>
 <div class="quick-links-container">
     <div class="wrap">
-        <div class="quick-links">
+        <div class="quick-links <?php print $padding ?>">
         <?php if ( !empty( $large_title ) ) { ?><div class="quick-links-title"><h2><?php print $large_title ?></h2></div><?php } ?>
     <?php
     // loop through the rows of data

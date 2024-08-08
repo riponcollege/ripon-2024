@@ -1,0 +1,45 @@
+
+
+.section-title-container {
+	padding: 20px;
+	@include respond-to( $bp-m ) { padding: 40px 30px 40px; }
+	@include respond-to( $bp-l ) { padding: 50px 40px 40px; }
+	@include respond-to( $bp-xl ) { padding: 60px 50px 40px; }
+	@include respond-to( $bp-xxl ) { padding: 70px 65px 40px; }
+	@include respond-to( $bp-xxxl ) { padding: 80px 80px 50px; }
+
+	@include respond-to( $bp-m ) {
+		display: flex;
+	}
+
+	.section-title, .section-intro {
+		@include respond-to( $bp-m ) {
+			flex: 1;
+			flex-basis: 50%;
+			margin-right: 5%;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+		
+		p.supertitle {
+			@include font-semi;
+			font-size: .75em;
+			padding: 0;
+			color: $blue;
+			border-bottom: 1px solid black;
+			display: inline-block;
+			margin-bottom: 15px;
+		}
+
+		h2 {
+			@include large-title;
+		}
+	}
+
+	.section-intro {
+		font-size: .85em;
+	}
+}
+

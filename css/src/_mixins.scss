@@ -49,6 +49,15 @@
 	@include respond-to( $bp-xxxl ) { padding: 80px 80px; }
 }
 
+@mixin padding-side {
+	padding: 0 20px;
+	@include respond-to( $bp-m ) { padding: 0 30px; }
+	@include respond-to( $bp-l ) { padding: 0 40px; }
+	@include respond-to( $bp-xl ) { padding: 0 50px; }
+	@include respond-to( $bp-xxl ) { padding: 0 65px; }
+	@include respond-to( $bp-xxxl ) { padding: 0 80px; }
+}
+
 
 @mixin padding-side( $top: 20px, $bottom: 20px ) {
 	padding: 20px;

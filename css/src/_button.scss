@@ -29,20 +29,23 @@
 		border-bottom: none;
 	}
 
-	&.green {
-		background-color: $green;
-	}
-
 	&.red {
 		background-color: $red;
+		color: white
 	}
 
 	&.blue {
 		background-color: $blue;
+		color: white;
 	}
 
 	&.tan {
 		background-color: $blue;
+		color: black;
+	}
+
+	&.white {
+		background-color: white;
 		color: black;
 	}
 }

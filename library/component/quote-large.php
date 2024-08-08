@@ -1,5 +1,6 @@
 <?php
 
+
 $photo = get_sub_field('photo');
 $content = get_sub_field('content');
 $citation = get_sub_field('citation');
@@ -8,7 +9,7 @@ $color = get_sub_field('color');
 
 if ( !empty( $photo ) && !empty( 'content' ) && !empty( $citation ) ) {
     ?>
-<div class="quote-large-container">
+<div class="quote-large-container <?php print $color ?>">
     <div class="wrap">
         <div class="quote-large">
             <div class="quote-photo">
@@ -26,3 +27,4 @@ if ( !empty( $photo ) && !empty( 'content' ) && !empty( $citation ) ) {
 </div>
     <?php
 }
+

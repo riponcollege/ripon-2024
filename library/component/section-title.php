@@ -1,6 +1,8 @@
 <?php
 
-global $supertitle, $title, $intro;
+$supertitle = get_sub_field('supertitle');
+$title = get_sub_field('title');
+$intro = get_sub_field('intro');
 
 if ( !empty( $title ) ) { 
     ?>
