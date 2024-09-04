@@ -1,13 +1,16 @@
 <?php
 
-// set wysiwyg editors to min height instead of fixed.
-add_action('admin_head', 'admin_styles');
-function admin_styles() {
+// add a wysiwyg 'short' class
+add_action('admin_head', 'acf_wysiwyg_short');
+function acf_wysiwyg_short() {
 	?>
 	<style>
-		iframe[id^='wysiwyg-acf-field'] {
-			min-height:40px;
-		}
+    .short .acf-editor-wrap iframe {			
+        height: 170px !important;
+    }
+    .short .mce-statusbar {
+        display: none;
+    }
 	</style>
 	<?php
 }

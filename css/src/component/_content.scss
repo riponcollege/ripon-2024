@@ -6,6 +6,10 @@
     background: white;
     color: black;
 
+    &.pad-tall {
+        @include padding-tall;
+    }
+
     &.red {
         @extend .white-links;
         background: $red;
@@ -28,6 +32,11 @@
 .content-two-container {
     background: white;
     color: black;
+    @include padding;
+
+    &.pad-tall {
+        @include padding-tall;
+    }
 
     &.red {
         @extend .white-links;
@@ -41,11 +50,6 @@
 
     .content-two {
         @extend .content-style;
-        @include padding;
-
-        &.pad-tall {
-            @include padding-tall;
-        }
 
         &.vcenter {
             align-items: center;

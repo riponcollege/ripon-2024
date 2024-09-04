@@ -2,15 +2,11 @@
 
 load_section_title();
 
-if ( have_rows('statistics') ): 
-    ?>
+?>
 <div class="stats-container">
-    <div class="wrap">
-        
-        <?php include( 'section-title.php' ); ?>
-
-        <div class="statistics">
-        <?php
+    <?php
+    if ( have_rows('statistics') ):  ?>
+        <div class="statistics"><?php
         // loop through the rows of data
         $num = 1;
         while ( have_rows( 'statistics' ) ) : the_row();
@@ -29,11 +25,11 @@ if ( have_rows('statistics') ):
             <?php
             $num++;
 
-        endwhile;
-        ?>
+        endwhile; ?>
         </div>
-    </div>
+        <?php
+    endif;
+    ?>
 </div>
 <?php
-endif;
 

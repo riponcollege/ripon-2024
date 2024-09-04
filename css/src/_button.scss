@@ -18,10 +18,11 @@
 	text-decoration: none;
 	display: inline-block;
 	text-align: center;
-	background-color: $grey;
-	color: white;
+	background-color: $grey !important;
+	color: white !important;
 	-webkit-appearance: none;
 	border-radius: 22px;
+	border: 0 !important;
 
 	&:hover {
 		text-decoration: none;
@@ -30,23 +31,23 @@
 	}
 
 	&.red {
-		background-color: $red;
-		color: white
+		background-color: $red !important;
+		color: white !important;
 	}
 
 	&.blue {
-		background-color: $blue;
-		color: white;
+		background-color: $blue !important;
+		color: white !important;
 	}
 
 	&.tan {
-		background-color: $blue;
-		color: black;
+		background-color: $blue !important;
+		color: black !important;
 	}
 
 	&.white {
-		background-color: white;
-		color: black;
+		background-color: white !important;
+		color: black !important;
 	}
 }
 

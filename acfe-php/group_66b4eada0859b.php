@@ -4,57 +4,8 @@ if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array(
 	'key' => 'group_66b4eada0859b',
-	'title' => 'Module: Calls to Action',
+	'title' => 'Basic Module: Calls to Action',
 	'fields' => array(
-		array(
-			'key' => 'field_66b4eb54e988a',
-			'label' => 'Title',
-			'name' => 'title',
-			'aria-label' => '',
-			'type' => 'text',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '70',
-				'class' => '',
-				'id' => '',
-			),
-			'default_value' => '',
-			'maxlength' => '',
-			'placeholder' => '',
-			'prepend' => '',
-			'append' => '',
-		),
-		array(
-			'key' => 'field_66b4ead9f5144',
-			'label' => 'Padding',
-			'name' => 'padding',
-			'aria-label' => '',
-			'type' => 'select',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '30',
-				'class' => '',
-				'id' => '',
-			),
-			'choices' => array(
-				'pad-none' => 'None',
-				'pad-normal' => 'Normal',
-				'pad-tall' => 'Tall',
-			),
-			'default_value' => 'pad-normal',
-			'return_format' => 'value',
-			'multiple' => 0,
-			'allow_custom' => 0,
-			'placeholder' => '',
-			'search_placeholder' => '',
-			'allow_null' => 0,
-			'ui' => 0,
-			'ajax' => 0,
-		),
 		array(
 			'key' => 'field_66b4eb61e988b',
 			'label' => 'Buttons',
@@ -179,7 +130,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1723133207,
+	'modified' => 1724867580,
 ));
 
 endif;

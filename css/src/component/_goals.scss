@@ -5,17 +5,23 @@
     initial-value: 0;
 }
 
+@keyframes p {
+    from{ --p: 0 }
+}
+
 .pie {
     --p: 20;
-    --b: 35px;
+    --b: 20px;
     --c: $red;
     --w: 200px;
 
     @include respond-to( $bp-m ) {
+        --b: 35px;
         --w: 300px;
     }
 
     @include respond-to( $bp-l ) {
+        --b: 45px;
         --w: 375px;
     }
 
@@ -23,42 +29,46 @@
     aspect-ratio: 1;
     position: relative;
     display: inline-grid;
-    margin: 5px;
+    margin: 0 0 20px 0;
     place-content: center;
-    font-size: 25px;
-    @include font-termina-bold;
-    color: $blue;
-}
 
-.pie:before, .pie:after {
-    content: "";
-    position: absolute;
-    border-radius: 50%;
-}
+    h2 {
+        color: $blue;
+        padding: 0;
+        line-height: 1.1em;
+    }
+    
+    h5 {
+        font-size: .9em;
+        padding: 0;
+    }
 
-.pie:before {
-    inset:0;
-    background:
-        radial-gradient( farthest-side, $red 98%,#0000) top/var(--b) var(--b) no-repeat,
-        conic-gradient(var(--c) calc(var(--p)*1%),#0000 0);
-    -webkit-mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
-            mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
-    background-size: 0 0, auto;
-}
+    &:before, &:after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+    }
 
-.pie:after {
-    inset: calc(50% - var(--b)/2);
-    background: $red;
-    transform: rotate( calc( var(--p)*3.6deg ) ) translateY( calc( 50% - var(--w)/2 ) );
-    content:none;
-}
+    &:before {
+        inset:0;
+        background:
+            radial-gradient( farthest-side, $red 98%,#0000) top/var(--b) var(--b) no-repeat,
+            conic-gradient(var(--c) calc(var(--p)*1%),#0000 0);
+        -webkit-mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+                mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+        background-size: 0 0, auto;
+    }
 
-.animate {
-    animation: p 600ms ease-in-out;
-}
+    &:after {
+        inset: calc(50% - var(--b)/2);
+        background: $red;
+        transform: rotate( calc( var(--p)*3.6deg ) ) translateY( calc( 50% - var(--w)/2 ) );
+        content:none;
+    }
 
-@keyframes p {
-    from{ --p: 0 }
+    &.animate {
+        animation: p 600ms ease-in-out;
+    }
 }
 
 
@@ -69,49 +79,54 @@
         background: $tan;
     }
 
-    .statistics {
-        border-top: 1px solid black;
-        padding-top: 40px;
-
+    .goals {
         @include respond-to( $bp-m ) {
             display: flex;
 
-            .stat {
-                flex: 1;
-                padding: 20px;
+            .goal-main {
+                flex: 1 1 50%;
+                margin-right: 5%;
+            }
+
+            .goals-minor {
+                flex: 1 1 50%;
             }
         }
 
-        .stat {
+        .goal-main {
             text-align: center;
+        }
 
-            .stat-icon {
-                max-width: 150px;
-                padding: 30px;
-                margin: 0 auto;
-                border-radius: 50%;
-                background: $tan;
+        .goals-minor {
+            .goal {
+                padding-bottom: 25px;
 
-                img {
-                    display: block;
+                .info {
+                    
                 }
-            }
 
-            h3 {
-                padding-top: 20px;
-                @include font-termina-bold;
-                text-transform: uppercase;
-                font-size: 1.6em;
-                line-height: 1em;
-                color: $blue;
-                text-decoration: none;
-            
-                span {
-                    opacity: .7;
-                }
-            
-                @include respond-to( $bp-m ) {
-                    font-size: 2em;
+                .bar-container {
+                    position: relative;
+                    border: 1px solid black;
+                    padding: 2px;
+                    background: white;
+                    border-radius: 19px;
+                    margin-top: 10px;
+
+                    .bar {
+                        background: $tan;
+                        height: 30px;
+                        border-radius: 15px;
+                    }
+
+                    .number {
+                        position: absolute;
+                        top: 50%;
+                        left: 20px;
+                        margin-top: -7px;
+                        font-size: 14px;
+                        font-weight: bold;
+                    }
                 }
             }
         }

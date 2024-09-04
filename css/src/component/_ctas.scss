@@ -1,0 +1,25 @@
+
+
+.cta-container {
+    @include padding;
+	background: white;
+    text-align: center;
+
+	&.tan {
+		background: $tan;
+	}
+
+	&.pad-tall {
+		@include padding-tall;
+	}
+}
+
+
+.cta-buttons {
+	padding: 12px 0;
+
+	.btn {
+		margin: 0 6px;
+	}
+}
+

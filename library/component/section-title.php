@@ -3,10 +3,12 @@
 $supertitle = get_sub_field('supertitle');
 $title = get_sub_field('title');
 $intro = get_sub_field('intro');
+$padding = get_sub_field('padding');
+$color = get_sub_field('color');
 
 if ( !empty( $title ) ) { 
     ?>
-<div class="section-title-container">
+<div class="section-title-container <?php print $padding . ' ' . $color; ?>">
     <div class="section-title">
         <?php if ( !empty( $supertitle ) ) { ?><p class="supertitle"><?php print $supertitle; ?></p><?php } ?>
         <h2><?php print $title ?></h2>

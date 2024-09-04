@@ -4,7 +4,7 @@
     background: $red;
     h1 { color: white; }
 
-    &.large {
+    &.large, &.large-menu {
         .title {
             @include padding-tall;
         }

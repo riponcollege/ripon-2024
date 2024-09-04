@@ -10,30 +10,43 @@ if ( !empty( $goal_name ) ):
 <div class="goals-container <?php print $color ?>">
 
     <?php include( 'section-title.php' ); ?>
-
-        <div class="pie animate no-round" style="--p:80;--c:#97303d;">80%</div>
-
-        <div class="goals-subgoals">
+    
+    <div class="goals">
+        <div class="goal-main">
+            <?php
+            
+            ?>
+            <div class="pie animate no-round" style="--p:80;--c:#97303d;"><h2>80%</h2><h5>$65 of $75 million</h5></div>
+        </div>
+        <div class="goals-minor">
         <?php
         // loop through the rows of data
-        $num = 1;
-        while ( have_rows( 'goal-bars' ) ) : the_row();
+        if ( have_rows( 'minor_goals' ) ) :
+            while ( have_rows( 'minor_goals' ) ) : the_row();
 
-            $icon = get_sub_field('icon');
-            $stat_number = get_sub_field('stat-number');
-            $subtitle = get_sub_field('subtitle');
-            ?>
+                $goal_name = get_sub_field('goal-name');
+                $currency = get_sub_field('currency');
+                $raised = get_sub_field('raised');
+                $goal = get_sub_field('goal');
+                $goal_unit = get_sub_field('goal-unit');
+
+                $goal_percent = floor( ( $raised / $goal ) * 100 );
+                ?>
             <div class="goal">
-                <h3><?php print $stat_number ?></h3>
-                <p class="subtitle"><?php print $subtitle ?></p>
+                <div class="info"><strong><?php print $goal_name ?></strong> | <?php print ( $currency ? "$" : '' ) . $goal . ' ' . $goal_unit ?></div>
+                <div class="bar-container">
+                    <div class="bar" style="width: <?php print $goal_percent; ?>%;"></div>
+                    <div class="number"><?php print $goal_percent; ?>%</div>
+                </div>
             </div>
-            <?php
-            $num++;
+                <?php
 
-        endwhile;
+            endwhile;
+        endif
         ?>
         </div>
     </div>
+
 </div>
 <?php
 endif;

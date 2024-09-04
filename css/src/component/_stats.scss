@@ -1,11 +1,10 @@
 
 
 .stats-container {
-    @include padding-tall;
+    @include padding;
 
     .statistics {
-        border-top: 1px solid black;
-        padding-top: 40px;
+        // border-top: 1px solid black;
 
         @include respond-to( $bp-m ) {
             display: flex;

@@ -13,7 +13,7 @@ if ( !empty( $title ) ) {
 	<div class="wrap">
 		<div class="title">
 			<h1><?php print $title ?></h1>
-			<?php if ( !empty( $nav_menu ) ) { ?>
+			<?php if ( !empty( $nav_menu ) && $theme == 'large-menu' ) { ?>
 			<div class="section-nav">
 				<?php wp_nav_menu( array( 'menu' => $nav_menu ) ); ?>
 			</div>

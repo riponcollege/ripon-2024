@@ -1,8 +1,17 @@
 
 
-.hero-photo {
+.hero-photo, .photo {
     img {
         display: block;
+    }
+}
+
+
+.photo {
+    padding: 10px 0;
+
+    img {
+
     }
 }
 
