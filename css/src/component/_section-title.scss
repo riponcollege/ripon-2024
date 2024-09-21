@@ -24,7 +24,7 @@
 		@include respond-to( $bp-m ) {
 			flex: 1;
 			flex-basis: 50%;
-			margin-right: 5%;
+			margin-right: 9%;
 
 			&:last-child {
 				margin-right: 0;
@@ -33,7 +33,6 @@
 		
 		p.supertitle {
 			@include font-semi;
-			font-size: .75em;
 			padding: 0;
 			color: $blue;
 			border-bottom: 1px solid black;

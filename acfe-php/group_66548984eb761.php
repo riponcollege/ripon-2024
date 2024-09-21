@@ -150,7 +150,11 @@ acf_add_local_field_group(array(
 										'footer-faculty' => 'Footer - Faculty',
 										'footer-overview' => 'Footer - Overview',
 										'footer-students' => 'Footer - Students',
+										'forever-ripon' => 'Forever Ripon',
+										'give' => 'Give',
 										'header-main' => 'Header - Main',
+										'infrastructure' => 'Infrastructure',
+										'title-academics' => 'Title - Academics',
 									),
 									'default_value' => false,
 									'return_format' => 'value',
@@ -530,7 +534,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1721243345,
+	'modified' => 1725473608,
 ));
 
 endif;

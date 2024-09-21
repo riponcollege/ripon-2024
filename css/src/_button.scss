@@ -18,8 +18,8 @@
 	text-decoration: none;
 	display: inline-block;
 	text-align: center;
-	background-color: $grey !important;
-	color: white !important;
+	background-color: $grey;
+	color: white;
 	-webkit-appearance: none;
 	border-radius: 22px;
 	border: 0 !important;
@@ -31,23 +31,23 @@
 	}
 
 	&.red {
-		background-color: $red !important;
-		color: white !important;
+		background-color: $red;
+		color: white;
 	}
 
 	&.blue {
-		background-color: $blue !important;
-		color: white !important;
+		background-color: $blue;
+		color: white;
 	}
 
 	&.tan {
-		background-color: $blue !important;
-		color: black !important;
+		background-color: $tan;
+		color: black;
 	}
 
 	&.white {
-		background-color: white !important;
-		color: black !important;
+		background-color: white;
+		color: black;
 	}
 }
 

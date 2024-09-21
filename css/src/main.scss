@@ -4,7 +4,10 @@
 $grey: #666666;
 $grey-light: #999999;
 $grey-dark: #444444;
-$red: #97303d;
+// $red: #97303d;
+// $red: #B30838;
+$red: #a10833;
+// $red: #96062f;
 $blue: #233f6c;
 $green: #38914a;
 $tan: #eeeae3;
@@ -28,7 +31,9 @@ $bp-xxxl: 1680px;
 
 
 // import page components
-@import "component/hero", "component/title", "component/section-title", "component/content", "component/stats", "component/quick-links", "component/quotes", "component/goals", "component/ctas";
+@import "component/slides", "component/hero", "component/title", "component/section-title", "component/content", 
+    "component/stats", "component/quick-links", "component/quotes", "component/goals", "component/ctas", 
+    "component/people", "component/areas", "component/nav-menu";
 
 
 // import lightbox styles

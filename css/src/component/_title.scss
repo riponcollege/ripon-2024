@@ -15,6 +15,33 @@
         h1 { color: $blue; }
     }
 
+    &.columns {
+        @include respond-to( $bp-xl ) {
+            .title {
+                display: flex;
+                align-items: center;
+
+                h1, .section-nav {
+                    flex: 1;
+                }
+
+                h1 {
+                    flex-basis: 35%;
+                }
+
+                .section-nav {
+                    margin-top: 0;
+                    flex-basis: 65%;
+
+                    ul li {
+                        flex:  0 0 47%;
+                        margin-right: 3%;
+                    }               
+                }
+            }
+        }
+    }
+
     .title {
         @include padding;
 
@@ -31,6 +58,7 @@
                 @include respond-to( $bp-m ) {
                     display: flex;
                     flex-wrap: wrap;
+                    margin-right: -3%;
                 }
 
                 li {

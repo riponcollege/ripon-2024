@@ -98,7 +98,7 @@ header {
 						line-height: 20px;
 						text-align: center;
 						text-transform: inherit;
-						font-size: .8em;
+						font-size: .9em;
 					}
 
 					@include respond-to( $bp-l ) {
@@ -112,7 +112,8 @@ header {
 
 				.submenu {
 					display: none;
-					background: rgba( $grey-light, .2 );
+					background: rgba( $tan, .6 );
+					// box-shadow: 0 10px 10px rgba( black, .05 );
 					@include padding;
 
 					@include respond-to( $menu-bp ) {
@@ -121,6 +122,7 @@ header {
 						top: 100px;
 						left: 0;
 						right: 0;
+						z-index: 1001;
 
 						.submenu-col {
 							flex: 1;
@@ -136,6 +138,10 @@ header {
 						color: $grey-light;
 					}
 
+					p {
+						padding: 5px 0 12px 0;
+					}
+
 					ul {
 						padding: 0 0 5px 0;
 
@@ -145,6 +151,7 @@ header {
 								padding: 1px 0;
 								line-height: 1.4em;
 								border-bottom: 1px solid transparent;
+								font-size: 1.1em;
 
 								@include respond-to( $menu-bp ) {
 									display: inline-block;

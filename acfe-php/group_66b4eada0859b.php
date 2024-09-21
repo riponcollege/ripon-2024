@@ -7,6 +7,35 @@ acf_add_local_field_group(array(
 	'title' => 'Basic Module: Calls to Action',
 	'fields' => array(
 		array(
+			'key' => 'field_66eac55d01231',
+			'label' => 'Alignment',
+			'name' => 'alignment',
+			'aria-label' => '',
+			'type' => 'select',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'center' => 'Center',
+				'left' => 'Left',
+			),
+			'default_value' => 'center',
+			'return_format' => 'value',
+			'multiple' => 0,
+			'allow_null' => 0,
+			'allow_in_bindings' => 0,
+			'ui' => 0,
+			'ajax' => 0,
+			'placeholder' => '',
+			'allow_custom' => 0,
+			'search_placeholder' => '',
+		),
+		array(
 			'key' => 'field_66b4eb61e988b',
 			'label' => 'Buttons',
 			'name' => 'buttons',
@@ -130,7 +159,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1724867580,
+	'modified' => 1726662012,
 ));
 
 endif;

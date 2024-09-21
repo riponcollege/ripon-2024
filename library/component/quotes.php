@@ -1,10 +1,11 @@
 <?php
     
 $title = get_sub_field( 'title' );
+$color = get_sub_field( 'color' );
 
 if ( have_rows('quotes') ): 
     ?>
-<div class="quotes-container">
+<div class="quotes-container <?php print $color ?>">
     <div class="quotes">
         <div class="quotes-inner">
         <?php

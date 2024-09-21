@@ -17,7 +17,7 @@ function main_menu() {
         foreach ( $menu as $menu_item ) {
 
             // show the main menu item
-            print '<li' . ( empty( $menu_item['submenu'] ) ? ' class="no-submenu"' : '' ) . '><a href="' . $menu_item['link'] . '">' . $menu_item['label'] . '</a>';
+            print '<li' . ( empty( $menu_item['submenu-modules'] ) ? ' class="no-submenu"' : '' ) . '><a href="' . $menu_item['link'] . '">' . $menu_item['label'] . '</a>';
 
             // if we have components for this page
             if ( !empty( $menu_item['submenu-modules'] ) ):

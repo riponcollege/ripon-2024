@@ -1,0 +1,220 @@
+
+
+.slides-container {
+	position: relative;
+	z-index: 1;
+
+	.slides {
+		@include clearfix;
+		position: relative;
+		transition: height 300ms ease-in-out;
+		background: #eee;
+		z-index: 2;
+		height: 400px;
+
+		@include respond-to( 768px ) {
+			height: 500px;
+		}
+
+		@include respond-to( 1024px ) {
+			height: 650px;
+		}
+
+		@include respond-to( 1220px ) {
+			height: 800px;
+		}
+
+		.slide {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			opacity: 0;
+			transition: opacity 400ms ease-in-out, padding 400ms ease-in-out;
+			height: 100%;
+			background: center center no-repeat;
+			background-size: cover;
+			z-index: 3;
+			overflow: hidden;
+			@include padding;
+
+			&.has-link {
+				cursor: pointer;
+			}
+
+			video {
+				display: none;
+
+				@include respond-to( 1025px ) {
+					position: absolute;
+					z-index: 5; 
+					display: block;
+					left: 50%; /* % of surrounding element */
+					top: 50%;
+					-webkit-transform: translate(-50%, -50%);
+					transform: translate(-50%, -50%);
+					min-width: 100%;
+					min-height: 100%;
+					width: auto; 
+					height: auto;
+					overflow: hidden;
+				}
+			}
+
+			&.visible {
+				opacity: 1;
+				z-index: 4;
+			}
+
+			.slide-overlay {
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				z-index: 5;
+				background: rgba( black, .3 );
+				pointer-events: none;
+			}
+
+			.slide-content {
+				position: absolute;
+				bottom: 80px;
+				left: 0;
+				right: 0;
+				color: white;
+				pointer-events: none;
+				z-index: 6;
+				text-align: center;
+				padding: 20px 40px;
+
+				@include respond-to( $bp-m ) { padding: 25px 30% 40px 30px; text-align: left; }
+				@include respond-to( $bp-l ) { padding: 25px 30% 50px $margin; }
+				@include respond-to( $bp-xl ) { padding: 30px 30% 50px $margin; }
+				@include respond-to( $bp-xxl ) { padding: 35px 35% 50px $margin; }
+				@include respond-to( $bp-xxxl ) { padding: 45px 40% 70px $margin; }
+			
+				.wrap {
+					min-width: auto;
+				}
+
+				@include respond-to( $bp-m ) {
+					position: absolute;
+					bottom: 0;
+				}
+				
+				h1 {
+					@include font-termina-bold;
+					color: white;
+					text-shadow: 0 0 15px rgba( black, .3 );
+					padding: 0;
+					margin-bottom: 20px;
+
+					font-size: 25px;
+					line-height: 30px;
+
+					@include respond-to( 500px ) {
+						font-size: 30px;
+						line-height: 40px;
+					}
+
+					@include respond-to( 768px ) {
+						font-size: 40px;
+						line-height: 50px;
+					}
+
+					@include respond-to( 1024px ) {
+						font-size: 50px;
+						line-height: 60px;
+					}
+
+					@include respond-to( $bp-xl ) {
+						font-size: 60px;
+						line-height: 70px;
+					}
+
+					@include respond-to( $bp-xxl ) {
+						font-size: 70px;
+						line-height: 80px;
+					}
+				}
+
+				p {
+					color: white;
+					text-shadow: 0 0 15px rgba( black, .4 );
+				}
+			}
+
+		}
+
+		$button-width: 40px;
+
+		.slides-nav {
+			position: absolute;
+			bottom: 40px;
+			left: 50%;
+			width: auto;
+			height: $button-width + 6;
+			margin-left: -( $button-width + 4 );
+			padding: 2px;
+			z-index: 7;
+			text-align: center;
+			border: 1px solid white;
+			border-radius: ( $button-width / 2 ) + 4;
+
+			@include respond-to( $bp-m ) {
+				left: auto;
+				right: 100px;
+				border-radius: ( $button-width / 2 ) + 4;
+				height: $button-width + 8;
+			}
+
+			@include respond-to( $bp-l ) {
+				bottom: 50px;
+			}
+
+			a {
+				display: inline-block;
+				cursor: pointer;
+				width: $button-width;
+				height: $button-width;
+				border-radius: $button-width / 2;
+				text-indent: -300px;
+				overflow: hidden;
+				color: black;
+				z-index: 1001;
+
+				@include respond-to( $bp-l ) {
+					width: 42px;
+					height: 42px;
+				}
+
+				&:hover {
+					border: none;
+				}
+
+				&.previous {
+					left: 0;
+					background: url(../img/icon-arrow-left.png) center center no-repeat;
+					background-size: contain;
+
+					&:hover {
+						background-image: url(../img/icon-arrow-left-hover.png);
+					}
+				}
+
+				&.next {
+					right: 0;
+					background: url(../img/icon-arrow-right.png) center center no-repeat;
+					background-size: contain;
+
+					&:hover {
+						background-image: url(../img/icon-arrow-right-hover.png);
+					}
+				}
+			}
+		}
+	}
+
+}
+

@@ -3,6 +3,18 @@
 .quotes-container {
     background: $tan;
 
+    &.white {
+        background: white;
+
+        .quotes .quotes-inner .quote .quote-bubble {
+            background: $tan;
+
+            &:after {
+                border-left: 50px solid $tan;
+            }
+        }
+    }
+
     .quotes {
         @include padding-tall;
 
@@ -36,7 +48,7 @@
 
                 @include respond-to( $bp-m ) {
                     flex: 1;
-                    margin-right: 5%;
+                    margin-right: 9%;
 
                     &:last-child {
                         margin-right: 0;
@@ -121,16 +133,16 @@
             text-align: center;
             
             img {
-                border-radius: 30px;
+                border-radius: 6px;
             }
 
             @include respond-to( $bp-l ) {
                 flex: 1;
-                margin-right: 3%;
+                margin-right: 6%;
             }
 
             @include respond-to( $bp-xl ) {
-                margin-right: 5%;
+                margin-right: 9%;
             }
         }
 

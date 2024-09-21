@@ -1,5 +1,10 @@
 
 
+.content-area {
+    padding: 12px 0;
+}
+
+
 .content-one {
     @extend .content-style;
     @include padding;
@@ -67,25 +72,25 @@
 
                 &.equal .column.one {
                     margin-right: 0;
-                    margin-left: 5%;
+                    margin-left: 10%;
                 }
             }
 
             &.equal {
                 .column.one {
-                    margin-right: 5%;
+                    margin-right: 9%;
                 }
             }
 
             &.right {
                 .column {
                     &:first-child {
-                        flex-basis: 30%;
-                        margin-right: 5%;
+                        flex-basis: 28%;
+                        margin-right: 9%;
                     }
 
                     &:nth-child(2) {
-                        flex-basis: 65%;
+                        flex-basis: 62%;
                     }
                 }
             }
@@ -93,12 +98,28 @@
             &.left {
                 .column {
                     &:first-child {
-                        flex-basis: 65%;
-                        margin-right: 5%;
+                        flex-basis: 62%;
+                        margin-right: 9%;
                     }
 
                     &:nth-child(2) {
-                        flex-basis: 30%;
+                        flex-basis: 28%;
+                    }
+                }
+            }
+
+            &.border {
+                .column {
+                    border: 1px solid rgba( black, .4 );
+                    border-radius: 6px;
+                    padding: 25px;
+
+                    &:first-child {
+                        margin-right: 5%;
+                    }
+
+                    @include respond-to( $bp-l ) {
+                        padding: 35px;
                     }
                 }
             }
@@ -123,7 +144,7 @@
         background: white;
         color: black;
 
-        @include respond-to( $bp-m ) {
+        @include respond-to( $bp-l ) {
             display: flex;
         }
 
@@ -132,9 +153,32 @@
             color: white;
         }
 
+        &.border {
+            .column {
+                margin-right: 3%;
+                border: 1px solid rgba( black, .4 );
+                border-radius: 6px;
+                padding: 25px;
+
+                @include respond-to( $bp-l ) {
+                    padding: 35px;
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+
         .column {
-            @include respond-to( $bp-m ) {
-                flex: 1;   
+            @include respond-to( $bp-l ) {
+                flex: 1;
+                flex-basis: 33.3333%;
+                margin-right: 5%;
+
+                &:last-child {
+                    margin-right: 0;
+                }
             }
         }
     }

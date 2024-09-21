@@ -10,7 +10,61 @@
 	}
 
 	&.pad-tall {
-		@include padding-tall;
+		padding: 20px;
+		@include respond-to( $bp-m ) { padding: 25px 30px; }
+		@include respond-to( $bp-l ) { padding: 30px 40px; }
+		@include respond-to( $bp-xl ) { padding: 40px 50px; }
+		@include respond-to( $bp-xxl ) { padding: 50px 65px; }
+		@include respond-to( $bp-xxxl ) { padding: 60px 80px; }	
+	}
+
+	&.red {
+		background: $red;
+
+		.btn {
+			background: none;
+		}
+
+		.cta-buttons {
+			padding: 1px;
+			border: 1px solid white;
+			border-radius: 22px;
+			display: block;
+			@include respond-to( $bp-m ) {
+				display: inline-block;
+				width: auto;
+			}
+
+
+			&:hover .btn:first-child {
+				background: none !important;
+				color: white !important;
+			}
+
+			.btn {
+				margin: 0;
+				background: none !important;
+				color: white !important;
+				transition: all 400ms ease-in-out;
+				margin-left: 2px;
+				display: block;
+
+				@include respond-to( $bp-m ) {
+					display: inline-block;
+					min-width: 200px;
+				}
+
+				&:first-child {
+					margin-left: 0;
+				}
+
+				&:first-child:hover, &:first-child, &:hover {
+					background: white !important;
+					color: black !important;
+					opacity: 1;
+				}
+			}
+		}
 	}
 }
 
@@ -18,8 +72,16 @@
 .cta-buttons {
 	padding: 12px 0;
 
+	&.center {
+		text-align: center;
+	}
+
 	.btn {
-		margin: 0 6px;
+		margin: 4px 6px;
+
+		@include respond-to( $bp-m ) {
+			margin: 0 6px;
+		}
 	}
 }
 

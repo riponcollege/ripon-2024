@@ -5,6 +5,10 @@
     initial-value: 0;
 }
 
+@property --c {
+    initial-value: #a10833;
+}
+
 @keyframes p {
     from{ --p: 0 }
 }
@@ -36,6 +40,10 @@
         color: $blue;
         padding: 0;
         line-height: 1.1em;
+
+        @include respond-to( $bp-l ) {
+            font-size: 3em;
+        }
     }
     
     h5 {
@@ -63,7 +71,7 @@
         inset: calc(50% - var(--b)/2);
         background: $red;
         transform: rotate( calc( var(--p)*3.6deg ) ) translateY( calc( 50% - var(--w)/2 ) );
-        content:none;
+        content: none;
     }
 
     &.animate {
@@ -85,11 +93,12 @@
 
             .goal-main {
                 flex: 1 1 50%;
-                margin-right: 5%;
+                margin-right: 9%;
             }
 
             .goals-minor {
                 flex: 1 1 50%;
+                padding-top: 0px;
             }
         }
 
@@ -98,6 +107,8 @@
         }
 
         .goals-minor {
+            padding-top: 25px;
+
             .goal {
                 padding-bottom: 25px;
 
@@ -112,18 +123,19 @@
                     background: white;
                     border-radius: 19px;
                     margin-top: 10px;
+                    width: 95%;
 
                     .bar {
-                        background: $tan;
-                        height: 30px;
-                        border-radius: 15px;
+                        background: $blue;
+                        height: 34px;
+                        border-radius: 17px;
                     }
 
                     .number {
                         position: absolute;
                         top: 50%;
-                        left: 20px;
-                        margin-top: -7px;
+                        right: -40px;
+                        margin-top: -9px;
                         font-size: 14px;
                         font-weight: bold;
                     }

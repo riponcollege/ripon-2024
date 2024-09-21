@@ -1,34 +1,56 @@
 <?php
 
-if( have_rows('slide') ):
-    
-    print '<div class="slides">';
+?>
+<div class="slides-container">
+    <?php
+    if ( have_rows( 'slides' ) ) : 
+    ?>
+    <div class="slides">
+    <?php
+    $count = 0;
 
-    // loop through the rows of data
-    $num = 0;
-    while ( have_rows('slide') ) : the_row();
+    while ( have_rows( 'slides' ) ) : the_row();
+        $title = get_sub_field( 'title' );
+        $link = get_sub_field( 'link' );
+        $image = get_sub_field( 'background' );
+        $label = get_sub_field( 'label' );
 
-        $background = get_sub_field('background');
-        $content = get_sub_field('content');
-        $link = get_sub_field('link');
-        $color = get_sub_field('color');
-        ?>
-        <div class="slide<?php print ( $num == 0 ? ' visible' : '' ) . ( !empty( $link ) ? ' has-link' : '' ); print ' ' . $color ?>"
-            <?php if ( !empty( $link ) ) { ?>data-href="<?php print $link ?>"<?php } ?>>
-            <div class="slide-background" style="background-image: url(<?php print $background; ?>);"></div>
+        if ( !empty( $image ) && !empty( $title ) ) :
+            ?>
+        <div class="slide <?php 
+            print ( get_row_index() == 1 ? 'visible' : '' ); 
+            print ( !empty( $link ) ? ' has-link' : '' ) ?>"<?php
+            print 'style="background-image: url(' . $image . ');"';
+            print ( !empty( $link ) ? 'data-href="' . $link . '"' : '' ) ?>>
+
+            <div class="slide-overlay"></div>
             <div class="slide-content">
-                <div class="slide-content-inner">
-                    <?php print $content ?>
-                </div>
+                <h1 class="slide-title"><?php print $title; ?></h1>
+                <?php if ( !empty( $label ) ) : ?>
+                    <a href="<?php print $link ?>" class="btn white"><?php print $label; ?></a>
+                <?php endif; ?>
             </div>
         </div>
-        <?php
-        $num++;
+            <?php
 
+            $count++;
+        endif;
     endwhile;
 
-    if ( $num > 1 ) print '<div class="slides-nav"><a href="#" class="previous">Previous</a><a href="#" class="next">Next</a></div>';
-    print '</div>';
-
-endif;
-
+    if ( $count > 1 ) : ?>
+        <div class="slides-nav">
+            <a class="previous">Previous</a>
+            <a class="next">Next</a>
+        </div>
+        <?php
+    endif;
+    ?>
+        <a href="#content-start" class="scroll-to-content"></a>
+    </div>
+    <?php
+    endif;
+    
+?>
+</div>
+<a name="content-start"></a>
+        

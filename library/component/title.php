@@ -6,10 +6,13 @@ $theme = get_sub_field('theme');
 $color = get_sub_field('color');
 $nav_menu = get_sub_field('nav-menu');
 
+$menu_obj = wp_get_nav_menu_object( $nav_menu );
+$menu_count = $menu_obj->count;
+
 // if it's not empty, lets output it
 if ( !empty( $title ) ) {
 	?>
-<div class="title-container <?php print $theme ?> <?php print $color ?>">
+<div class="title-container <?php print $theme ?> <?php print $color; print ( $menu_count<5 ? ' columns' : '' ) ?>">
 	<div class="wrap">
 		<div class="title">
 			<h1><?php print $title ?></h1>

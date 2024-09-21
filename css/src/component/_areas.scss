@@ -1,0 +1,100 @@
+
+
+.areas-container {
+    @include padding;
+    background: white;
+    color: black;
+
+    &.padding-tall {
+        @include padding-tall;
+    }
+
+    &.tan {
+        background: $tan;
+    }
+
+    .area-listing {
+
+        @include respond-to( $bp-s ) {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -2%;
+        }
+
+        a {
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 10px;
+            transition: all 400ms ease-in-out;
+            display: flex;
+            box-shadow: 0 0 20px rgba( black, .2 );
+
+            &:hover {
+                border: none;
+                opacity: .9;
+            }
+
+            @include respond-to( $bp-s ) {
+                flex: 0 1 48%;
+                margin: 0 2% 2% 0;
+            }
+
+            @include respond-to( $bp-m ) {
+                flex: 0 1 31.3333%;
+            }
+
+            @include respond-to( $bp-xl ) {
+                flex: 0 1 23%;
+            }
+
+            @include respond-to( $bp-xxl ) {
+                flex: 0 1 18%;
+            }
+
+            .area-entry {
+                background-color: black;
+                background-position: center center;
+                background-size: cover;
+                position: relative;
+                text-align: center;
+                flex: 1;
+                display: flex;
+                align-items: center;
+                height: 100px;
+                padding: 0 20px;
+
+                @include respond-to( $bp-s ) {
+                    height: 120px;
+                    padding: 0 35px;
+                }
+
+                @include respond-to( $bp-m ) {
+                    height: 160px;
+                    padding: 0 35px;
+                }
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    z-index: 0;
+                    background: rgba( black, .5 );
+                }
+
+                .area-name {
+                    flex: 1;
+                    position: relative;
+                    z-index: 1;
+                    color: white;
+                    font-size: 1.2em;
+                    line-height: 1.5em;
+                    text-shadow: 0 0 30px black;
+                }
+            }
+        }
+    }
+}
+

@@ -3,8 +3,21 @@
 load_section_title();
 
 $goal_name = get_sub_field( 'goal-name' );
+$is_currency = get_sub_field( 'currency' );
+$raised = get_sub_field( 'raised' );
+$goal = get_sub_field( 'goal' );
 $color = get_sub_field( 'color' );
 
+// set symbol to precede numbers
+$currency = '';
+if ( $is_currency ) {
+    $currency = "$";
+}
+
+// get a pretty number from the raised and total amounts
+$raised_pretty = floor( ( $raised / $goal ) * 100 );
+
+// if we have goal name set
 if ( !empty( $goal_name ) ): 
     ?>
 <div class="goals-container <?php print $color ?>">
@@ -16,7 +29,7 @@ if ( !empty( $goal_name ) ):
             <?php
             
             ?>
-            <div class="pie animate no-round" style="--p:80;--c:#97303d;"><h2>80%</h2><h5>$65 of $75 million</h5></div>
+            <div class="pie animate no-round" style="--p:<?php print $raised_pretty; ?>;--c:#a10833;"><h2><?php print $raised_pretty; ?>%</h2><h5><?php print $currency . $raised ?> of <?php print $currency . $goal ?> million</h5></div>
         </div>
         <div class="goals-minor">
         <?php

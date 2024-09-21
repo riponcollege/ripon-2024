@@ -2,17 +2,25 @@
 
 .stats-container {
     @include padding;
-
+    
     .statistics {
-        // border-top: 1px solid black;
-
+        border-top: 1px solid rgba( black, .6 );
+        padding-top: 30px;
+        
         @include respond-to( $bp-m ) {
             display: flex;
+            margin-top: 20px;
+            padding-top: 50px;
 
             .stat {
                 flex: 1;
                 padding: 20px;
             }
+        }
+
+        @include respond-to( $bp-l ) {
+            margin-top: 40px;
+            padding-top: 70px;
         }
 
         .stat {

@@ -20,12 +20,13 @@ h1, h2, h3, h4, h5, h6, p {
 	line-height: 1.5em;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
 	@include font-termina-bold;
+	line-height: 1.3em;
 	text-transform: uppercase;
 }
 
-h4, h5, h6 {
+h5, h6 {
 	@include font-bold;
 }
 
@@ -40,6 +41,10 @@ h4, h5, h6 {
 
 	@include respond-to( $bp-m ) {
 		font-size: 2.6em;
+	}
+
+	@include respond-to( $bp-xl ) {
+		font-size: 2.9em;
 	}
 }
 
@@ -57,18 +62,30 @@ h2 {
 
 h3 {
 	font-size: 1.6em;
+	text-transform: none;
+	@include font-termina-demi;
 
 	@include respond-to( $bp-m ) {
-		font-size: 1.7em;
-	}
-
-	@include respond-to( $bp-l ) {
-		font-size: 1.89em;
+		font-size: 1.8em;
 	}
 }
 
 h4 {
 	font-size: 1.4em;
+	@include font-termina-demi;
+	text-transform: none;
+
+	@include respond-to( $bp-m ) {
+		font-size: 1.45em;
+	}
+
+	@include respond-to( $bp-l ) {
+		font-size: 1.5em;
+	}
+}
+
+h5 {
+	font-size: 1.3em;
 }
 
 p {
@@ -118,7 +135,7 @@ img {
 	}
 
 	&.rounded {
-		border-radius: 30px;
+		border-radius: 6px;
 	}
 }
 
