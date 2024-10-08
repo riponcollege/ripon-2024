@@ -1,0 +1,86 @@
+
+
+.photo-grid-container {
+
+    &.tan {
+        background: $tan;
+    }
+
+    &.pad-tall {
+        @include padding-tall;
+    }
+
+    &.pad-normal {
+        @include padding;
+    }
+
+    &.pad-side {
+        @include padding-side;
+    }
+
+    .photo-grid {
+
+        a {
+            display: block;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-bottom: 20px;
+            
+            .photo {
+                @include font-termina-demi;
+                font-size: 1.7em;
+                line-height: 1.2em;
+                text-shadow: 0 0 20px rgba( black, .5 );
+                color: white;
+                display: flex;
+                align-items: end;
+                padding: 20px;
+                height: 350px;
+
+                span {
+                    flex: 1;
+                }
+            }
+
+            &:hover {
+                border: 0;
+            }
+        }
+
+        @include respond-to( $bp-s ) {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -3%;
+
+            a {
+                flex: 1;
+                flex-basis: 47%;
+                margin-right: 3%;
+            }
+        }
+
+        @include respond-to( $bp-m ) {
+            display: flex;
+            flex-wrap: nowrap;
+
+            a {
+                flex-basis: 30.3333%;
+
+                .photo {
+                    height: auto;
+                    aspect-ratio: 3 / 4;
+                }
+            }
+        }
+
+        @include respond-to( $bp-xl ) {
+            a {
+                .photo {
+                    font-size: 2em;
+                }
+            }
+        }
+    }
+}
+

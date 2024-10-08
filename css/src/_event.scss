@@ -1,0 +1,301 @@
+
+
+.event {
+	.event-header {
+
+		@include respond-to( 600px ) {
+			display: flex;
+  		}
+
+		.event-thumbnail {
+			background: url(../img/bg-page-header.webp) center center no-repeat;
+			background-size: cover;
+			min-height: 150px;
+
+			@include respond-to( 600px ) {
+				flex: 1;
+				flex-basis: 40%;
+			}
+
+			@include respond-to( 768px ) {
+				flex: 1;
+				flex-basis: 20%;
+				min-height: 250px;
+			}
+		}
+
+		.event-info {
+			background: $grey-light;
+			padding: 20px;
+			align-items: center;
+			justify-content: center;
+
+			@include respond-to( 600px ) {
+				flex: 1;
+				flex-basis: 60%;
+			}
+
+			@include respond-to( 600px ) {
+				flex: 1;
+				flex-basis: 80%;
+			}
+		}
+	}
+}
+
+
+.event-columns {
+	@include respond-to( 768px ) {
+		display: flex;
+
+		.event-column {
+			flex: 1;
+
+			&.buttons {
+				text-align: right;
+				padding: 0;
+			}
+		}
+	}
+}
+
+
+.event-search-form {
+	@include clearfix;
+	margin-bottom: 10px;
+
+	.event-search-text {
+		@include font;
+		font-size: 17px;
+		line-height: 25px;
+		padding: 8px;
+		float: left;
+		width: 150px;
+	}
+
+	.event-search-button {
+		padding: 15px 25px !important;
+		float: left;
+		margin-left: -5px;
+	}
+}
+
+
+.month-nav {
+    @extend .btn;
+	margin-bottom: 10px;
+	float: left;
+	cursor: pointer;
+
+	&.next {
+		float: right;
+	}
+
+	&:hover {
+		background: lighten( $grey, 10% );
+		color: white;
+	}
+}
+
+
+
+.calendar-month-title {
+	text-align: center;
+	font-size: 1.1em;
+
+	@include respond-to( 600px ) {
+		font-size: 1.6em;
+	}
+
+	@include respond-to( 900px ) {
+		font-size: 2.2em;
+	}
+}
+
+
+
+$calendar-border: 1px solid rgba( black, .2 );
+
+.content-wide .calendar-container {
+    @include clearfix;
+    border-left: $calendar-border;
+    border-bottom: $calendar-border;
+    border-radius: 6px;
+    overflow: hidden;
+
+    .calendar {
+        width: 100%;
+
+        tr {
+            th {
+                background: $blue;
+                color: white;
+                border-right: 1px solid $blue;
+                border-bottom: 1px solid $blue;
+                padding: 10px;
+
+                span {
+                    display: none;
+                    
+                    @include respond-to( 768px ) {
+                        display: inline;
+                    }
+                }
+            }
+
+            td {
+                width: 14.58%;
+                padding: 8px;
+                text-align: center;
+                border-right: $calendar-border;
+                border-bottom: $calendar-border;
+
+                &:first-child {
+                    border-left: none;
+                }
+
+                &:first-child {
+                    border-right: none;
+                }
+
+                &.calendar-day:hover {
+                    background: rgba( black, .05 );
+                }
+
+                .day-number {
+                    text-align: right;
+                }
+
+                .day-events {
+                    display: none;
+
+                    @include respond-to( 768px ) {
+                        display: block;
+                        min-height: 100px;
+
+                        .event-time, .event-description {
+                            display: none;
+                        }
+                    }
+
+                    a {
+                        @include font-bold;
+                        font-size: 13px;
+                    }
+                    
+                    .event {
+                        padding: 7px 0;
+                        border-top: 1px solid rgba( $grey, .2 );
+                    }
+
+                    .event-title {
+                        line-height: 20px;
+                    }
+
+                    .event-dead {
+                        font-size: 13px;
+                        @include font;
+                        color: #777;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.day-event-list {
+	display: block;
+	padding: 20px 0;
+
+	@include respond-to( 768px ) {
+		display: none;
+	}
+
+	.event-title {
+		@include font-bold;
+		font-size: 1.2em;
+		margin-top: 8px;
+	}
+
+	.event-time {
+		color: $grey;
+		font-style: italic;
+	}
+
+	.event-description {
+		font-size: .85em;
+		line-height: 1.4em;
+	}
+}
+
+
+
+.event-list {
+	padding: 20px 0;
+
+	.event {
+		position: relative;
+		padding-left: 100px;
+		padding-bottom: 30px;
+		min-height: 120px;
+
+		.event-date-month {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 80px;
+
+			@include font-termina;
+			font-size: 20px;
+			line-height: 20px;
+			text-align: center;
+		}
+
+		.event-date-day {
+			position: absolute;
+			left: 0;
+			top: 25px;
+			width: 80px;
+
+			@include font-termina-bold;
+			font-size: 50px;
+			line-height: 50px;
+			text-align: center;
+		}
+
+		.event-date-year {
+			position: absolute;
+			left: 0;
+			top: 80px;
+			width: 80px;
+
+			@include font-termina;
+			font-size: 20px;
+			line-height: 20px;
+			text-align: center;
+		}
+
+		h3 {
+			@include font-termina-bold;
+			padding: 0;
+
+			a {
+
+			}
+		}
+
+		.event-location {
+			opacity: .7;
+			padding: 4px 0;
+		}
+
+		.event-excerpt {
+			font-size: .9em;
+
+			.btn {
+				margin-top: 7px;
+			}
+		}
+	}
+}
+

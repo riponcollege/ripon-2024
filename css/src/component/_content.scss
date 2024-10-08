@@ -60,6 +60,15 @@
             align-items: center;
         }
 
+        &.border {
+            .column {
+                border: 1px solid rgba( black, .4 );
+                border-radius: 6px;
+                padding: 25px;
+                margin-bottom: 10px;
+            }
+        }
+
         @include respond-to( $bp-m ) {
             display: flex;
 
@@ -110,10 +119,6 @@
 
             &.border {
                 .column {
-                    border: 1px solid rgba( black, .4 );
-                    border-radius: 6px;
-                    padding: 25px;
-
                     &:first-child {
                         margin-right: 5%;
                     }
@@ -129,8 +134,12 @@
 
 
 .content-three-container {
+    @include padding;
     background: white;
-    color: black;
+
+    &.pad-tall {
+        @include padding-tall;
+    }
 
     &.red {
         @extend .white-links;
@@ -140,11 +149,8 @@
 
     .content-three {
         @extend .content-style;
-        @include padding;
-        background: white;
-        color: black;
 
-        @include respond-to( $bp-l ) {
+        @include respond-to( $bp-xl ) {
             display: flex;
         }
 
@@ -153,16 +159,13 @@
             color: white;
         }
 
-        &.border {
-            .column {
-                margin-right: 3%;
-                border: 1px solid rgba( black, .4 );
-                border-radius: 6px;
-                padding: 25px;
+        .column {
+            margin-bottom: 10px;
 
-                @include respond-to( $bp-l ) {
-                    padding: 35px;
-                }
+            @include respond-to( $bp-xl ) {
+                flex: 1;
+                flex-basis: 28.3333%;
+                margin-right: 5%;
 
                 &:last-child {
                     margin-right: 0;
@@ -170,14 +173,21 @@
             }
         }
 
-        .column {
-            @include respond-to( $bp-l ) {
-                flex: 1;
-                flex-basis: 33.3333%;
-                margin-right: 5%;
+        &.border {
+            .column {
+                border: 1px solid rgba( black, .4 );
+                border-radius: 6px;
+                padding: 25px;
 
-                &:last-child {
-                    margin-right: 0;
+                @include respond-to( $bp-xl ) {
+                    flex: 1;
+                    flex-basis: 30.3333%;
+                    margin-right: 3%;
+                    padding: 35px;
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
                 }
             }
         }

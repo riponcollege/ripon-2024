@@ -8,7 +8,7 @@ module.exports = function(grunt) {
 
         watch: {
             js: {
-                files: ['js/src/**/*.js'],
+                files: ['js/src/*.js', 'js/src/component/*.js'],
                 tasks: ['uglify'],
                 options: {
                     spawn: false
@@ -31,7 +31,8 @@ module.exports = function(grunt) {
                     'js/main.js': [
                         'node_modules/reframe.js/dist/jquery.reframe.',
                         'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
-                        'js/src/**/*.js',
+                        'js/src/*.js',
+                        'js/src/component/*.js',
                     ]
                 }
             },

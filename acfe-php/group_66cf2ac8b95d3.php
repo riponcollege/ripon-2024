@@ -122,7 +122,7 @@ acf_add_local_field_group(array(
 		10 => 'tags',
 		11 => 'send-trackbacks',
 	),
-	'active' => true,
+	'active' => false,
 	'description' => '',
 	'show_in_rest' => 0,
 	'acfe_display_title' => '',
@@ -132,7 +132,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1726840425,
+	'modified' => 1727882760,
 ));
 
 endif;
