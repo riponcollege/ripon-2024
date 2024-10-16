@@ -1,0 +1,81 @@
+
+
+.facts-container {
+
+    .facts {
+        @include padding;
+
+        &.pad-tall {
+            @include padding-tall;
+        }
+
+        &.tan {
+            background: $tan;
+        }
+
+        .facts-inner {
+            @include respond-to( $bp-s ) {
+                display: flex;
+                flex-wrap: wrap;
+                
+                .fact {
+                    flex: 1 1 50%;
+                    padding: 0 2% 5%;
+                }
+            }
+
+            @include respond-to( $bp-l ) {
+                flex-wrap: nowrap;
+                
+                .fact {
+                    flex: 1;
+                }
+            }
+
+            .fact {
+                text-align: center;
+                margin-bottom: 30px;
+
+                h3 {
+                    @include font-termina-bold;
+                    text-transform: uppercase;
+                    padding-bottom: 10px;
+
+                    span {
+                        display: block;
+                        color: $red;
+                    }
+                }
+
+                p {
+                    border-bottom: 1px solid black;
+                    padding-bottom: 30px;
+                }
+            }
+        }
+
+        .data-points {
+            @extend .content-style;
+
+            @include respond-to( $bp-s ) {
+                display: flex;
+                flex-wrap: wrap;
+                
+                .points {
+                    flex: 1 0 50%;
+                    padding: 0 2% 3%;
+                }
+            }     
+
+            @include respond-to( $bp-l ) {
+                flex-wrap: nowrap;
+                
+                .points {
+                    flex: 1;
+                }
+            }
+        }
+    }
+
+}
+

@@ -21,7 +21,7 @@ acf_add_local_field_group(array(
 				'id' => '',
 			),
 			'acfe_repeater_stylised_button' => 0,
-			'layout' => 'table',
+			'layout' => 'block',
 			'pagination' => 0,
 			'min' => 0,
 			'max' => 0,
@@ -150,7 +150,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1723136818,
+	'modified' => 1728490682,
 ));
 
 endif;

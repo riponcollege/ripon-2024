@@ -17,8 +17,8 @@ if ( have_rows( 'accordions' ) ) {
 
                 // put this accordion into our accordion function so we aren't duplicating code
                 ?>
-                <div class="accordion <?php print ( $open ? 'open' : '' ) ?>">
-                    <div class="accordion-handle <?php print $color; ?>">
+                <div class="accordion <?php print ( $open ? 'open' : '' ) ?> <?php print $color; ?>">
+                    <div class="accordion-handle">
                         <?php print $title; ?>
                     </div>
                     <div class="accordion-content">
