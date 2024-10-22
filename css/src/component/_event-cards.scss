@@ -1,0 +1,24 @@
+
+
+.event-cards-container {
+    @include padding;
+
+    &.pad-tall {
+        @include padding-tall;
+    }
+    
+    &.tan {
+        background: $tan;
+    }
+
+    .event-cards {
+        hr {
+            
+        }
+
+        .event-card {
+            @extend .content-style;
+        }
+    }
+}
+

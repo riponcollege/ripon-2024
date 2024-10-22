@@ -175,7 +175,7 @@ acf_add_local_field_group(array(
 			'min' => 0,
 			'max' => 0,
 			'collapsed' => '',
-			'button_label' => 'Add Row',
+			'button_label' => 'Add Column',
 			'rows_per_page' => 20,
 			'sub_fields' => array(
 				array(
@@ -216,11 +216,10 @@ acf_add_local_field_group(array(
 					),
 					'acfe_repeater_stylised_button' => 0,
 					'layout' => 'table',
-					'pagination' => 0,
 					'min' => 0,
 					'max' => 0,
 					'collapsed' => '',
-					'button_label' => 'Add Row',
+					'button_label' => 'Add Data Point',
 					'rows_per_page' => 20,
 					'sub_fields' => array(
 						array(
@@ -263,8 +262,8 @@ acf_add_local_field_group(array(
 	'menu_order' => 0,
 	'position' => 'normal',
 	'style' => 'default',
-	'label_placement' => 'left',
-	'instruction_placement' => 'label',
+	'label_placement' => 'top',
+	'instruction_placement' => 'field',
 	'hide_on_screen' => '',
 	'active' => false,
 	'description' => '',
@@ -276,7 +275,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1729086176,
+	'modified' => 1729099696,
 ));
 
 endif;
