@@ -1,0 +1,57 @@
+
+
+.hours-contact-container {
+    @include respond-to( $bp-m ) {
+        display: flex;
+
+        .hours-container {
+            flex: 1 1 50%;
+            padding-right: 4.5%;
+        }
+
+        .contact-container {
+            flex: 1 1 44.5%;
+            margin-left: 4.5%;
+        }
+
+        .hours-container {
+            border-right: 1px solid rgba( black, .5 );
+        }
+    }
+
+    .hours-container, .contact-inner {
+        @include respond-to( $bp-l ) {
+            display: flex;
+
+            .hours-title, .contact-title {
+                flex: 1 1 40%;
+                margin-right: 5%;
+                padding-top: 15px;
+            }
+
+            .hours, .contacts {
+                flex: 1 1 55%;
+            }
+        }
+    }
+
+    .contact-social {
+        a {
+            display: inline-block;
+            border: 1px solid black !important;
+            border-radius: 50%;
+            padding: 12px;
+            margin-left: 4%;
+
+            img {
+                width: 22px;
+                display: block;
+            }
+
+            &:hover {
+                opacity: .6;
+            }
+        }
+    }
+}
+

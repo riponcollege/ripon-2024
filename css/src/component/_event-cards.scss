@@ -12,12 +12,67 @@
     }
 
     .event-cards {
+        @extend .content-style;
+
         hr {
             
         }
 
         .event-card {
             @extend .content-style;
+            background: white;
+            border-radius: 6px;
+            border: 1px solid rgba( black, .5 );
+            padding: 20px;
+            margin-bottom: 20px;
+
+            .card-date {
+                display: flex;
+                @include font-bold;
+                color: $blue;
+                padding: 15px 0;
+
+                div {
+                    flex: 1;
+
+                    &.day {
+                        text-align: center;
+                        @include font-termina-bold;
+                        font-size: 2.5em;
+                    }
+
+                    &.year {
+                        text-align: right;
+                    }
+                }
+            }
+        }
+
+        @include respond-to( $bp-m ) {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -5%;
+
+            .event-card {
+                flex: 0 1 45%;
+                margin-right: 5%;
+                padding: 40px;
+
+                .card-date {
+                    padding: 8px 0;
+                }
+            }
+        }
+
+        @include respond-to( $bp-l ) {
+            display: flex;
+            flex-wrap: nowrap;
+            margin-right: -5%;
+
+            .event-card {
+                flex: 0 1 29%;
+                margin-right: 4.3333%;
+            }
         }
     }
 }

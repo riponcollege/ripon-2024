@@ -18,7 +18,7 @@ $args = array(
         'relation' => 'AND',
         array(
             'key' => '_p_event_start',
-            'value' => $timestamp_start,
+            'value' => time(),
             'compare' => '>='
         )
     )
@@ -50,8 +50,6 @@ if ( $mode == 'filtered' ) {
 // get the events out of the database
 $card_query = new WP_Query( $args );
 
-// print_r( $card_query );
-
 // if it's not empty, lets output it
 if ( $card_query->have_posts() ):
 ?>
@@ -72,7 +70,7 @@ if ( $card_query->have_posts() ):
             <hr>
             <a href="<?php the_permalink(); ?>"><h6><?php the_title(); ?></h6></a>
             <?php the_excerpt(); ?>
-            <p class="card-button"><a href="" class="btn blue">Event Info</a></p>
+            <p class="card-button"><a href="<?php the_permalink() ?>" class="btn blue">Event Info</a></p>
         </div>
         <?php
     endwhile;
