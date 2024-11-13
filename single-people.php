@@ -19,6 +19,7 @@ if ( have_posts() ) :
 <div class="title-container small red">
     <div class="title">
         <h1><?php the_title(); ?></h1>
+        <h3><?php print $title; ?></h3>
     </div>
 </div>
 <div class="content-two-container pad-tall">
@@ -27,7 +28,6 @@ if ( have_posts() ) :
             <?php the_post_thumbnail( 'full', array( 'class' => 'rounded' ) ); ?>
         </div>
         <div class="column two">
-            <h2><?php print $title; ?></h2>
             <div class="contact-items">
                 <?php if ( !empty( $office ) ) { ?><p class="contact-item"><strong>Office:</strong><br> <?php print $office ?></p><?php } ?>
                 <?php if ( !empty( $phone ) ) { ?><p class="contact-item"><strong>Phone:</strong><br> <a href="tel:<?php print preg_replace("/[^0-9]/", "", $phone ) ?>"><?php print $phone ?></a></p><?php } ?>

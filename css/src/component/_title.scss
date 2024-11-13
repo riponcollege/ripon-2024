@@ -3,6 +3,7 @@
 .title-container {
     background: $red;
     h1 { color: white; }
+    h2, h3 { color: rgba( white, .7 ); }
 
     &.large, &.large-menu {
         .title {
@@ -27,6 +28,7 @@
 
                 h1 {
                     flex-basis: 35%;
+                    padding-right: 3%;
                 }
 
                 .section-nav {

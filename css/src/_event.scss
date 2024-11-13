@@ -44,192 +44,6 @@
 }
 
 
-.event-columns {
-	@include respond-to( 768px ) {
-		display: flex;
-
-		.event-column {
-			flex: 1;
-
-			&.buttons {
-				text-align: right;
-				padding: 0;
-			}
-		}
-	}
-}
-
-
-.event-search-form {
-	@include clearfix;
-	margin-bottom: 10px;
-
-	.event-search-text {
-		@include font;
-		font-size: 17px;
-		line-height: 25px;
-		padding: 8px;
-		float: left;
-		width: 150px;
-	}
-
-	.event-search-button {
-		padding: 15px 25px !important;
-		float: left;
-		margin-left: -5px;
-	}
-}
-
-
-.month-nav {
-    @extend .btn;
-	margin-bottom: 10px;
-	float: left;
-	cursor: pointer;
-
-	&.next {
-		float: right;
-	}
-
-	&:hover {
-		background: lighten( $grey, 10% );
-		color: white;
-	}
-}
-
-
-
-.calendar-month-title {
-	text-align: center;
-	font-size: 1.1em;
-
-	@include respond-to( 600px ) {
-		font-size: 1.6em;
-	}
-
-	@include respond-to( 900px ) {
-		font-size: 2.2em;
-	}
-}
-
-
-
-$calendar-border: 1px solid rgba( black, .2 );
-
-.content-wide .calendar-container {
-    @include clearfix;
-    border-left: $calendar-border;
-    border-bottom: $calendar-border;
-    border-radius: 6px;
-    overflow: hidden;
-
-    .calendar {
-        width: 100%;
-
-        tr {
-            th {
-                background: $blue;
-                color: white;
-                border-right: 1px solid $blue;
-                border-bottom: 1px solid $blue;
-                padding: 10px;
-
-                span {
-                    display: none;
-                    
-                    @include respond-to( 768px ) {
-                        display: inline;
-                    }
-                }
-            }
-
-            td {
-                width: 14.58%;
-                padding: 8px;
-                text-align: center;
-                border-right: $calendar-border;
-                border-bottom: $calendar-border;
-
-                &:first-child {
-                    border-left: none;
-                }
-
-                &:first-child {
-                    border-right: none;
-                }
-
-                &.calendar-day:hover {
-                    background: rgba( black, .05 );
-                }
-
-                .day-number {
-                    text-align: right;
-                }
-
-                .day-events {
-                    display: none;
-
-                    @include respond-to( 768px ) {
-                        display: block;
-                        min-height: 100px;
-
-                        .event-time, .event-description {
-                            display: none;
-                        }
-                    }
-
-                    a {
-                        @include font-bold;
-                        font-size: 13px;
-                    }
-                    
-                    .event {
-                        padding: 7px 0;
-                        border-top: 1px solid rgba( $grey, .2 );
-                    }
-
-                    .event-title {
-                        line-height: 20px;
-                    }
-
-                    .event-dead {
-                        font-size: 13px;
-                        @include font;
-                        color: #777;
-                    }
-                }
-            }
-        }
-    }
-}
-
-.day-event-list {
-	display: block;
-	padding: 20px 0;
-
-	@include respond-to( 768px ) {
-		display: none;
-	}
-
-	.event-title {
-		@include font-bold;
-		font-size: 1.2em;
-		margin-top: 8px;
-	}
-
-	.event-time {
-		color: $grey;
-		font-style: italic;
-	}
-
-	.event-description {
-		font-size: .85em;
-		line-height: 1.4em;
-	}
-}
-
-
-
 .event-list {
 	padding: 20px 0;
 
@@ -299,3 +113,206 @@ $calendar-border: 1px solid rgba( black, .2 );
 	}
 }
 
+
+.calendar-container {
+	@include clearfix;
+
+	@include respond-to( $bp-m ) {
+		display: flex;
+	}
+	
+	.calendar-grid {
+		@include font-termina;
+
+		@include respond-to( $bp-m ) {
+			flex: 1;
+			flex-basis: 45%;
+			padding-right: 6%;
+		}
+
+		h4 {
+			@include font-termina-bold;
+			text-transform: uppercase;
+			font-size: 1.1em;
+			text-align: center;
+		}
+
+		.month-nav {
+			padding: 8px 10px 12px;
+			color: darken( $grey-dark, 10% );
+			text-decoration: none;
+			float: left;
+			cursor: pointer;
+			border-bottom: 0 !important;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			transition: color 400ms ease-in-out;
+
+			font-size: .7em;
+			@include respond-to( $bp-l ) {
+				font-size: .8em;
+			}
+		
+			&.next {
+				float: right;
+			}
+		
+			&:hover {
+				color: $blue;
+			}
+		}
+
+		.event-category-switcher-container {
+			padding: 20px 0 10px;
+
+			@include respond-to( $bp-m ) {
+				padding: 40px 0;
+			}
+
+			label {
+				display: block;
+				@include font-termina-bold;
+				text-transform: uppercase;
+				font-size: 1.1em;
+				text-align: center;
+			}
+
+			select {
+				display: block;
+				width: 100%;
+				margin-top: 5px;
+
+				@include respond-to( $bp-m ) {
+					margin: 20px 0 10px;
+				}
+			}
+
+			.clear-category-filter {
+				display: block;
+				border-bottom: 0;
+				padding: 5px 0 5px;
+				text-align: center;
+				color: $red;
+
+				&:hover {
+					border-bottom: 0;
+				}
+			}
+		}
+	
+		.calendar {
+			border-top: 1px solid rgba( $grey, .2 ) !important;
+			border-left: 1px solid rgba( $grey, .2 ) !important;
+			width: 100%;
+
+			td {
+				width: 14.58%;
+				padding: 12px 4px;
+				text-align: center;
+				border-right: 1px solid rgba( $grey, .2 ) !important;
+				border-bottom: 1px solid rgba( $grey, .2 ) !important;
+				color: $blue;
+				font-size: .8em;
+				line-height: 1em;
+				cursor: inherit;
+
+				@include respond-to( $bp-m ) {
+					padding: 18px 12px;
+				}
+
+				@include respond-to( $bp-l ) {
+					font-size: .9em;
+					padding: 20px 12px;
+				}
+
+				&.calendar-day-head {
+					@include font-termina;
+					background: $blue;
+					color: white;
+					text-transform: uppercase;
+					font-size: .7em;
+				}
+
+				&.has-events {
+					cursor: pointer;
+					@include font-termina-bold;
+				}
+
+				&.calendar-day:hover {
+					background: #eee;
+				}
+
+				&.calendar-day.current-day {
+					background: #f5f5f5;
+
+					&:hover {
+						background: #eee;
+					}
+				}
+			}
+		}
+	}
+
+	.calendar-event-list {
+		padding-top: 20px;
+
+		@include respond-to( $bp-m ) {
+			flex: 1;
+			flex-basis: 66.6666%;
+			padding-top: 0;
+		}
+
+		.calendar-event-list-title {
+			padding: 0 0 10px;
+			border-bottom: 2px solid rgba( $grey, .2 );
+			margin-bottom: 10px;
+
+			h4 {
+				@include font-termina-bold;
+				text-transform: uppercase;
+				font-size: 1.2em;
+				color: $blue;
+			}
+		}
+
+		.clear-filter {
+			display: none;
+			color: $red !important;
+			@include font-termina-bold;
+			margin-bottom: 15px;
+			cursor: pointer;
+		}
+
+		.event {
+			padding-bottom: 20px;
+			line-height: 1.4em;
+			
+			&.hide {
+				display: none;
+			}
+
+			.event-title {
+				@include font-bold;
+				color: $blue;
+			}
+
+			.event-time {
+				@include font-bold;
+				font-size: .8em;
+				color: $grey-dark;
+			}
+
+			.event-description {
+				font-size: .8em;
+				line-height: 1.3em;
+			}
+
+			@include respond-to( $bp-m ) {
+				.event-title {
+					font-size: 1.2em;
+					line-height: 1.5em;
+				}
+			}
+		}
+	}
+}

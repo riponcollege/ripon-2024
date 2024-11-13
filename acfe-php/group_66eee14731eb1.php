@@ -41,8 +41,8 @@ acf_add_local_field_group(array(
 				'class' => '',
 				'id' => '',
 			),
-			'display_format' => 'm/d/Y g:i a',
-			'return_format' => 'd/m/Y g:i a',
+			'display_format' => 'F j, Y g:i a',
+			'return_format' => 'm/d/Y g:i a',
 			'first_day' => 0,
 			'allow_in_bindings' => 0,
 		),
@@ -68,8 +68,8 @@ acf_add_local_field_group(array(
 				'class' => '',
 				'id' => '',
 			),
-			'display_format' => 'd/m/Y g:i a',
-			'return_format' => 'd/m/Y g:i a',
+			'display_format' => 'F j, Y g:i a',
+			'return_format' => 'm/d/Y g:i a',
 			'first_day' => 1,
 			'allow_in_bindings' => 0,
 		),
@@ -141,7 +141,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1729099810,
+	'modified' => 1731518467,
 ));
 
 endif;
