@@ -43,7 +43,6 @@ if ( $mode == 'filtered' ) {
     
     // otherwise, this is a curated list
     $event_ids = get_sub_field( 'events' );
-    print_r( $event_ids );
 
 }
 

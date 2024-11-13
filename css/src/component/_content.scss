@@ -60,6 +60,14 @@
             align-items: center;
         }
 
+        .column {
+            padding: 15px 0;
+
+            @include respond-to( $bp-m ) {
+                padding: 0;
+            }
+        }
+
         &.border {
             .column {
                 border: 1px solid rgba( black, .4 );

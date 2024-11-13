@@ -41,6 +41,10 @@
 		@include respond-to( $bp-l ) {
 			margin: 20px 0;
 		}
+
+		&.red {
+			border-bottom: 5px solid $red;
+		}
 	}
 
 	a:not(.btn) {

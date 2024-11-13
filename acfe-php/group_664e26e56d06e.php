@@ -1489,13 +1489,6 @@ acf_add_local_field_group(array(
 				'value' => 'area',
 			),
 		),
-		array(
-			array(
-				'param' => 'post_type',
-				'operator' => '==',
-				'value' => 'people',
-			),
-		),
 	),
 	'menu_order' => 0,
 	'position' => 'normal',
@@ -1516,7 +1509,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1729099460,
+	'modified' => 1730133871,
 ));
 
 endif;
