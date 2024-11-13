@@ -40,6 +40,7 @@ if ( have_posts() ) :
     </div>
 </div>
         <?php
+        get_components();
     endwhile;
 endif;
 get_components();

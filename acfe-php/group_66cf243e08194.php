@@ -440,7 +440,7 @@ acf_add_local_field_group(array(
 		array(
 			'key' => 'field_671fbf931a644',
 			'label' => 'Components',
-			'name' => 'components',
+			'name' => 'people-components',
 			'aria-label' => '',
 			'type' => 'clone',
 			'instructions' => '',
@@ -455,7 +455,7 @@ acf_add_local_field_group(array(
 				0 => 'group_664e26e56d06e',
 			),
 			'display' => 'seamless',
-			'layout' => 'block',
+			'layout' => 'table',
 			'prefix_label' => 0,
 			'prefix_name' => 0,
 			'acfe_seamless_style' => 0,
@@ -612,7 +612,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1730135074,
+	'modified' => 1731511105,
 ));
 
 endif;
