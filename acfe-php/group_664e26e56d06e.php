@@ -555,7 +555,7 @@ acf_add_local_field_group(array(
 							'required' => 0,
 							'conditional_logic' => 0,
 							'wrapper' => array(
-								'width' => '50',
+								'width' => '',
 								'class' => '',
 								'id' => '',
 							),
@@ -584,7 +584,7 @@ acf_add_local_field_group(array(
 							'required' => 0,
 							'conditional_logic' => 0,
 							'wrapper' => array(
-								'width' => '50',
+								'width' => '',
 								'class' => '',
 								'id' => '',
 							),
@@ -593,6 +593,7 @@ acf_add_local_field_group(array(
 								'white' => 'White',
 								'red' => 'Red',
 								'image' => 'Background Photo',
+								'image-box' => 'Background Photo w/ Red Content Box',
 							),
 							'default_value' => 'white',
 							'return_format' => 'value',
@@ -619,6 +620,13 @@ acf_add_local_field_group(array(
 										'field' => 'field_66cf654c58593',
 										'operator' => '==',
 										'value' => 'image',
+									),
+								),
+								array(
+									array(
+										'field' => 'field_66cf654c58593',
+										'operator' => '==',
+										'value' => 'image-box',
 									),
 								),
 							),
@@ -1509,7 +1517,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1730133871,
+	'modified' => 1731863008,
 ));
 
 endif;

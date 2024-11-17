@@ -74,9 +74,9 @@ if ( $card_query->have_posts() ):
         <?php
     endwhile;
     ?>
-
-
     </div>
 </div>
 <?php
 endif;
+
+wp_reset_query();

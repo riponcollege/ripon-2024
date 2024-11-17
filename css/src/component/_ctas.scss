@@ -24,10 +24,32 @@
 
 		.cta {
 			flex: 1;
+			max-width: 800px;
+			margin: 0 auto;
+		}
+	}
 
-			&.with-content {
-				max-width: 800px;
-				margin: 0 auto;
+	&.image-box {
+		@include respond-to( $bp-m ) {
+			padding-right: 0;
+		}
+
+		.cta {
+			background: $red;
+			color: white;
+			max-width: 800px;
+			margin: 40px auto;
+			padding: 30px 4%;
+
+			@include respond-to( $bp-m ) {
+				max-width: 65%;
+				padding: 30px 7% 30px 4%;
+				margin: 40px 0 40px auto;
+				text-align: left;
+			}
+
+			@include respond-to( $bp-l ) {
+				padding: 40px 7% 40px 4%;
 			}
 		}
 	}

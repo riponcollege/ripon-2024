@@ -155,6 +155,10 @@
         color: white;
     }
 
+    &.tan {
+        background: $tan;
+    }
+
     .content-three {
         @extend .content-style;
 
