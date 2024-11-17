@@ -4,7 +4,6 @@
     @include padding;
     
     .statistics {
-        border-top: 1px solid rgba( black, .6 );
         padding-top: 30px;
         
         @include respond-to( $bp-m ) {
