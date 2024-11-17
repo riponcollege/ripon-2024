@@ -2,6 +2,7 @@
 
 $people_category = get_sub_field( 'group' );
 $search = get_sub_field( 'search' );
+$include_bio = get_sub_field( 'include-bio' );
 $color = get_sub_field( 'color' );
 
 // if the people category
@@ -49,7 +50,11 @@ if ( !empty( $people_category ) ) :
             <div class="person-info">
                 <h4><?php print ( $link ? '<a href="' . get_the_permalink() . '">' : '' ) . get_field( "_p_person_lname" ) . ', ' . get_field( "_p_person_fname" ) . ( $link ? '</a>' : '' ) ?></h4>
                 <p class="person-title"><?php print get_field( "_p_person_title" ); ?></p>
-                <?php print ( !$link ? ( get_field( "_p_person_email" ) ? '<p class="person-email"><a href="mailto:' . get_field( "_p_person_email" ) . '">Email Me</a></p>' : '' ) : '' ); ?>
+                <?php
+                if ( $include_bio ) {
+                    print '<p class="person-link"><a href="' . get_permalink() . '">View Bio</a></p>';
+                }
+                ?>
             </div>
         </div>
     <?php endwhile; ?>

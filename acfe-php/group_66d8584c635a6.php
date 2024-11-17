@@ -16,7 +16,7 @@ acf_add_local_field_group(array(
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
-				'width' => '40',
+				'width' => '35',
 				'class' => '',
 				'id' => '',
 			),
@@ -30,6 +30,7 @@ acf_add_local_field_group(array(
 			'acfe_bidirectional' => array(
 				'acfe_bidirectional_enabled' => '0',
 			),
+			'allow_in_bindings' => 1,
 			'bidirectional' => 0,
 			'multiple' => 0,
 			'bidirectional_target' => array(
@@ -37,7 +38,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_66d8589e0f3f3',
-			'label' => 'Include Search Field',
+			'label' => 'Include Search',
 			'name' => 'search',
 			'aria-label' => '',
 			'type' => 'true_false',
@@ -45,12 +46,34 @@ acf_add_local_field_group(array(
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
-				'width' => '20',
+				'width' => '15',
 				'class' => '',
 				'id' => '',
 			),
 			'message' => '',
 			'default_value' => 0,
+			'allow_in_bindings' => 1,
+			'ui_on_text' => '',
+			'ui_off_text' => '',
+			'ui' => 1,
+		),
+		array(
+			'key' => 'field_673a6643e3f0a',
+			'label' => 'Include Bio Links',
+			'name' => 'include-bio',
+			'aria-label' => '',
+			'type' => 'true_false',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '15',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => '',
+			'default_value' => 0,
+			'allow_in_bindings' => 1,
 			'ui_on_text' => '',
 			'ui_off_text' => '',
 			'ui' => 1,
@@ -65,7 +88,7 @@ acf_add_local_field_group(array(
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
-				'width' => '20',
+				'width' => '15',
 				'class' => '',
 				'id' => '',
 			),
@@ -77,6 +100,7 @@ acf_add_local_field_group(array(
 			'return_format' => 'value',
 			'multiple' => 0,
 			'allow_null' => 0,
+			'allow_in_bindings' => 1,
 			'ui' => 0,
 			'ajax' => 0,
 			'placeholder' => '',
@@ -137,7 +161,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1729099731,
+	'modified' => 1731880614,
 ));
 
 endif;
