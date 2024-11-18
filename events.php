@@ -3,21 +3,13 @@
  * Template Name: Events Calendar
  */
 
-get_header(); 
-
 check_events_url();
+
+get_header(); 
 
 get_components();
 
-?>
-	<div class="title-container red">
-		<div class="wrap">
-			<div class="title">
-				<h1>Events</h1>
-			</div>
-		</div>
-	</div>
-	
+?>	
 	<div id="content" class="wrap content-wide" role="main">
 		<?php
 
