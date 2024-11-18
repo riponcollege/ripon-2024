@@ -18,6 +18,7 @@
         @include respond-to( $bp-s ) {
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
             margin-right: -2%;
         }
 
