@@ -129,6 +129,7 @@
 				color: white !important;
 				transition: all 400ms ease-in-out;
 				margin-left: 2px;
+				margin-bottom: 8px;
 				display: block;
 
 				@include respond-to( $bp-m ) {
