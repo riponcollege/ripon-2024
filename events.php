@@ -7,6 +7,8 @@ get_header();
 
 check_events_url();
 
+get_components();
+
 ?>
 	<div class="title-container red">
 		<div class="wrap">
