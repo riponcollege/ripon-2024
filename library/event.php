@@ -1124,14 +1124,14 @@ function add_15m_interval( $schedules ) {
 
 
 // register an action that does the event cleanup
-// add_action( 'event_cleanup', 'event_cleanup' );
+add_action( 'event_cleanup', 'event_cleanup' );
 
 
 // if we don't have a schedule created
 if ( !wp_next_scheduled( 'event_cleanup' ) ) {
 
 	// clean up old events on the same schedule.
-	// wp_schedule_event( time(), 'fifteen_minutes', 'event_cleanup' );
+	wp_schedule_event( time(), 'fifteen_minutes', 'event_cleanup' );
 }
 
 
@@ -1148,7 +1148,7 @@ function event_cleanup() {
 			'relation' => 'AND',
 			array(
 				'key' => '_p_event_start',
-				// 'value' => date( 'Y-m-d g:i:s', $timestamp_old ),
+				// 'value' => date( 'Y-m-d G:i:s', $timestamp_old ),
 				'value' => $timestamp_old,
 				'compare' => '<='
 			)
