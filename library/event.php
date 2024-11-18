@@ -607,68 +607,6 @@ function manage_event_clauses( $pieces, $query ) {
 }
 
 
-// add content to custom event admin listing columns
-add_action( 'manage_event_posts_custom_column', 'manage_event_columns', 10, 2 );
-function manage_event_columns( $column, $post_id ) {
-	global $post;
-
-	switch( $column ) {
-
-		/* If displaying the 'duration' column. */
-		case 'start' :
-
-			/* Get the post meta. */
-			$start = get_post_meta( $post_id, '_p_event_start', true );
-
-			/* If no duration is found, output a default message. */
-			if ( empty( $start ) ) {
-				echo __( '-' );
-
-			} else if ( is_numeric( $start ) ) {
-				printf( date( 'n/j/Y @ g:ia', $start ) );
-			
-			/* If there is a duration, append 'minutes' to the text string. */
-			} else {
-				printf( date( 'n/j/Y @ g:ia', strtotime( $start ) ) );
-			}
-
-			break;
-
-		/* If displaying the 'genre' column. */
-		case 'category' :
-
-			/* Get the genres for the post. */
-			$terms = get_the_terms( $post_id, 'event_cat' );
-
-			/* If terms were found. */
-			if ( !empty( $terms ) ) {
-
-				$out = array();
-
-				/* Loop through each term, linking to the 'edit posts' page for the specific term. */
-				foreach ( $terms as $term ) {
-					$out[] = sprintf( '<a href="%s">%s</a>',
-						esc_url( add_query_arg( array( 'post_type' => $post->post_type, 'event_cat' => $term->slug ), 'edit.php' ) ),
-						esc_html( sanitize_term_field( 'name', $term->name, $term->term_id, 'event_cat', 'display' ) )
-					);
-				}
-
-				/* Join the terms, separating them with a comma. */
-				echo join( ', ', $out );
-			}
-
-			/* If no terms were found, output a default message. */
-			else {
-				_e( 'No Category' );
-			}
-
-			break;
-
-		/* Just break out of the switch statement for everything else. */
-		default :
-			break;
-	}
-}
 
 
 // event shortcode
@@ -1066,15 +1004,88 @@ function events_cta_shortcode( $event_atts ) {
 add_shortcode( 'events-cta', 'events_cta_shortcode' );
 
 
+
+function wpa84258_admin_posts_sort_last_name( $query ){
+    global $pagenow;
+    if ( is_admin() && 'edit.php' == $pagenow && isset( $_GET['post_type'] ) && $_GET['post_type'] == 'event' ) {
+		$query->set( 'meta_key', '_p_event_start' );
+		$query->set( 'orderby', 'meta_value' );
+		$query->set( 'order', 'DESC' );
+    }
+}
+add_action( 'pre_get_posts', 'wpa84258_admin_posts_sort_last_name' );
+
+
+
+// add content to custom event admin listing columns
+add_action( 'manage_event_posts_custom_column', 'manage_event_columns', 10, 2 );
+function manage_event_columns( $column, $post_id ) {
+	global $post;
+
+	switch( $column ) {
+
+		/* If displaying the 'duration' column. */
+		case 'start' :
+
+			/* Get the post meta. */
+			$start = get_post_meta( $post_id, '_p_event_start', true );
+
+			print $start;
+			/* If no duration is found, output a default message. 
+			if ( empty( $start ) ) {
+				echo __( '-' );
+
+			} else if ( is_numeric( $start ) ) {
+				printf( date( 'Y/m/d @ g:ia', $start ) );
+			
+			} else {
+				printf( date( 'Y/m/d @ g:ia', strtotime( $start ) ) );
+			}
+			*/
+			break;
+
+		/* If displaying the 'genre' column. */
+		case 'category' :
+
+			/* Get the genres for the post. */
+			$terms = get_the_terms( $post_id, 'event_cat' );
+
+			/* If terms were found. */
+			if ( !empty( $terms ) ) {
+
+				$out = array();
+
+				/* Loop through each term, linking to the 'edit posts' page for the specific term. */
+				foreach ( $terms as $term ) {
+					$out[] = sprintf( '<a href="%s">%s</a>',
+						esc_url( add_query_arg( array( 'post_type' => $post->post_type, 'event_cat' => $term->slug ), 'edit.php' ) ),
+						esc_html( sanitize_term_field( 'name', $term->name, $term->term_id, 'event_cat', 'display' ) )
+					);
+				}
+
+				/* Join the terms, separating them with a comma. */
+				echo join( ', ', $out );
+			}
+
+			/* If no terms were found, output a default message. */
+			else {
+				_e( 'No Category' );
+			}
+
+			break;
+
+		/* Just break out of the switch statement for everything else. */
+		default :
+			break;
+	}
+}
+
+
 // enable sortable columns for event post type
 add_filter("manage_edit-event_sortable_columns", 'edit_event_sort');
-function edit_event_sort($columns) {
-	$custom = array(
-		'start' 	=> '_p_event_start',
-		'end' 		=> '_p_event_end',
-		'category'	=> 'event_cat'
-	);
-	return wp_parse_args($custom, $columns);
+function edit_event_sort( $columns ) {
+	// $columns['start'] = '_p_event_start';
+	return array();
 }
 
 
@@ -1101,4 +1112,69 @@ function rss_event_sort( $query ) {
 	return $query;
 }
 add_filter( 'pre_get_posts', 'rss_event_sort' );
+
+
+add_filter( 'cron_schedules', 'add_15m_interval' );
+function add_15m_interval( $schedules ) { 
+    $schedules['fifteen_minutes'] = array(
+        'interval' => 900,
+        'display'  => esc_html__( 'Every Fifteen Minutes' ) );
+    return $schedules;
+}
+
+
+// register an action that does the event cleanup
+// add_action( 'event_cleanup', 'event_cleanup' );
+
+
+// if we don't have a schedule created
+if ( !wp_next_scheduled( 'event_cleanup' ) ) {
+
+	// clean up old events on the same schedule.
+	// wp_schedule_event( time(), 'fifteen_minutes', 'event_cleanup' );
+}
+
+
+function event_cleanup() {
+
+	// get the retention setting from the database
+	$retention = get_field( 'event-retention', 'option' );
+
+	// select all events older than a hear ago
+	$timestamp_old = time() - ( 86400 * $retention );
+
+	$args = array(
+		'meta_query' => array(
+			'relation' => 'AND',
+			array(
+				'key' => '_p_event_start',
+				// 'value' => date( 'Y-m-d g:i:s', $timestamp_old ),
+				'value' => $timestamp_old,
+				'compare' => '<='
+			)
+		),
+		'post_type' => 'event',
+		'orderby' => 'meta_value_num',
+		'meta_key' => '_p_event_start',
+		'order' => 'ASC',
+		'posts_per_page' => 50
+	);
+
+	// get the posts
+	$to_delete = new WP_Query( $args );
+
+	// if we have posts.
+	if ( $to_delete->have_posts() ) {
+
+		// loop through them
+		while ( $to_delete->have_posts() ) : $to_delete->the_post();
+
+			// delete (forcing deletion from the database).
+			wp_delete_post( get_the_ID(), 1 );
+
+		endwhile;
+	}
+
+}
+
 
