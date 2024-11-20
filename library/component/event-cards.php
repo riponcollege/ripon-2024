@@ -57,7 +57,7 @@ if ( $card_query->have_posts() ):
     <?php
 	while ( $card_query->have_posts() ): $card_query->the_post();
         // get the fields
-        $start = get_field( '_p_event_start' );
+        $start = strtotime( get_field( '_p_event_start' ) );
         ?>
         <div class="event-card">
             <?php the_post_thumbnail( 'event-card' ); ?>
