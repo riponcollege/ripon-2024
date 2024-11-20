@@ -42,9 +42,7 @@ if ( !empty( $people_category ) ) :
         <div class="person-entry visible">
             <div class="person-photo">
                 <?php 
-                print ( $link ? '<a href="' . get_the_permalink() . '">' : '' ) . 
-                    '<img src="' . get_the_post_thumbnail_url() . '">' . 
-                    ( $link ? '</a>' : '' ); 
+                print '<img src="' . get_the_post_thumbnail_url() . '">'; 
                 ?>
             </div>
             <div class="person-info">

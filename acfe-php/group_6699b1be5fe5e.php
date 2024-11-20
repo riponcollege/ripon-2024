@@ -80,11 +80,13 @@ acf_add_local_field_group(array(
 				'pad-tall' => 'Tall',
 				'pad-normal' => 'Normal',
 				'pad-no-bottom' => 'No Bottom Padding',
+				'pad-none' => 'No Padding',
 			),
 			'default_value' => 'pad-normal',
 			'return_format' => 'value',
 			'multiple' => 0,
 			'allow_null' => 0,
+			'allow_in_bindings' => 1,
 			'ui' => 0,
 			'ajax' => 0,
 			'placeholder' => '',
@@ -144,7 +146,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1729099626,
+	'modified' => 1732130075,
 ));
 
 endif;

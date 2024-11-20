@@ -11,6 +11,10 @@
     background: white;
     color: black;
 
+    &.pad-none { 
+        padding: 0 !important;
+    }
+
     &.pad-tall {
         @include padding-tall;
     }
