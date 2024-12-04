@@ -18,7 +18,7 @@ $admin_email = get_option( 'admin_email' );
 			<footer>
 				<div class="footer-main">
 					<div class="column">
-						<h3>Overview</h3>
+						<h3>Quick Links</h3>
 						<?php 
 						wp_nav_menu( 
 							array( 
@@ -29,7 +29,7 @@ $admin_email = get_option( 'admin_email' );
 						?>
 					</div>
 					<div class="column">
-						<h3>Students</h3>
+						<h3>Admissions</h3>
 						<?php 
 						wp_nav_menu( 
 							array( 
@@ -40,7 +40,7 @@ $admin_email = get_option( 'admin_email' );
 						?>
 					</div>
 					<div class="column">
-						<h3>Faculty</h3>
+						<h3>Resources</h3>
 						<?php 
 						wp_nav_menu( 
 							array( 
