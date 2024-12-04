@@ -673,7 +673,9 @@ acf_add_local_field_group(array(
 							),
 							'choices' => array(
 								'text-white' => 'White',
+								'text-white no-overlay' => 'White (No Image Treatment)',
 								'text-black' => 'Black',
+								'text-black no-overlay' => 'Black (No Image Treatment)',
 							),
 							'default_value' => 'white',
 							'return_format' => 'value',
@@ -1517,7 +1519,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1731863008,
+	'modified' => 1733340188,
 ));
 
 endif;
