@@ -23,6 +23,7 @@ acf_add_local_field_group(array(
 			'choices' => array(
 				'equal' => 'Equal Column Width',
 				'equal border' => 'Equal Column Width (w/ Borders)',
+				'equal narrow' => 'Equal Column Width (Narrow)',
 				'left' => 'Large Left Column',
 				'right' => 'Large Right Column',
 			),
@@ -256,7 +257,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => 'This module is intended to be cloned into multiple places.',
-	'modified' => 1729099635,
+	'modified' => 1736362988,
 ));
 
 endif;

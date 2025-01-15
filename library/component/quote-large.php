@@ -1,11 +1,12 @@
 <?php
 
 
-$photo = get_sub_field('photo');
-$content = get_sub_field('content');
-$citation = get_sub_field('citation');
-$subtitle = get_sub_field('subtitle');
-$color = get_sub_field('color');
+$photo = get_sub_field( 'photo' );
+$content = get_sub_field( 'content' );
+$citation = get_sub_field( 'citation' );
+$subtitle = get_sub_field( 'subtitle' );
+$color = get_sub_field( 'color' );
+$hide_quotes = get_sub_field( 'hide_quotes' );
 
 if ( !empty( $photo ) && !empty( 'content' ) && !empty( $citation ) ) {
     ?>
@@ -16,7 +17,7 @@ if ( !empty( $photo ) && !empty( 'content' ) && !empty( $citation ) ) {
                 <img src="<?php print $photo; ?>" />
             </div>
             <div class="quote-content">
-                <div class="quote-content-inner">
+                <div class="quote-content-inner<?php print ( $hide_quotes ? ' no-quotes' : '' ) ?>">
                     <?php print wpautop( $content ); ?>
                 </div>
                 <h4><?php print $citation ?></h4>

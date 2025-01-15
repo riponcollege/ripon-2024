@@ -80,10 +80,10 @@ function p_image_resize( $url, $width, $height = null, $crop = null, $single = t
 
 	//return the output
     if ($single) {
-	//str return
+	    //str return
         $image = $img_url;
     } else {
-	//array return
+	    //array return
         $image = array(
             0 => $img_url,
             1 => $dst_w,
@@ -108,4 +108,11 @@ function p_is_image( $img_path ) {
     return in_array( $info['extension'], $valid_extensions );
     
 }
+
+
+// remove image height and width attributes from all images so they can be responsive.
+function remove_img_attr ( $html ) {
+    return preg_replace('/(width|height)="\d+"\s/', "", $html);
+}
+add_filter( 'post_thumbnail_html', 'remove_img_attr' );
 

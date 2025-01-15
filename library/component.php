@@ -56,6 +56,7 @@ function nav_menus_load( $field ) {
 
 // dynamically populate 'state' select fields with a list of states
 add_filter( 'acf/load_field/name=states', 'states_load' );
+add_filter( 'acf/load_field/name=_p_alum_state', 'states_load' );
 function states_load( $field ) {
 
     // add the array of states
@@ -117,6 +118,21 @@ function states_load( $field ) {
         'AP'=>'Armed Forces Pacific',
         'UK'=>'United Kingdom'
     );
+    return $field;
+}
+
+
+add_filter( 'acf/load_field/name=_p_alum_year', 'years_load' );
+function years_load( $field ) {
+
+    // set up an array of years from 1950 to current
+    $field['choices'] = array();
+    $field['choices'][0] = '- none -';
+    $n = 1940;
+    while ( $n < ( date( 'Y' ) + 1 ) ) {
+        $field['choices'][$n] = $n;
+        $n++;
+    }
     return $field;
 }
 

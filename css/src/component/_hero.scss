@@ -1,8 +1,67 @@
 
 
 .hero-photo, .photo {
+    position: relative;
+
     img {
         display: block;
+    }
+
+    &.with-content {
+        background: center center no-repeat;
+        background-size: cover;
+        
+        .hero-photo {
+            display: none;
+        }
+
+        &:before {
+            position: absolute;
+            content: ' ';
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 5;
+            background: rgba( black, .3 );
+            pointer-events: none;
+        }
+
+        .hero-content-container {
+            position: relative;
+            z-index: 10;
+            min-height: 400px;
+            display: flex;
+            align-items: end;
+
+            .hero-content {
+                flex: 1;
+                color: white;
+                text-shadow: 0 0 10px rgba( black, .5 );
+                @include padding;
+            }
+        }
+    }
+
+    @include respond-to( $bp-l ) {
+        &.with-content {
+            .hero-photo {
+                display: block;
+            }
+
+            .hero-content-container {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                min-height: 0;
+
+                .hero-content {
+                    padding-right: 40%;
+                }
+            }
+        }
     }
 }
 

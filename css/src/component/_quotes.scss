@@ -172,6 +172,14 @@
                     left: 0;
                 }
 
+                &.no-quotes {
+                    margin-top: 0;
+
+                    &:before {
+                        content: '';
+                    }
+                }
+
             }
 
             h4 {

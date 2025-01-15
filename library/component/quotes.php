@@ -5,7 +5,7 @@ $color = get_sub_field( 'color' );
 
 if ( have_rows('quotes') ): 
     ?>
-<div class="quotes-container <?php print $color ?>">
+<div class="quotes-container <?php print $color; ?>">
     <div class="quotes">
         <div class="quotes-inner">
         <?php

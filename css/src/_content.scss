@@ -240,3 +240,34 @@
 	}
 }
 
+
+.pagination {
+	padding: 10px 50px 30px;
+	text-align: center;
+	@include font;
+	display: block;
+
+	ul {
+
+		li {
+			display: inline-block;
+
+			.page-numbers {
+				padding: 10px 10px;
+				text-decoration: none;
+				color: white;
+				background: $grey-light;
+				display: inline-block;
+				margin: 0 4px;
+
+				&.current {
+					background: $red;
+				}
+
+				&:hover {
+					border: 0;
+				}
+			}
+		}
+	}
+}
