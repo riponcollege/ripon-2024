@@ -8,7 +8,7 @@
 
 <title><?php wp_title( '|', true, 'right' ); ?> <?php bloginfo( 'sitename' ) ?></title>
 
-<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="profile" href="https://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
 <!--[if lt IE 9]>
@@ -16,7 +16,7 @@
 <![endif]-->
 
 <?php wp_head(); ?>
-<link href="<?php bloginfo( "template_url" ) ?>/css/main.css?v=13" rel="stylesheet" type="text/css">
+<link href="<?php bloginfo( "template_url" ) ?>/css/main.css?v=14" rel="stylesheet" type="text/css">
 
 </head>
 <body <?php body_class(); ?>>

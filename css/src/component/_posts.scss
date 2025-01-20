@@ -32,6 +32,8 @@
 
 
 .article-cards {
+
+    
     @include respond-to( $bp-s ) {
         display: flex;
         flex-wrap: wrap;
@@ -43,7 +45,12 @@
     }
 
     .entry {
-        margin: 0 0 20px;
+        @extend .content-style;
+        background: white;
+        border-radius: 6px;
+        border: 1px solid rgba( black, .5 );
+        padding: 25px;
+        margin-bottom: 25px;
 
         @include respond-to( $bp-s ) {
             flex: 0 0 50%;
@@ -54,7 +61,7 @@
             flex: 0 0 28.3333%;
             margin: 0 5% 5% 0;
         }
-    
+
         .entry-thumbnail {
             position: relative;
 

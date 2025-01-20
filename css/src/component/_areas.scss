@@ -36,20 +36,20 @@
             }
 
             @include respond-to( $bp-s ) {
-                flex: 1 1 48%;
+                flex: 0 1 48%;
                 margin: 0 2% 2% 0;
             }
 
             @include respond-to( $bp-m ) {
-                flex: 1 1 31.3333%;
+                flex: 0 1 31.3333%;
             }
 
             @include respond-to( $bp-xl ) {
-                flex: 1 1 23%;
+                flex: 0 1 23%;
             }
 
             @include respond-to( $bp-xxl ) {
-                flex: 1 1 18%;
+                flex: 0 1 18%;
             }
 
             .area-entry {

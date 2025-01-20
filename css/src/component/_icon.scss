@@ -1,0 +1,20 @@
+
+
+.icon-container {
+    display: flex;
+
+    & > div {
+        flex: 1;
+    }
+
+    .icon {
+        flex-basis: 30%;
+        padding: 20px 20px 0 0;
+        text-align: center;
+    }
+
+    .icon-content {
+        flex-basis: 70%;
+    }
+}
+
