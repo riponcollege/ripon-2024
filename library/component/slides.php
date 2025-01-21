@@ -15,7 +15,7 @@
         $image = get_sub_field( 'background' );
         $label = get_sub_field( 'label' );
 
-        if ( !empty( $image ) && !empty( $title ) ) :
+        if ( !empty( $image ) ) :
             ?>
         <div class="slide <?php 
             print ( get_row_index() == 1 ? 'visible' : '' ); 
@@ -25,9 +25,9 @@
 
             <div class="slide-overlay"></div>
             <div class="slide-content">
-                <h1 class="slide-title"><?php print $title; ?></h1>
+                <?php  if ( !empty( $title ) ) : ?><h1 class="slide-title"><?php print $title; ?></h1><?php endif; ?>
                 <?php if ( !empty( $label ) ) : ?>
-                    <a href="<?php print $link ?>" class="btn white"><?php print $label; ?></a>
+                    <a href="<?php print ( !empty( $link ) ? $link : '#' ); ?>" class="btn white"><?php print $label; ?></a>
                 <?php endif; ?>
             </div>
         </div>
