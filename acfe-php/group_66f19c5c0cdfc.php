@@ -52,6 +52,7 @@ acf_add_local_field_group(array(
 			'choices' => array(
 				'default' => 'Default',
 				'minimal' => 'Minimal',
+				'whats-new' => 'What\'s New',
 			),
 			'default_value' => 'default',
 			'return_format' => 'value',
@@ -110,7 +111,7 @@ acf_add_local_field_group(array(
 				'id' => '',
 			),
 			'acfe_repeater_stylised_button' => 0,
-			'layout' => 'block',
+			'layout' => 'table',
 			'pagination' => 0,
 			'min' => 0,
 			'max' => 0,
@@ -157,7 +158,37 @@ acf_add_local_field_group(array(
 					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array(
-						'width' => '44',
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'maxlength' => '',
+					'allow_in_bindings' => 0,
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+					'parent_repeater' => 'field_66f1fdfc5cea3',
+				),
+				array(
+					'key' => 'field_679117c94e493',
+					'label' => 'Link Text',
+					'name' => 'link_text',
+					'aria-label' => '',
+					'type' => 'text',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array(
+						array(
+							array(
+								'field' => 'field_673a8f05ef94a',
+								'operator' => '==',
+								'value' => 'whats-new',
+							),
+						),
+					),
+					'wrapper' => array(
+						'width' => '',
 						'class' => '',
 						'id' => '',
 					),
@@ -179,7 +210,7 @@ acf_add_local_field_group(array(
 					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array(
-						'width' => '44',
+						'width' => '',
 						'class' => '',
 						'id' => '',
 					),
@@ -219,7 +250,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1731891043,
+	'modified' => 1737562165,
 ));
 
 endif;
