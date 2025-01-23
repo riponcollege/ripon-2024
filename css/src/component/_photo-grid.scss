@@ -28,7 +28,7 @@
                 background-repeat: no-repeat;
                 background-size: cover;
                 @include font-termina-demi;
-                font-size: 1.3em;
+                font-size: 1.2em;
                 line-height: 1.2em;
                 text-shadow: 0 0 20px rgba( black, .5 );
                 color: white;
@@ -38,11 +38,11 @@
                 height: 350px;
 
                 @include respond-to( $bp-l ) {
-                    font-size: 1.5em;
+                    font-size: 1.3em;
                 }
 
                 @include respond-to( $bp-xxl ) {
-                    font-size: 1.7em;
+                    font-size: 1.4em;
                 }
 
                 span {
@@ -77,14 +77,6 @@
                 .photo {
                     height: auto;
                     aspect-ratio: 3 / 4;
-                }
-            }
-        }
-
-        @include respond-to( $bp-xl ) {
-            a {
-                .photo {
-                    font-size: 2em;
                 }
             }
         }
