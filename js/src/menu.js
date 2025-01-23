@@ -31,5 +31,12 @@ jQuery(document).ready(function($){
 
 	});
 
+	// quicknav functionality
+	$('select.quick-nav').on( 'change', function(){
+		if ( $(this).val() != '' ) {
+			location.href = $(this).val();
+		}
+	});
+	
 });
 
