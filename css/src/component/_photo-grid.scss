@@ -29,7 +29,7 @@
                 background-size: cover;
                 @include font-termina-demi;
                 font-size: 1.2em;
-                line-height: 1.2em;
+                line-height: 1.3em;
                 text-shadow: 0 0 20px rgba( black, .5 );
                 color: white;
                 display: flex;
@@ -175,24 +175,35 @@
         }
 
         &.whats-new {
-            span {
-                position: absolute;
-                bottom: 0;
-                right: 0;
-                left: 0;
-                background: $blue;
-                padding: 20px;
+            a {
+                .photo {
 
-                @include respond-to( $bp-m ) {
-                    padding: 20px 40px;
-                }
+                    span {
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        left: 0;
+                        background: $blue;
+                        padding: 20px;
+                        font-size: 18px;
 
-                .photo-cta {
-                    display: block;
-                    text-decoration: underline;
-                    color: white;
-                    opacity: 1;
-                    font-size: .55em;
+                        @include respond-to( $bp-m ) {
+                            padding: 20px 40px;
+                        }
+
+                        @include respond-to( $bp-xl ) {
+                            font-size: 1.2em;
+                        }
+
+                        .photo-cta {
+                            display: block;
+                            text-decoration: underline;
+                            color: white;
+                            opacity: 1;
+                            @include font-termina;
+                            font-size: .6em;
+                        }
+                    }
                 }
             }
         }
