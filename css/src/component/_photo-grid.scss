@@ -184,14 +184,14 @@
                         right: 0;
                         left: 0;
                         background: $blue;
-                        padding: 20px;
+                        padding: 20px 8%;
                         font-size: 18px;
 
                         @include respond-to( $bp-m ) {
-                            padding: 20px 40px;
                         }
 
                         @include respond-to( $bp-xl ) {
+                            padding: 20px 40px;
                             font-size: 1.2em;
                         }
 
