@@ -20,7 +20,7 @@ jQuery(document).ready(function($){
 		}
 
 		// when user clicks a link in the menu, open submenu if it exists.
-		menu.find( 'a' ).click(function(){
+		menu.find( '>ul>li>a' ).click(function(){
 			var parent_li = $( this ).parent( 'li' );
 			var submenu = $( this ).next( '.submenu' );
 			if ( !submenu.is( ':visible' ) && !parent_li.hasClass('no-submenu') ) {
