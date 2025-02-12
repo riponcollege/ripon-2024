@@ -10,6 +10,7 @@
     }
 }
 
+
 .post-list-container {
     @include padding;
 
@@ -32,8 +33,6 @@
 
 
 .article-cards {
-
-    
     @include respond-to( $bp-s ) {
         display: flex;
         flex-wrap: wrap;
@@ -99,31 +98,42 @@
     }
 }
 
-.content-wide.article {
-    .post-date {
-        color: $grey;
-        font-size: .9em;
+
+// post specific styles.
+.content-narrow {
+    max-width: 800px;
+    margin: 30px auto;
+
+    @include respond-to( $bp-l ) {
+        max-width: 70%;
     }
 
-    .post-thumbnail {
-        max-width: 400px;
-        margin: 20px auto;
-        position: relative;
-
-        @include respond-to( $bp-m ) {
-            margin: 0 0 20px 20px;
-            float: right;    
+    img.alignright, .post-thumbnail, .wp-caption.alignright {
+        @include respond-to( $bp-s ) {
+            float: right;
+            max-width: 50%;
+            margin: 15px 0 35px 35px;
         }
 
-        img {
-            display: block;
+        @include respond-to ( $bp-l ) {
+            margin-right: -15%;
         }
     }
 
-    h1 {
+    img.alignleft, .wp-caption.alignleft {
+        @include respond-to( $bp-s ) {
+            float: left;
+            max-width: 50%;
+            margin: 15px 35px 35px 0;
+        }
 
+        @include respond-to ( $bp-l ) {
+            margin-left: -15%;
+        }
+    }
+
+    .wp-caption-text {
+        font-size: .8em;
     }
 }
-
-
 
