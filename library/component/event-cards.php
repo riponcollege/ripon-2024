@@ -18,7 +18,7 @@ $args = array(
         'relation' => 'AND',
         array(
             'key' => '_p_event_start',
-            'value' => time(),
+            'value' => date( 'Y-m-d G:i:s', time() ),
             'compare' => '>='
         )
     )
