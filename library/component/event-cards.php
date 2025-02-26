@@ -4,6 +4,8 @@
 $mode = get_sub_field( 'mode' );
 $color = get_sub_field( 'color' );
 $padding = get_sub_field( 'padding' );
+$more_events = get_sub_field( 'more_events' );
+$more_events_link = get_sub_field( 'more_events_link' );
 
 
 // set up query args that apply for both modes.
@@ -75,6 +77,7 @@ if ( $card_query->have_posts() ):
     endwhile;
     ?>
     </div>
+    <?php if ( $more_events ) : ?><p class="text-center"><a href="<?php print $more_events_link['url'] ?>" class="btn red"><?php print $more_events_link['title'] ?></a></p><?php endif; ?>
 </div>
 <?php
 endif;
