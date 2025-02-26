@@ -151,6 +151,52 @@ acf_add_local_field_group(array(
 			'search_placeholder' => '',
 		),
 		array(
+			'key' => 'field_67bf6da714dc9',
+			'label' => 'Show \'More News\'',
+			'name' => 'more_news',
+			'aria-label' => '',
+			'type' => 'true_false',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => '',
+			'default_value' => 0,
+			'allow_in_bindings' => 0,
+			'ui_on_text' => 'Show',
+			'ui_off_text' => 'Hide',
+			'ui' => 1,
+		),
+		array(
+			'key' => 'field_67bf6e2ec3637',
+			'label' => 'More News Link',
+			'name' => 'more_news_link',
+			'aria-label' => '',
+			'type' => 'link',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => 'field_67bf6da714dc9',
+						'operator' => '==',
+						'value' => '1',
+					),
+				),
+			),
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'return_format' => 'array',
+			'allow_in_bindings' => 0,
+		),
+		array(
 			'key' => 'field_6787fd6e84d04',
 			'label' => '(Column 6/12)',
 			'name' => '',
@@ -232,7 +278,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1736965940,
+	'modified' => 1740598868,
 ));
 
 endif;
