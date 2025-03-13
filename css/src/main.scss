@@ -11,6 +11,8 @@ $red: #a10833;
 $blue: #233f6c;
 $green: #38914a;
 $tan: #eeeae3;
+$yellow: #F8C630;
+$teal: #3E92CC;
 
 
 // breakpoints
@@ -34,7 +36,7 @@ $bp-xxxl: 1680px;
 @import "component/alum", "component/slides", "component/hero", "component/accordions", "component/title", "component/section-title", 
     "component/content", "component/stats", "component/quick-links", "component/quotes", "component/goals", "component/ctas", 
     "component/people", "component/areas", "component/nav-menu", "component/posts", "component/tabs", "component/photo-grid", 
-    "component/facts", "component/event-cards", "component/hours", "component/icon";
+    "component/facts", "component/event-cards", "component/hours", "component/icon", "component/emergency";
 
 
 // import lightbox styles

@@ -22,6 +22,51 @@ acf_add_local_field_group(array(
 			),
 			'acfe_flexible_advanced' => 0,
 			'layouts' => array(
+				'layout_67d23dcec8e3c' => array(
+					'key' => 'layout_67d23dcec8e3c',
+					'name' => 'emergency',
+					'label' => 'Emergency Bar',
+					'display' => 'block',
+					'sub_fields' => array(
+						array(
+							'key' => 'field_67d23dd7c8e3f',
+							'label' => 'Module: Emergency Bar',
+							'name' => 'module-emergency-bar',
+							'aria-label' => '',
+							'type' => 'clone',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'clone' => array(
+								0 => 'group_67d23d5bf26a6',
+							),
+							'display' => 'seamless',
+							'layout' => 'block',
+							'prefix_label' => 0,
+							'prefix_name' => 0,
+							'acfe_seamless_style' => 0,
+							'acfe_clone_modal' => 0,
+							'acfe_clone_modal_close' => 0,
+							'acfe_clone_modal_button' => '',
+							'acfe_clone_modal_size' => 'large',
+						),
+					),
+					'min' => '',
+					'max' => '',
+					'acfe_flexible_render_template' => false,
+					'acfe_flexible_render_style' => false,
+					'acfe_flexible_render_script' => false,
+					'acfe_flexible_thumbnail' => false,
+					'acfe_flexible_settings' => false,
+					'acfe_flexible_settings_size' => 'medium',
+					'acfe_flexible_modal_edit_size' => false,
+					'acfe_flexible_category' => false,
+				),
 				'layout_66e1d5e75b235' => array(
 					'key' => 'layout_66e1d5e75b235',
 					'name' => 'slides',
@@ -1609,7 +1654,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1736965318,
+	'modified' => 1741831671,
 ));
 
 endif;
