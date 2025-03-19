@@ -70,7 +70,7 @@ if ( have_posts() ) :
 					foreach ( $events as $event ) : ?>
 					<div class="entry">
 						<h6><a href="<?php print get_permalink( $event->ID ); ?>"><?php print $event->post_title; ?></a></h6>
-						<p class="date"><?php print $event->_p_event_start; ?></p>
+						<p class="date"><?php print str_replace( '12:00am', '', date( 'M jS, Y g:ia', strtotime( $event->_p_event_start ) ) ); ?></p>
 					</div><?php
 					endforeach;
 

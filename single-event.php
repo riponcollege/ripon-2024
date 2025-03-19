@@ -13,7 +13,7 @@ get_header();
             <?php  if ( have_posts() ) :
                 while ( have_posts() ) : the_post(); 
                     $event_start = get_field( '_p_event_start' );
-                    $event_start_formatted = date( 'F jS, Y g:ia', strtotime( $event_start ) );
+                    $event_start_formatted = str_replace( '12:00am', '', date( 'F jS, Y g:ia', strtotime( $event_start ) ) );
                     ?>
                     <h1><?php the_title(); ?></h1>
                     <hr>
@@ -46,7 +46,7 @@ get_header();
                     foreach ( $events as $event ) : ?>
                     <div class="entry">
                         <h6><a href="<?php print get_permalink( $event->ID ); ?>"><?php print $event->post_title; ?></a></h6>
-                        <p class="date"><?php print $event->_p_event_start; ?></p>
+						<p class="date"><?php print str_replace( '12:00am', '', date( 'M jS, Y g:ia', strtotime( $event->_p_event_start ) ) ); ?></p>
                     </div><?php
                     endforeach;
 
