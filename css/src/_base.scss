@@ -114,15 +114,15 @@ a {
 	}
 }
 
-img {
+img, .wp-caption {
 	&.alignleft {
 		float: left;
-		margin: 0 10px 10px 0;
+		margin: 10px 15px 15px 0;
 	}
 
 	&.alignright {
 		float: right;
-		margin: 0 0 10px 10px;
+		margin: 15px 0 15px 15px;
 	}
 
 	&.aligncenter {

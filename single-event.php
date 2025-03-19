@@ -6,7 +6,7 @@
 get_header();
 
 ?>
-<div class="content-two-container white pad-tall">
+<div class="content-two-container white pad-tall single">
     <?php if ( !empty( $title ) ) : ?><h2><?php print $title ?></h2><?php endif; ?>
     <div class="content-two top left">
         <div class="column one">
@@ -34,8 +34,26 @@ get_header();
                 endwhile;
             endif; ?>
         </div>
-        <div class="column two">
-            More events.
+        <div class="column two sidebar">
+            <div class="box">
+                <div class="box-header">
+                    <h4>Upcoming Events</h4>
+                </div>
+                <div class="box-content">
+                    <?php
+                    $events = get_upcoming_events( 3 );
+
+                    foreach ( $events as $event ) : ?>
+                    <div class="entry">
+                        <h6><a href="<?php print get_permalink( $event->ID ); ?>"><?php print $event->post_title; ?></a></h6>
+                        <p class="date"><?php print $event->_p_event_start; ?></p>
+                    </div><?php
+                    endforeach;
+
+                    wp_reset_postdata();
+                    ?>
+                </div>
+            </div>
         </div>
     </div>
 </div>
