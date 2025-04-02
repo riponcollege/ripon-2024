@@ -4,6 +4,7 @@ $people_category = get_sub_field( 'group' );
 $search = get_sub_field( 'search' );
 $include_bio = get_sub_field( 'include-bio' );
 $color = get_sub_field( 'color' );
+$name_format = get_sub_field( 'name_format' );
 
 // if the people category
 if ( !empty( $people_category ) ) :
@@ -38,7 +39,13 @@ if ( !empty( $people_category ) ) :
     <?php if ( $p->have_posts() ) : ?>
     <div class="people-listing">
 
-    <?php while ( $p->have_posts() ) : $p->the_post(); ?>
+    <?php while ( $p->have_posts() ) : $p->the_post(); 
+        if ( $name_format == 'last-first' ) :
+            $person_name = get_field( "_p_person_lname" ) . ', ' . get_field( "_p_person_fname" );
+        else:
+            $person_name = get_field( "_p_person_fname" ) . ' ' .  get_field( "_p_person_lname" );
+        endif;
+        ?>
         <div class="person-entry visible">
             <div class="person-photo">
                 <?php 
@@ -46,7 +53,7 @@ if ( !empty( $people_category ) ) :
                 ?>
             </div>
             <div class="person-info">
-                <h4><?php print ( $link ? '<a href="' . get_the_permalink() . '">' : '' ) . get_field( "_p_person_lname" ) . ', ' . get_field( "_p_person_fname" ) . ( $link ? '</a>' : '' ) ?></h4>
+                <h4><?php print ( $link ? '<a href="' . get_the_permalink() . '">' : '' ) . $person_name . ( $link ? '</a>' : '' ) ?></h4>
                 <p class="person-title"><?php print get_field( "_p_person_title" ); ?></p>
                 <?php
                 if ( $include_bio ) {
