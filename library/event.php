@@ -218,7 +218,7 @@ function get_month_events( $m, $y, $category='all' ) {
 
 
 // get upcoming events based on optional category
-function get_upcoming_events( $limit, $category = 0 ) {
+function get_upcoming_events( $limit, $category = 0, $exclude = 0 ) {
 
 	$timestamp_start = date( 'Y-m-d', mktime( 0, 0, 0 ) );
 
@@ -256,6 +256,15 @@ function get_upcoming_events( $limit, $category = 0 ) {
 				)
 			);
 		}
+	}
+
+	if ( $exclude > 0 ) {
+		if ( is_array( $exclude ) ) :
+			$ex_clause = $exclude;
+		else:
+			$ex_clause = array( $exclude );
+		endif;
+		$args['post__not_in'] = $ex_clause;
 	}
 
 	$event_query = new WP_Query( $args );

@@ -41,7 +41,7 @@ get_header();
                 </div>
                 <div class="box-content">
                     <?php
-                    $events = get_upcoming_events( 3 );
+                    $events = get_upcoming_events( 3, 0, get_the_ID() );
 
                     foreach ( $events as $event ) : ?>
                     <div class="entry">

@@ -43,7 +43,8 @@ if ( have_posts() ) :
 
 					$related = new WP_Query(array(
 						'category__in' => $cats,
-						'posts_per_page' => 2
+						'posts_per_page' => 2,
+						'post__not_in' => array( get_the_ID() ),
 					));
 
 					if ( $related->have_posts() ) :
