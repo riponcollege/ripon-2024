@@ -172,3 +172,25 @@ if ( ! function_exists( 'pagination' ) ) :
 	
 endif;
 
+
+function page_header( $title ) {
+	?>
+<div class="title-container red">
+	<div class="wrap">
+		<div class="title">
+			<h1><?php print $title ?></h1>
+		</div>
+	</div>
+</div>
+	<?php
+}
+
+
+
+function fn_search_courses_only($query) {
+    if( $query->is_search && !is_admin() ) {
+        $query->set('post_type', ( isset( $_REQUEST['post_type'] ) ? $_REQUEST['post_type'] : array( 'post', 'page', 'event', 'people' ) ) );
+    }
+}
+add_action( 'pre_get_posts', 'fn_search_courses_only' );
+

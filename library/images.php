@@ -116,3 +116,6 @@ function remove_img_attr ( $html ) {
 }
 add_filter( 'post_thumbnail_html', 'remove_img_attr' );
 
+
+
+add_filter('wp_img_tag_add_auto_sizes', '__return_false');
