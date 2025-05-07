@@ -807,7 +807,7 @@ acf_add_local_field_group(array(
 							'conditional_logic' => 0,
 							'wrapper' => array(
 								'width' => '',
-								'class' => 'short',
+								'class' => '',
 								'id' => '',
 							),
 							'default_value' => '',
@@ -1654,7 +1654,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1746645484,
+	'modified' => 1746645940,
 ));
 
 endif;
