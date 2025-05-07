@@ -813,7 +813,7 @@ acf_add_local_field_group(array(
 							'default_value' => '',
 							'allow_in_bindings' => 0,
 							'tabs' => 'visual',
-							'toolbar' => 'basic',
+							'toolbar' => 'full',
 							'media_upload' => 0,
 							'delay' => 0,
 						),
@@ -1654,7 +1654,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1741831671,
+	'modified' => 1746645484,
 ));
 
 endif;
