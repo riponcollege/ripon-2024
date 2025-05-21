@@ -2,6 +2,10 @@
 
 .stats-container {
     @include padding;
+
+    &.tan {
+        background: $tan;
+    }
     
     .statistics {
         padding-top: 30px;

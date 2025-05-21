@@ -1,9 +1,10 @@
 <?php
 
 load_section_title();
+$color = get_sub_field( 'color' );
 
 ?>
-<div class="stats-container">
+<div class="stats-container <?php print $color; ?>">
     <?php
     if ( have_rows('statistics') ):  ?>
         <div class="statistics"><?php
