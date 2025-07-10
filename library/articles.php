@@ -33,7 +33,7 @@ function articles_shortcode( $atts ) {
     // Check that we have query results.
     if ( $query->have_posts() ) {
 
-        $return = '<div class="article-cards">';
+        $return = '<div class="articles ' . $a['style'] . '">';
 
         // Start looping over the query results.
         while ( $query->have_posts() ) {
