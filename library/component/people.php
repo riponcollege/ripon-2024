@@ -5,9 +5,11 @@ $search = get_sub_field( 'search' );
 $include_bio = get_sub_field( 'include-bio' );
 $color = get_sub_field( 'color' );
 $name_format = get_sub_field( 'name_format' );
+$sort = get_sub_field( 'sort' );
 
 // if the people category
 if ( !empty( $people_category ) ) :
+
 
     // set some query vars
     $vars = array( 
@@ -24,6 +26,23 @@ if ( !empty( $people_category ) ) :
             )
         )
     );
+
+    if ( $sort == 'sort' ) {
+        $vars['meta_query'] = array(
+            'relation' => 'AND', // Or 'OR' depending on your logic
+            'meta_sort' => array(
+                'key' => 'sort',
+                'type' => 'NUMERIC',
+            ),
+            'meta_lname' => array(
+                'key' => '_p_person_lname',
+            ),
+        );
+        $vars['orderby'] = array(
+            'meta_sort' => 'ASC', // 'ASC' for ascending, 'DESC' for descending
+            'meta_lname' => 'ASC', // 'ASC' for ascending, 'DESC' for descending
+        );
+    }
 
     // run the query
     $p = new WP_Query( $vars );
