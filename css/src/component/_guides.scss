@@ -1,0 +1,26 @@
+
+
+.guides {
+    @extend .content-style;
+    @include padding;
+    background: white;
+    color: black;
+
+    &.pad-tall {
+        @include padding-tall;
+    }
+
+    &.tan {
+        background: $tan;
+    }
+
+    @include respond-to( $bp-m ) {
+        display: flex;
+    }
+
+    .guide-column {
+        flex: 1 1 50%;
+        padding-right: 3%;
+    }
+}
+

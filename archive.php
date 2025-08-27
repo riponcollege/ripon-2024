@@ -50,7 +50,7 @@ query_posts( $args );
 		<strong><?php echo $wp_query->found_posts; ?></strong> total posts. Showing results <strong><?php print $result_range; ?></strong>.
 	</div>
 	<hr />
-	<div class="article-cards blog-listing">
+	<div class="articles card blog-listing">
 	<?php
 
 	while ( have_posts() ) : the_post();

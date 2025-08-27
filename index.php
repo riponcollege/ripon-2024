@@ -53,7 +53,7 @@ $query = new WP_Query( $args );
 				There are <strong><?php echo $wp_query->found_posts; ?></strong> total posts. Showing results <strong><?php print $result_range; ?></strong>.
 			</div>
 			<hr />
-			<div class="article-cards blog-listing">
+			<div class="articles card blog-listing">
 			<?php
 
 			while ( $query->have_posts() ) : $query->the_post();
