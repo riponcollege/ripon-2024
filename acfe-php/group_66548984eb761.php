@@ -198,6 +198,8 @@ acf_add_local_field_group(array(
 									'placeholder' => '',
 									'allow_custom' => 0,
 									'search_placeholder' => '',
+									'create_options' => 0,
+									'save_options' => 0,
 								),
 							),
 							'min' => '',
@@ -519,6 +521,8 @@ acf_add_local_field_group(array(
 					'placeholder' => '',
 					'allow_custom' => 0,
 					'search_placeholder' => '',
+					'create_options' => 0,
+					'save_options' => 0,
 					'parent_repeater' => 'field_66548ace3177d',
 				),
 				array(
@@ -582,6 +586,60 @@ acf_add_local_field_group(array(
 			'prepend' => '',
 			'append' => 'days',
 		),
+		array(
+			'key' => 'field_68c1c9a9aa61d',
+			'label' => 'Guides',
+			'name' => '',
+			'aria-label' => '',
+			'type' => 'tab',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'placement' => 'top',
+			'endpoint' => 0,
+			'selected' => 0,
+		),
+		array(
+			'key' => 'field_68c1c9b4aa61e',
+			'label' => 'All Guides Page',
+			'name' => 'all-guides',
+			'aria-label' => '',
+			'type' => 'post_object',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'post_type' => array(
+				0 => 'page',
+			),
+			'post_status' => array(
+				0 => 'publish',
+			),
+			'taxonomy' => '',
+			'return_format' => 'object',
+			'multiple' => 0,
+			'save_custom' => 0,
+			'save_post_status' => 'publish',
+			'acfe_bidirectional' => array(
+				'acfe_bidirectional_enabled' => '0',
+			),
+			'allow_null' => 0,
+			'allow_in_bindings' => 0,
+			'bidirectional' => 0,
+			'ui' => 1,
+			'bidirectional_target' => array(
+			),
+			'save_post_type' => '',
+		),
 	),
 	'location' => array(
 		array(
@@ -608,7 +666,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1731940277,
+	'modified' => 1757530599,
 ));
 
 endif;
