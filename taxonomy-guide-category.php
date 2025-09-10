@@ -6,9 +6,24 @@
 get_header(); 
 
 $term = get_queried_object();
-page_header( '<span>Guides:</span> ' . $term->name );
+$all_guides = get_field( 'all-guides', 'option' );
 
 ?>
+<div class="title-container <?php print $theme . ' ' . $color . ' ' . ( $menu_count<5 ? 'columns' : '' ) . ' count-' . $menu_count ?>">
+	<div class="wrap">
+		<div class="title">
+			<h1><?php print '<span>Guides:</span> ' . $term->name ?></h1>
+			<?php if ( !empty( $nav_menu ) && $theme == 'large-menu' ) { ?>
+			<div class="section-nav">
+				<?php wp_nav_menu( array( 'menu' => $nav_menu ) ); ?>
+			</div>
+			<?php } ?>
+			<div class="title-button">
+				<a href="<?php print get_permalink( $all_guides->ID ); ?>" class="btn white">&laquo; All Guides</a>
+			</div>
+		</div>
+	</div>
+</div>
 
 <div class="content-wide">
 	<div class="guides-container">
