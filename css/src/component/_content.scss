@@ -23,6 +23,10 @@
         @include padding-tall;
     }
 
+    &.pad-no-bottom {
+        @include padding-no-bottom;
+    }
+
     &.red {
         @extend .white-links;
         background: $red;
