@@ -173,14 +173,29 @@ function get_month_events( $m, $y, $category='all' ) {
 			'relation' => 'OR',
 			array(
 				array(
+					'key' => '_p_event_end',
+					'value' => $y . '-' . str_pad( $m, 2, '0', STR_PAD_LEFT ),
+					'compare' => 'LIKE'
+				)
+			),
+			array(
+				array(
 					'key' => '_p_event_start',
 					'value' => $y . '-' . str_pad( $m, 2, '0', STR_PAD_LEFT ),
 					'compare' => 'LIKE'
 				),
+			),
+			array(
+				'relation' => 'AND',
+				array(
+					'key' => '_p_event_start',
+					'value' => $y . '-' . str_pad( $m, 2, '0', STR_PAD_LEFT ),
+					'compare' => '<='
+				),
 				array(
 					'key' => '_p_event_end',
 					'value' => $y . '-' . str_pad( $m, 2, '0', STR_PAD_LEFT ),
-					'compare' => 'LIKE'
+					'compare' => '>='
 				)
 			)
 		),
@@ -191,6 +206,7 @@ function get_month_events( $m, $y, $category='all' ) {
 		'posts_per_page' => 100
 	);
 
+	//print_r( $args ); die;
 
 	// add event category to the query if it's not showing all events
 	if ( $category != 'all' ) {
