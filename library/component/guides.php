@@ -5,6 +5,7 @@ $padding = get_sub_field( 'padding' );
 $color = get_sub_field( 'color' );
 $filtering = get_sub_field( 'filtering' );
 $categories = get_sub_field( 'categories' );
+$sort = get_sub_field( 'sort' );
 
 if ( $filtering == 'all' ) {
     $guide_categories = get_terms( array( 
@@ -37,6 +38,18 @@ if ( !empty( $guide_categories ) && $mode == 'guides' ) : ?>
                 ),
             ),
         );
+
+        if ( $sort == 'sort' ) {
+            $args['meta_query'] = array(
+                'sort' => array(
+                    'key' => 'sort', 
+                    'compare' => 'EXISTS',
+                    'type' => 'NUMERIC',
+                ),
+            );
+            $args['orderby'] = 'sort title';
+            $args['order'] = 'ASC';
+        }
         $guides = new WP_Query( $args );
 
         if ( $guides->have_posts() ) : ?>
