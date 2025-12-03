@@ -596,6 +596,51 @@ acf_add_local_field_group(array(
 					'acfe_flexible_modal_edit_size' => false,
 					'acfe_flexible_category' => false,
 				),
+				'layout_6914d89e55822' => array(
+					'key' => 'layout_6914d89e55822',
+					'name' => 'before-after',
+					'label' => 'Before & After',
+					'display' => 'block',
+					'sub_fields' => array(
+						array(
+							'key' => 'field_6914d8ab55825',
+							'label' => 'Module: Before & After',
+							'name' => 'module-before-after',
+							'aria-label' => '',
+							'type' => 'clone',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'clone' => array(
+								0 => 'group_6914d8427abf8',
+							),
+							'display' => 'seamless',
+							'layout' => 'block',
+							'prefix_label' => 0,
+							'prefix_name' => 0,
+							'acfe_seamless_style' => 0,
+							'acfe_clone_modal' => 0,
+							'acfe_clone_modal_close' => 0,
+							'acfe_clone_modal_button' => '',
+							'acfe_clone_modal_size' => 'large',
+						),
+					),
+					'min' => '',
+					'max' => '',
+					'acfe_flexible_render_template' => false,
+					'acfe_flexible_render_style' => false,
+					'acfe_flexible_render_script' => false,
+					'acfe_flexible_thumbnail' => false,
+					'acfe_flexible_settings' => false,
+					'acfe_flexible_settings_size' => 'medium',
+					'acfe_flexible_modal_edit_size' => false,
+					'acfe_flexible_category' => false,
+				),
 				'layout_66b4ec08112b4' => array(
 					'key' => 'layout_66b4ec08112b4',
 					'name' => 'cta',
@@ -1753,6 +1798,7 @@ acf_add_local_field_group(array(
 	'active' => true,
 	'description' => '',
 	'show_in_rest' => 0,
+	'display_title' => '',
 	'acfe_display_title' => '',
 	'acfe_autosync' => array(
 		0 => 'php',
@@ -1760,7 +1806,7 @@ acf_add_local_field_group(array(
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1755714255,
+	'modified' => 1762974095,
 ));
 
 endif;

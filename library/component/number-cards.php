@@ -42,4 +42,3 @@ if ( have_rows( 'card' ) ) : ?>
     </div>
 </div><?php
 endif;
-
