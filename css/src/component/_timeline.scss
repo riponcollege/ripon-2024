@@ -1,0 +1,139 @@
+
+
+.timeline {
+    background: white center center no-repeat;
+    background-size: cover;
+    position: relative;
+	padding: 20px;
+	@include respond-to( $bp-m ) { padding: 25px 30px; }
+	@include respond-to( $bp-l ) { padding: 30px $margin; }
+	@include respond-to( $bp-xl ) { padding: 40px $margin; }
+	@include respond-to( $bp-xxl ) { padding: 50px $margin; }
+	@include respond-to( $bp-xxxl ) { padding: 60px $margin; }
+    
+    &.fore-white {
+        color: white;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba( black, .3 );
+            z-index: 0;
+        }
+
+        .timeline-line {
+            border-color: white !important;
+
+            &:before {
+                background: white;
+            }
+        }
+    }
+
+    &.fore-black {
+        color: black;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba( white, .3 );
+            z-index: 0;
+        }
+
+        .timeline-line {
+            border-color: black !important;
+        }
+    }
+
+    .timeline-line {
+        position: absolute;
+        z-index: 1;
+        left: 9%;
+        bottom: 0;
+        top: 0;
+        border-left: 1px solid;
+        
+        &:before {
+            position: absolute;
+            top: 50%;
+            left: -10px;
+            margin-top: -10px;
+            content: '';
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            background: black;
+        }
+
+        @include respond-to( $bp-m ) {
+            left: 50%;
+        }
+    }
+
+    &.begin .timeline-line {
+        position: absolute;
+        top: 50%;
+
+        &:before {
+            top: -10px;
+        }
+    }
+
+    &.end .timeline-line {
+        position: absolute;
+        top: 0;
+        bottom: 50%;
+
+        &:before {
+            top: auto;
+            bottom: -10px;
+        }
+    }
+
+    .timeline-inner {
+        position: relative;
+        z-index: 1;
+        padding-left: 15%;
+    }
+
+    @include respond-to( $bp-m ) {
+        .timeline-inner {
+            padding-left: 0;
+            display: flex;
+            align-items: center;
+
+            .timeline-photo {
+                flex: 0 0 46%;
+                margin-right: 4%;
+            }
+
+            .timeline-content {
+                flex: 0 0 46%;
+                margin-left: 4%;
+            }
+        }
+
+        &.left .timeline-inner {
+            flex-direction: row-reverse;
+
+            .timeline-photo {
+                margin-right: 0;
+                margin-left: 4%;
+            }
+
+            .timeline-content {
+                margin-left: 0;
+                margin-right: 4%;
+            }
+        }
+    }
+}
+
