@@ -11,6 +11,10 @@
 	@include respond-to( $bp-xxl ) { padding: 50px $margin; }
 	@include respond-to( $bp-xxxl ) { padding: 60px $margin; }
     
+    &.tan {
+        background: $tan;
+    }
+
     &.fore-white {
         color: white;
 
