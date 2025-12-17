@@ -46,6 +46,8 @@ jQuery(document).ready(function($){
                     var story_size = $stories_inner.find( '.story' ).width() + parseFloat( $stories_inner.find( '.story' ).css( 'margin-right' ) );
                     var stories_total_width = num_stories * story_size;
 
+                    console.log( story_size );
+
                     // calculate positions
                     var position_current = parseFloat( $stories_inner.css( 'margin-left' ) );
                     var position_new = position_current - story_size;
