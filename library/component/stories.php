@@ -19,7 +19,7 @@ $color = get_sub_field( 'color' );
             $story_photo = get_sub_field( 'photo' );
             $story_link = get_sub_field( 'link' );
             ?>
-        <div class="story" data-link="<?php print $story_link; ?>">
+        <div class="story<?php print ( !empty( $story_link ) ? ' has-link' : '' ); ?>" <?php print ( !empty( $story_link ) ? 'data-href="' . $story_link . '"' : '' ); ?>>
             <img src="<?php print $story_photo['sizes']['post-thumbnail']; ?>">
             <div class="story-content">
                 <h3><?php print $story_title; ?></h3>

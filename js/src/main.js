@@ -12,5 +12,10 @@ jQuery(document).ready(function($){
 	$( '.lightbox-iframe' ).magnificPopup({ 'type': 'iframe' });
 	$( '.lightbox' ).magnificPopup({ 'type': 'image' });
 
+	$( '.has-link' ).on( 'click', function(){
+		var link = $(this).data('href');
+		if ( link.length > 0 ) window.open( link, '_blank' ).focus();
+	});
+
 });
 
