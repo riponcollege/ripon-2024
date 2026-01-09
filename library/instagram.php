@@ -24,7 +24,6 @@ function refresh_insta_cache( $feed ) {
     
     // otherwise, get the feed for it, and cache the result
     $feed_content = file_get_contents( $feed );
-    print $feed_content;
     if ( !file_put_contents( $insta_cache_file, $feed_content ) ) {
         print 'Error writing cache file.';
     }
