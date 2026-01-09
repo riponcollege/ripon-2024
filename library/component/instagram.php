@@ -22,18 +22,20 @@ if ( !empty( $feed ) ) : ?>
                     <?php print $posts->username ?>
                 </div>
             </div>
-            <div class="insta-post-content">
-            <?php if ( $post->mediaType == 'VIDEO' ) : ?>
-                <video width="100%" controls poster="<?php print $post->sizes->large->mediaUrl ?>" style="aspect-ratio: <?php print $post->sizes->large->width ?> / <?php print $post->sizes->large->height ?>;">
-                    <source src="<?php print $post->mediaUrl ?>" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            <?php else: ?>
-                <img src="<?php print $post->mediaUrl ?>">
-            <?php endif; ?>
-            </div>
-            <div class="insta-post-caption">
-                <?php print wpautop( $post->caption ) ?>
+            <div class="has-link" data-href="<?php print $post->permalink ?>">
+                <div class="insta-post-content">
+                <?php if ( $post->mediaType == 'VIDEO' ) : ?>
+                    <video width="100%" controls poster="<?php print $post->sizes->large->mediaUrl ?>" style="aspect-ratio: <?php print $post->sizes->large->width ?> / <?php print $post->sizes->large->height ?>;">
+                        <source src="<?php print $post->mediaUrl ?>" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                <?php else: ?>
+                    <img src="<?php print $post->mediaUrl ?>">
+                <?php endif; ?>
+                </div>
+                <div class="insta-post-caption">
+                    <?php print wpautop( $post->caption ) ?>
+                </div>
             </div>
         </div>
             <?php endif;
