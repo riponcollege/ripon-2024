@@ -1,0 +1,73 @@
+
+
+.instagram-container {
+    @include padding-tall;
+    background: $red url(../img/bg-175.png) bottom right no-repeat;
+    background-size: contain;
+
+    .intro {
+        color: white;
+        text-align: center;
+        padding: 0 0 60px;
+    }
+
+    .instagram-posts {
+        @include respond-to( $bp-s ) {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -5%;
+            overflow: hidden;
+            justify-content: center;
+        }
+
+        .insta-post {
+            background: white;
+            box-shadow: 0 0 30px rgba( black, .4 );
+
+            @include respond-to( $bp-s ) {
+                flex: 0 0 45%;
+                margin: 0 5% 5% 0;
+            }
+
+            @include respond-to( $bp-m ) {
+                flex: 0 0 30.3333%;
+                margin: 0 3% 3% 0;
+            }
+
+            .insta-post-attribution {
+                display: flex;
+                align-items: center;
+                padding: 10px;
+
+                .insta-post-attribution-photo {
+                    flex: 0 0 40px;
+                    margin: 0 10px 0 10px;
+                    border-radius: 50%;
+                    overflow: hidden;
+
+                    img {
+                        display: block;
+                    }
+                }
+                
+                .insta-post-attribution-name {
+                    flex: 1;
+                }
+            }
+
+            .insta-post-content {
+                img, video {
+                    max-width: 100%;
+                }
+            }
+
+            .insta-post-caption {
+                @extend .content-style;
+                padding: 15px 20px 20px;
+                font-size: .85em;
+            }
+        }
+    }
+
+}
+

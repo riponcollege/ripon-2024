@@ -14,5 +14,5 @@ function require_multi( $files ) {
 
 
 // include utility functions
-require_multi( 'core', 'admin', 'alum', 'articles', 'images', 'paginate', 'button', 'menu', 'component', 'event' );
+require_multi( 'core', 'admin', 'alum', 'articles', 'images', 'paginate', 'button', 'menu', 'component', 'event', 'instagram' );
 
