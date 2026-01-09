@@ -52,7 +52,7 @@ $admin_email = get_option( 'admin_email' );
 					</div>
 					<div class="column brand">
 						<div class="sub-column">	
-							<img src="<?php bloginfo( 'template_url') ?>/img/logo-black.svg" class="footer-logo">
+							<a href="/175-celebration/"><img src="<?php bloginfo( 'template_url') ?>/img/logo-175.svg" class="footer-logo"></a>
 						</div>
 						<div class="sub-column">
 							<?php print get_field( 'address', 'option' ) ?>
