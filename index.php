@@ -50,7 +50,7 @@ $query = new WP_Query( $args );
 	<div class="wrap">
 		<div class="content-wide" role="main">
 			<h3>Browse by Category</h3>
-			<p><?php wp_dropdown_categories( array( 'class' => 'quick-category-nav', 'value_field' => 'slug', 'orderby' => 'name', 'order' => 'ASC', 'show_option_none' => __( '- select a category -' ) ) ) ?></p>
+			<p><?php wp_dropdown_categories( array( 'class' => 'quick-category-nav', 'value_field' => 'slug', 'orderby' => 'name', 'order' => 'ASC', 'show_option_none' => __( '- select a category -' ), 'exclude' => implode( ',', $excluded_categories ) ) ) ?></p>
 			<hr />
 			<div class="quiet total-results">
 				There are <strong><?php echo $wp_query->found_posts; ?></strong> total posts. Showing results <strong><?php print $result_range; ?></strong>.
