@@ -19,6 +19,9 @@ global $wp_query, $paged;
 // set the args based on current query
 $args = $wp_query->query_vars;
 
+$excluded_categories = get_field( 'excluded_categories', 'option' );
+$args['category__not_in'] = $excluded_categories;
+
 // calculate results range to show above the result listing
 if ( $paged > 0 ) {
 	$result_range_start = ( ( $paged - 1 ) * $args['posts_per_page'] ) + 1;
