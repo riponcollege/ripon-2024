@@ -292,5 +292,5 @@
 
 
 jQuery(document).ready(function($){
-    $('.before-after').beforeAfter();
+    $('.before-after.visible').beforeAfter();
 });
