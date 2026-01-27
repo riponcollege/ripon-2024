@@ -30,7 +30,7 @@
         height: 80px;
         width: 80px;
         margin-top: -40px;
-        color: transparent;
+        color: transparent !important;
         background: url(../img/icon-arrow-left.png) center center no-repeat;
         background-size: contain;
         cursor: pointer;
@@ -44,7 +44,7 @@
         height: 80px;
         width: 80px;
         margin-top: -40px;
-        color: transparent;
+        color: transparent !important;
         background: url(../img/icon-arrow-right.png) center center no-repeat;
         background-size: contain;
         cursor: pointer;
