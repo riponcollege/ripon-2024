@@ -9,8 +9,8 @@ if ( have_rows( 'instance' ) ) : ?>
         $image2 = get_sub_field( 'image_two' );
         ?>
         <div class="before-after<?php print ( get_row_index() == 1 ? ' visible' : '' ); ?>">
-            <img src="<?php print $image1; ?>" alt="Before" />
-            <img src="<?php print $image2; ?>" alt="After" />
+            <img src="<?php print $image1; ?>" alt="Before" rel="preload" />
+            <img src="<?php print $image2; ?>" alt="After" rel="preload" />
         </div>
     <?php endwhile; ?>
     </div>

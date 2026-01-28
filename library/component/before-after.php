@@ -6,8 +6,8 @@ $image2 = get_sub_field( 'image_two' );
 if ( !empty( $image1 ) && !empty( $image2 ) ) {
     ?>
 <div class="before-after visible">
-    <img src="<?php print $image1; ?>" alt="Before" />
-    <img src="<?php print $image2; ?>" alt="After" />
+    <img src="<?php print $image1; ?>" alt="Before" rel="preload" />
+    <img src="<?php print $image2; ?>" alt="After" rel="preload" />
 </div>
     <?php
 }

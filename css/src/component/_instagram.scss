@@ -29,8 +29,8 @@
                 margin: 0 5% 5% 0;
             }
 
-            @include respond-to( $bp-m ) {
-                flex: 0 0 30.3333%;
+            @include respond-to( $bp-l ) {
+                flex: 0 0 22%;
                 margin: 0 3% 3% 0;
             }
 

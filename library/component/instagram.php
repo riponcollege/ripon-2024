@@ -12,7 +12,7 @@ if ( !empty( $feed ) ) : ?>
         <?php
         $posts = insta( $feed );
         foreach ( $posts->posts as $index => $post ) : 
-            if ( $index < 3 ) : ?>
+            if ( $index < 4 ) : ?>
         <div class="insta-post">
             <div class="insta-post-attribution has-link" data-href="https://instagram.com/<?php print $posts->username ?>">
                 <div class="insta-post-attribution-photo">
@@ -34,7 +34,7 @@ if ( !empty( $feed ) ) : ?>
                 <?php endif; ?>
                 </div>
                 <div class="insta-post-caption">
-                    <?php print wpautop( $post->caption ) ?>
+                    <?php print wpautop( wp_trim_words( $post->caption, 50 ) ) ?>
                 </div>
             </div>
         </div>
