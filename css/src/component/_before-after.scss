@@ -61,7 +61,7 @@
 
 
 
-.content-two-container .before-after-carousel {
+.content-two-container .before-after-carousel, .content-one .before-after-carousel {
     @include respond-to( $bp-m ) {
         a.prev {
             left: -50px;
