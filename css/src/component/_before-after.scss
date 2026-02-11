@@ -34,6 +34,8 @@
         background: url(../img/icon-arrow-left.png) center center no-repeat;
         background-size: contain;
         cursor: pointer;
+        text-indent: 1000px;
+        overflow: hidden;
     }
 
     a.next {
@@ -48,6 +50,8 @@
         background: url(../img/icon-arrow-right.png) center center no-repeat;
         background-size: contain;
         cursor: pointer;
+        text-indent: 1000px;
+        overflow: hidden;
     }
 
     a:hover {
@@ -55,3 +59,28 @@
     }
 }
 
+
+
+.content-two-container .before-after-carousel {
+    @include respond-to( $bp-m ) {
+        a.prev {
+            left: -50px;
+            height: 40px;
+            width: 40px;
+            margin-top: -20px;
+            border: none !important;
+            background: url(../img/icon-arrow-black-left.png) center center no-repeat;
+            background-size: contain;
+        }
+
+        a.next {
+            right: -50px;
+            height: 40px;
+            width: 40px;
+            margin-top: -20px;
+            border: none !important;
+            background: url(../img/icon-arrow-black-right.png) center center no-repeat;
+            background-size: contain;
+        }
+    }
+}

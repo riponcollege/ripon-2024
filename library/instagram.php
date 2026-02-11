@@ -8,7 +8,7 @@ function insta( $feed ) {
     $insta_cache = get_insta_cache( $feed );
 
     // if the cache var isn't 'false', return it.
-    if ( !$insta_cache ) {
+    if ( !is_string( $insta_cache ) ) {
         return refresh_insta_cache( $feed );
     } else {
         return json_decode( $insta_cache );
@@ -29,7 +29,7 @@ function refresh_insta_cache( $feed ) {
     }
 
     return json_decode( $feed_content );
-        
+    
 }
 
 
