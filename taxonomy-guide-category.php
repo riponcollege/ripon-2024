@@ -17,20 +17,11 @@ $args = array(
 			'terms'    => $term, // Replace with the slug of the term you want to query
 		),
 	),
+	
 );
 
-$args['meta_query'] = array(
-	'relation' => 'OR',
-	array(
-		'key' => 'sort', 
-		'compare' => 'NOT EXISTS'
-	),
-	array(
-		'key' => 'sort', 
-		'compare' => 'EXISTS'
-	),
-);
 $args['orderby'] = 'sort title';
+$argx['order'] = 'ASC ASC';
 $guides = new WP_Query( $args );
 
 ?>
