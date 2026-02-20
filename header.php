@@ -39,6 +39,8 @@
 </head>
 <body <?php body_class(); ?>>
 <div class="container">
+
+<?php if ( !isset( $_REQUEST['notemplate'] ) ) : ?>
 <header>
 	<div class="wrap">
 	
@@ -67,6 +69,7 @@
 		</div>
 	</div>
 </header>
+<?php endif; ?>
 
 <section class="content">
 	<a name="content"></a>

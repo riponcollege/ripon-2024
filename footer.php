@@ -12,7 +12,8 @@ $admin_email = get_option( 'admin_email' );
 ?>
 	
 	</section>
-	
+<?php if ( !isset( $_REQUEST['notemplate'] ) ) : ?>
+
 	<div class="footer-container">
 		<div class="wrap">
 			<footer>
@@ -76,6 +77,7 @@ $admin_email = get_option( 'admin_email' );
 			</footer>
 		</div>
 	</div>
+<?php endif; ?>
 
 </div><!-- #container -->
 
