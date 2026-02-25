@@ -19,12 +19,8 @@ jQuery(document).ready(function($){
                     var num_stories = $stories_inner.find( '.story' ).length;
                     var story_size = $stories_inner.find( '.story' ).width() + parseFloat( $stories_inner.find( '.story' ).css( 'margin-right' ) );
 
-                    // window width 
-                    var window_width = $(window).width();
-                    var story_limit_modifier = Math.floor( window_width / story_size );
-                    
                     // total max story size, with modifier taken into account
-                    var stories_total_width = num_stories * ( story_size - story_limit_modifier );
+                    var stories_total_width = num_stories * story_size;
 
                     // calculate positions
                     var position_current = parseFloat( $stories_inner.css( 'margin-left' ) );
@@ -49,23 +45,26 @@ jQuery(document).ready(function($){
 
                 if ( !$( this ).hasClass('disable') ) {
 
-                    // get some info
-                    var num_stories = $stories_inner.find( '.story' ).length;
-                    var story_size = $stories_inner.find( '.story' ).width() + parseFloat( $stories_inner.find( '.story' ).css( 'margin-right' ) );
-
                     // window width 
                     var window_width = $(window).width();
+                    
+                    // get some info
+                    var story_size = $stories_inner.find( '.story' ).width() + parseFloat( $stories_inner.find( '.story' ).css( 'margin-right' ) );
                     var story_limit_modifier = Math.floor( window_width / story_size );
+                    var num_stories = $stories_inner.find( '.story' ).length - story_limit_modifier;
+                    console.log( num_stories );
                     
                     // total max story size, with modifier taken into account
-                    var stories_total_width = num_stories * ( story_size - story_limit_modifier );
+                    var stories_total_width = num_stories * story_size;
 
                     // calculate positions
                     var position_current = parseFloat( $stories_inner.css( 'margin-left' ) );
                     var position_new = position_current - story_size;
-                    var position_max = stories_total_width - ( story_size * story_limit_modifier );
+                    var position_max = -(stories_total_width);
 
-                    if ( position_new <= position_max ) {
+                    console.log( position_current + ' ' + position_new + ' ' + position_max );
+
+                    if ( position_new == position_max ) {
                         $( this ).addClass( 'disable' );
                     } else {
                         $( this ).removeClass( 'disable' );
