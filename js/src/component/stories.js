@@ -65,10 +65,6 @@ jQuery(document).ready(function($){
                     var position_new = position_current - story_size;
                     var position_max = stories_total_width - ( story_size * story_limit_modifier );
 
-                    console.log( position_current );
-                    console.log( position_new );
-                    console.log( position_max );
-
                     if ( position_new <= position_max ) {
                         $( this ).addClass( 'disable' );
                     } else {
