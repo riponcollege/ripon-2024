@@ -23,6 +23,11 @@ elseif ( is_category() ) :
 	$page_title = $category->name;
 	$page_subtitle = ( !empty( $category->category_description ) ? $category->category_description : '&nbsp;' );
 
+elseif ( is_tax( 'people' ) ) :
+	$category = get_queried_object();
+	$page_title = $category->name;
+	$page_subtitle = ( !empty( $category->category_description ) ? $category->category_description : '&nbsp;' );
+
 else :
 	$page_title = 'Archives';
 
