@@ -82,5 +82,6 @@ $admin_email = get_option( 'admin_email' );
 </div><!-- #container -->
 
 <?php wp_footer(); ?>
+<?php print get_field( 'footer_scripts', 'option' ); ?>
 </body>
 </html>

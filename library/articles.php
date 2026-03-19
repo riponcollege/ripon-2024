@@ -17,7 +17,7 @@ function articles_shortcode( $atts ) {
 	);
 
 	if ( !empty( $a['tags'] ) ) {
-		$args['tag'] = $a['tags'];
+		$args['tag__in'] = explode( ',', $a['tags'] );
 	}
 
 	if ( !empty( $a['cats'] ) ) {

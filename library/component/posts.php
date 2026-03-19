@@ -5,7 +5,10 @@ $mode = get_sub_field( 'mode' );
 $filter_arg = '';
 if ( $mode == 'filtered' ):
     $category = implode( ',', get_sub_field( 'category' ) );
-    $filter_arg = ( $mode !='all' ? ' cats="' . $category . '"' : '' );
+    $filter_arg = ' cats="' . $category . '"';
+elseif ( $mode == 'filtered-tags' ):
+    $tag = implode( ',', get_sub_field( 'tag' ) );
+    $filter_arg = ' tags="' . $tag . '"';
 endif;
 
 // posts per page
@@ -19,7 +22,7 @@ $more_news_link = get_sub_field( 'more_news_link' );
 ?>
 <div class="post-list-container <?php print $color . ' ' . $padding ?>">
     <div class="post-list">
-        <?php print do_shortcode( '[articles ' . $filter_arg . ' posts_per_page="' . $posts_per_page . '" /]' ); ?>
+        <?php print do_shortcode( '[articles' . $filter_arg . ' posts_per_page="' . $posts_per_page . '" /]' ); ?>
     </div>
     <?php if ( $more_news ) : ?><p class="text-center"><a href="<?php print $more_news_link['url'] ?>" class="btn red"><?php print $more_news_link['title'] ?></a></p><?php endif; ?>
 </div>

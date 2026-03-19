@@ -40,7 +40,8 @@ acf_add_local_field_group(array(
 			),
 			'choices' => array(
 				'all' => 'All Posts',
-				'filtered' => 'Filtered',
+				'filtered' => 'Filtered (Category)',
+				'filtered-tags' => 'Filtered (Tags)',
 			),
 			'default_value' => 'all',
 			'return_format' => 'value',
@@ -119,6 +120,8 @@ acf_add_local_field_group(array(
 			'placeholder' => '',
 			'allow_custom' => 0,
 			'search_placeholder' => '',
+			'create_options' => 0,
+			'save_options' => 0,
 		),
 		array(
 			'key' => 'field_6787fd8b84d05',
@@ -149,6 +152,8 @@ acf_add_local_field_group(array(
 			'placeholder' => '',
 			'allow_custom' => 0,
 			'search_placeholder' => '',
+			'create_options' => 0,
+			'save_options' => 0,
 		),
 		array(
 			'key' => 'field_67bf6da714dc9',
@@ -252,6 +257,44 @@ acf_add_local_field_group(array(
 			'bidirectional_target' => array(
 			),
 		),
+		array(
+			'key' => 'field_69bc42bbda6de',
+			'label' => 'Tag(s)',
+			'name' => 'tag',
+			'aria-label' => '',
+			'type' => 'taxonomy',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => 'field_6787fd9a84d06',
+						'operator' => '==',
+						'value' => 'filtered-tags',
+					),
+				),
+			),
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'taxonomy' => 'post_tag',
+			'add_term' => 1,
+			'save_terms' => 0,
+			'load_terms' => 0,
+			'return_format' => 'id',
+			'field_type' => 'multi_select',
+			'allow_null' => 0,
+			'acfe_bidirectional' => array(
+				'acfe_bidirectional_enabled' => '0',
+			),
+			'allow_in_bindings' => 1,
+			'bidirectional' => 0,
+			'multiple' => 0,
+			'bidirectional_target' => array(
+			),
+		),
 	),
 	'location' => array(
 		array(
@@ -271,14 +314,14 @@ acf_add_local_field_group(array(
 	'active' => false,
 	'description' => '',
 	'show_in_rest' => 0,
-	'acfe_display_title' => '',
+	'display_title' => '',
 	'acfe_autosync' => array(
 		0 => 'php',
 	),
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1740598868,
+	'modified' => 1773945584,
 ));
 
 endif;
