@@ -1973,6 +1973,13 @@ acf_add_local_field_group(array(
 				'value' => 'area',
 			),
 		),
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'course',
+			),
+		),
 	),
 	'menu_order' => 0,
 	'position' => 'normal',
@@ -1987,13 +1994,15 @@ acf_add_local_field_group(array(
 	'description' => '',
 	'show_in_rest' => 0,
 	'display_title' => '',
+	'allow_ai_access' => false,
+	'ai_description' => '',
 	'acfe_autosync' => array(
 		0 => 'php',
 	),
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1769451222,
+	'modified' => 1775662289,
 ));
 
 endif;
