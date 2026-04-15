@@ -10,7 +10,7 @@ $content = get_sub_field( 'content' );
 if ( !empty( $photo ) ) {
 	?>
 <div class="hero-photo<?php print ( $add_content ? ' with-content' : '' ) ?>" style="background-image: url(<?php print $photo ?>);">
-	<img src="<?php print $photo ?>" class="hero-photo" />
+	<img src="<?php print $photo['url'] ?>" alt="<?php print $photo['alt'] ?>" class="hero-photo" />
 	<?php if ( $add_content ) { ?>
 	<div class="hero-content-container">
 		<div class="hero-content">

@@ -7,7 +7,7 @@ if ( !empty( $icon ) && !empty( $content ) ) :
     ?>
     <div class="icon-container">
         <div class="icon">
-            <img src="<?php print $icon ?>" />
+            <img src="<?php print $icon['url']; ?>" alt="<?php print $icon['alt']; ?>" />
         </div>
         <div class="icon-content">
             <?php print $content ?>

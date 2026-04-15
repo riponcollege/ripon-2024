@@ -30,7 +30,7 @@ if ( !empty( $feed ) ) : ?>
                         Your browser does not support the video tag.
                     </video>
                 <?php else: ?>
-                    <img src="<?php print $insta_post->mediaUrl ?>">
+                    <img src="<?php print $insta_post->mediaUrl ?>" alt="<?php print wp_trim_words( $insta_post->caption, 50 ) ?>">
                 <?php endif; ?>
                 </div>
                 <div class="insta-post-caption">
