@@ -21,7 +21,7 @@ acf_add_local_field_group(array(
 				'id' => '',
 			),
 			'uploader' => '',
-			'return_format' => 'url',
+			'return_format' => 'array',
 			'library' => 'all',
 			'acfe_thumbnail' => 0,
 			'min_width' => '',
@@ -31,6 +31,7 @@ acf_add_local_field_group(array(
 			'max_height' => '',
 			'max_size' => '',
 			'mime_types' => '',
+			'allow_in_bindings' => 1,
 			'preview_size' => 'medium',
 		),
 		array(
@@ -124,6 +125,8 @@ acf_add_local_field_group(array(
 			'placeholder' => '',
 			'allow_custom' => 0,
 			'search_placeholder' => '',
+			'create_options' => 0,
+			'save_options' => 0,
 		),
 		array(
 			'key' => 'field_677e9f10e1521',
@@ -165,14 +168,16 @@ acf_add_local_field_group(array(
 	'active' => false,
 	'description' => '',
 	'show_in_rest' => 0,
-	'acfe_display_title' => '',
+	'display_title' => '',
+	'allow_ai_access' => false,
+	'ai_description' => '',
 	'acfe_autosync' => array(
 		0 => 'php',
 	),
 	'acfe_form' => 0,
 	'acfe_meta' => '',
 	'acfe_note' => '',
-	'modified' => 1736351588,
+	'modified' => 1777584573,
 ));
 
 endif;

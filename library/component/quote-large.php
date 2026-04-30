@@ -14,7 +14,7 @@ if ( !empty( $photo ) && !empty( 'content' ) && !empty( $citation ) ) {
     <div class="wrap">
         <div class="quote-large">
             <div class="quote-photo">
-                <img src="<?php print $photo; ?>" />
+                <img src="<?php print $photo['url'] ?>" alt="<?php print $photo['alt'] ?>" />
             </div>
             <div class="quote-content">
                 <div class="quote-content-inner<?php print ( $hide_quotes ? ' no-quotes' : '' ) ?>">
