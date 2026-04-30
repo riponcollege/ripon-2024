@@ -41,7 +41,7 @@
 </head>
 <body <?php body_class(); ?>>
 <div class="container">
-
+<a href="#main-content" class="skip-to-content" tabindex="0">Skip to Main Content</a>
 <?php if ( !isset( $_REQUEST['notemplate'] ) ) : ?>
 <header>
 	<div class="wrap">
@@ -54,10 +54,7 @@
 
 		<div class="header-inner">
 			<nav class="main">
-				<?php 
-				//wp_nav_menu( array( 'theme_location' => 'header-main', 'menu_class' => 'nav-menu main' ) ); 
-				main_menu();
-				?>
+				<?php main_menu(); ?>
 			</nav>
 
 			<div class="search">
@@ -73,5 +70,5 @@
 </header>
 <?php endif; ?>
 
-<section class="content">
+<section class="content" id="main-content">
 	<a name="content"></a>

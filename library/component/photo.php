@@ -10,7 +10,7 @@ if ( !empty( $photo ) ) {
 	?>
 <div class="photo">
 	<?php if ( !empty( $link ) ) { ?><a href="<?php print $link; ?>"><?php } ?>
-	<img src="<?php print $photo ?>" class='rounded' />
+	<img src="<?php print $photo['url'] ?>" alt="<?php print $photo['alt'] ?>" class='rounded' />
 	<?php if ( !empty( $link ) ) { ?></a"><?php } ?>
 </div>
 	<?php
