@@ -53,8 +53,8 @@ $admin_email = get_option( 'admin_email' );
 					</div>
 					<div class="column brand">
 						<div class="sub-column">	
-							<a href="/175-celebration/"><img src="<?php bloginfo( 'template_url') ?>/img/logo-175.svg" class="footer-logo" class="Ripon 175th Logo"></a><br>
-							<img src="<?php bloginfo( 'template_url' ); ?>/img/logo-black.svg" class="footer-logo" alt="Ripon Logo" />
+							<a href="/175-celebration/" title="Visit 175th Celebration"><img src="<?php bloginfo( 'template_url') ?>/img/logo-175.svg" class="footer-logo" alt="Ripon 175th Logo"></a><br>
+							<a href="/" title="Visit Homepage"><img src="<?php bloginfo( 'template_url' ); ?>/img/logo-black.svg" class="footer-logo" alt="Ripon Logo" /></a>
 						</div>
 						<div class="sub-column">
 							<?php print get_field( 'address', 'option' ) ?>
