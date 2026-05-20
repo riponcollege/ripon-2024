@@ -68,7 +68,7 @@ if ( !empty( $people_category ) ) :
         <div class="person-entry visible">
             <div class="person-photo">
                 <?php 
-                print '<img src="' . get_the_post_thumbnail_url() . '">'; 
+                print '<img src="' . get_the_post_thumbnail_url() . '" alt="Photo of ' . $person_name . '">'; 
                 ?>
             </div>
             <div class="person-info">

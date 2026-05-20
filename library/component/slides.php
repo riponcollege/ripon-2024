@@ -27,7 +27,7 @@
             <div class="slide-content">
                 <?php  if ( !empty( $title ) ) : ?><h1 class="slide-title"><?php print $title; ?></h1><?php endif; ?>
                 <?php if ( !empty( $label ) ) : ?>
-                    <a href="<?php print ( !empty( $link ) ? $link : '#' ); ?>" class="btn white"><?php print $label; ?></a>
+                    <a href="<?php print ( !empty( $link ) ? $link : '#' ); ?>" class="btn white" title="Link: <?php print $title; ?>"><?php print $label; ?></a>
                 <?php endif; ?>
             </div>
         </div>

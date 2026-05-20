@@ -18,7 +18,7 @@ $color = get_sub_field( 'color' );
             ?>
             <div class="stat">
                 <div class="stat-icon">
-                    <img src="<?php print $icon; ?>" />
+                    <img src="<?php print $icon['url']; ?>" alt="<?php print $icon['alt']; ?>" />
                 </div>
                 <h3><?php print $stat_number ?></h3>
                 <p class="subtitle"><?php print $subtitle ?></p>
