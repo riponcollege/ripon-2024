@@ -71,4 +71,3 @@
 <?php endif; ?>
 
 <section class="content" id="main-content">
-	<a name="content"></a>
