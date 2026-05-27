@@ -62,7 +62,7 @@
 			</div>
 
 			<a class="menu-toggle">
-				<img src="<?php bloginfo( 'template_url' ) ?>/img/icon/menu-white.svg" class="mobile-only" />
+				<img src="<?php bloginfo( 'template_url' ) ?>/img/icon/menu-white.svg" class="mobile-only" alt="Show/hide menu." />
 			</a>
 
 		</div>
