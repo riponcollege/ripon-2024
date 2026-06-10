@@ -1,6 +1,8 @@
 <?php
     
 $large_title = get_sub_field( 'quick-links-title' );
+$title_element = get_sub_field( 'title_element' );
+$title_element = ( empty( $title_element ) ? 'h2' : $title_element );
 $padding = get_sub_field( 'padding' );
 $color = get_sub_field( 'color' );
 
@@ -9,7 +11,7 @@ if ( have_rows('rows') ):
 <div class="quick-links-container <?php print $color; ?>">
     <div class="wrap">
         <div class="quick-links <?php print $padding ?>">
-        <?php if ( !empty( $large_title ) ) { ?><div class="quick-links-title"><h2><?php print $large_title ?></h2></div><?php } ?>
+        <?php if ( !empty( $large_title ) ) { ?><div class="quick-links-title"><?php print '<' . $title_element . '>' . $large_title . '</' . $title_element . '>'; ?></div><?php } ?>
     <?php
     // loop through the rows of data
     $num = 1;
