@@ -16,7 +16,7 @@ $side = get_sub_field( 'side' );
     <div class="timeline-line"></div>
     <div class="timeline-inner">
         <div class="timeline-photo">
-            <?php if ( !empty( $photo ) ) : ?>
+            <?php if ( !empty( $photo['url'] ) ) : ?>
             <img src="<?php print $photo['url'] ?>" class="rounded" alt="<?php print $photo['alt']; ?>" />
             <?php endif; ?>
         </div>
