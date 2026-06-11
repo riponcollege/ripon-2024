@@ -202,7 +202,7 @@ acf_add_local_field_group(array(
 				'id' => '',
 			),
 			'uploader' => '',
-			'return_format' => 'url',
+			'return_format' => 'array',
 			'library' => 'all',
 			'acfe_thumbnail' => 0,
 			'min_width' => '',
@@ -256,13 +256,14 @@ acf_add_local_field_group(array(
 	'description' => '',
 	'show_in_rest' => 0,
 	'display_title' => '',
-	'acfe_autosync' => array(
-		0 => 'php',
+	'allow_ai_access' => false,
+	'ai_description' => '',
+	'acfe' => array(
+		'autosync' => array(
+			0 => 'php',
+		),
 	),
-	'acfe_form' => 0,
-	'acfe_meta' => '',
-	'acfe_note' => '',
-	'modified' => 1765387032,
+	'modified' => 1781219103,
 ));
 
 endif;
