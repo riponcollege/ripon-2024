@@ -15,11 +15,12 @@ if ( have_rows( 'card' ) ) : ?>
             <?php
             while ( have_rows( 'card' ) ) : the_row();
                 $cutout = get_sub_field( 'cutout' );
+                print_r( $cutout );
                 ?>
-            <div class="card<?php print ( !empty( $cutout ) ? ' with-cutout' : '' ) ?>">
-                <?php if ( !empty( $cutout ) ) { ?>
+            <div class="card<?php print ( !empty( $cutout['url'] ) ? ' with-cutout' : '' ) ?>">
+                <?php if ( !empty( $cutout['url'] ) ) { ?>
                 <div class="card-cutout">
-                    <img src="<?php print $cutout ?>" />
+                    <img src="<?php print $cutout['url'] ?>" alt="<?php print $cutout['alt'] ?>" />
                 </div>
                 <?php } ?>
                 <div class="card-content">
