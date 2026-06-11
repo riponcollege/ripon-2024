@@ -10,7 +10,6 @@ $photo = get_sub_field( 'photo' );
 $style = get_sub_field( 'style' );
 $side = get_sub_field( 'side' );
 
-
 ?>
 <div class="timeline <?php print $style ?> <?php print $side ?> <?php print ( $background == 'photo' ? 'fore-' . $foreground_color : '' ); ?> <?php print $background; ?>" <?php print ( $background == 'photo' ? 'style="background-image: url(' . $background_image . ')"' : '' ); ?>>
     <div class="timeline-line"></div>
