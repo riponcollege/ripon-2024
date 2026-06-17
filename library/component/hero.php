@@ -9,7 +9,7 @@ $content = get_sub_field( 'content' );
 // if it's not empty, lets output it
 if ( !empty( $photo ) ) {
 	?>
-<div class="hero-photo<?php print ( $add_content ? ' with-content' : '' ) ?>" style="background-image: url(<?php print $photo ?>);">
+<div class="hero-photo<?php print ( $add_content ? ' with-content' : '' ) ?>" style="background-image: url(<?php print $photo['url'] ?>);">
 	<img src="<?php print $photo['url'] ?>" alt="<?php print $photo['alt'] ?>" class="hero-photo" />
 	<?php if ( $add_content ) { ?>
 	<div class="hero-content-container">

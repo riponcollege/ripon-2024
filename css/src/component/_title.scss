@@ -1,10 +1,13 @@
-
-
 .title-container {
     background: $red;
-    h1 { 
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        @include large-title;
         color: white;
-
+        text-transform: uppercase;
         span {
             display: block;
             font-size: 16px;
@@ -13,129 +16,114 @@
             opacity: .5;
         }
     }
-    h2, h3 { color: rgba( white, .7 ); }
-
-    &.large, &.large-menu {
+    &.large,
+    &.large-menu {
         .title {
             @include padding-tall;
         }
     }
-
     &.tan {
         background: $tan;
-        h1 { color: $blue; }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            color: $blue;
+        }
     }
-
     &.columns {
-        @include respond-to( $bp-xl ) {
+        @include respond-to( $bp-xl) {
             .title {
                 display: flex;
                 align-items: center;
-
-                h1, .section-nav {
+                h1,
+                .section-nav {
                     flex: 1;
                 }
-
                 h1 {
                     flex-basis: 35%;
                     padding-right: 3%;
                 }
-
                 .section-nav {
                     margin-top: 0;
                     flex-basis: 65%;
-
                     ul li {
-                        flex:  0 0 47%;
+                        flex: 0 0 47%;
                         margin-right: 3%;
-                    }               
+                    }
                 }
             }
         }
     }
-
     &.count-1 {
-        @include respond-to( $bp-m ) {
+        @include respond-to( $bp-m) {
             .title .section-nav ul {
                 display: block;
             }
         }
-
-        @include respond-to( $bp-xl ) {
+        @include respond-to( $bp-xl) {
             .title {
-                h1, .section-nav {
+                h1,
+                .section-nav {
                     flex: 1;
                 }
-
                 h1 {
                     flex-basis: 65%;
                     padding-right: 3%;
                 }
-
                 .section-nav {
                     margin-top: 0;
                     flex-basis: 35%;
-
                     ul {
                         display: block;
-                        
                         li {
                             margin-right: 0;
                         }
-                    }               
+                    }
                 }
             }
         }
     }
-
     .title {
         @include padding;
-
         .section-nav {
-            border-top: 1px solid rgba( white, .3 );
+            border-top: 1px solid rgba( white, .3);
             margin-top: 10px;
-
-            @include respond-to( $bp-m ) {
+            @include respond-to( $bp-m) {
                 border-top: none;
                 margin-top: 15px;
             }
-
             ul {
-                @include respond-to( $bp-m ) {
+                @include respond-to( $bp-m) {
                     display: flex;
                     flex-wrap: wrap;
                     margin-right: -3%;
                 }
-
                 li {
-                    @include respond-to( $bp-m ) {
-                        flex:  0 0 47%;
+                    @include respond-to( $bp-m) {
+                        flex: 0 0 47%;
                         margin-right: 3%;
                     }
-
-                    @include respond-to( $bp-l ) {
-                        flex:  0 0 30%;
+                    @include respond-to( $bp-l) {
+                        flex: 0 0 30%;
                         margin-right: 3.3333%;
                     }
-
                     a {
                         @include font-termina;
                         display: block;
                         color: white;
                         padding: 10px 0;
-                        border-bottom: 1px solid rgba( white, .5 );
+                        border-bottom: 1px solid rgba( white, .5);
                         font-size: .85em;
                         position: relative;
                         transition: all 200ms ease-in-out;
-
-                        @include respond-to( $bp-m ) {
+                        @include respond-to( $bp-m) {
                             padding: 15px 0;
                         }
-
-                        @include respond-to( $bp-l ) {
+                        @include respond-to( $bp-l) {
                             padding: 20px 0;
                         }
-
                         &:after {
                             position: absolute;
                             right: 15px;
@@ -148,10 +136,8 @@
                             font-size: 19px;
                             transition: all 200ms ease-in-out;
                         }
-
                         &:hover {
-                            border-bottom: 1px solid rgba( black, .5 );
-                        
+                            border-bottom: 1px solid rgba( black, .5);
                             &:after {
                                 right: 0;
                             }
