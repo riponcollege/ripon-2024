@@ -2,9 +2,10 @@
 
 load_section_title();
 $color = get_sub_field( 'color' );
+$padding = get_sub_field( 'padding' );
 
 ?>
-<div class="stats-container <?php print $color; ?>">
+<div class="stats-container <?php print $color; ?> <?php print $padding; ?>">
     <?php
     if ( have_rows('statistics') ):  ?>
         <div class="statistics"><?php

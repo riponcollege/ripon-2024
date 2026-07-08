@@ -27,7 +27,7 @@ if ( have_rows('rows') ):
             <div class="row <?php print ( is_int( $num / 2 ) ? 'even' : 'odd' ); ?>">
                 <div class="column photo" style="background-image: url(<?php print $photo ?>);">&nbsp;</div>
                 <div class="column content">
-                    <h4><?php print $title ?></h4>
+                    <h3><?php print $title ?></h3>
                     <p><?php print $content ?></p>
                     <p><span class="cta"><?php print $link_text ?> &xrarr;</span></p>
                 </div>

@@ -132,6 +132,40 @@ acf_add_local_field_group(array(
 				),
 			),
 		),
+		array(
+			'key' => 'field_6a32ee0bb95c9',
+			'label' => 'Padding',
+			'name' => 'padding',
+			'aria-label' => '',
+			'type' => 'select',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'pad-normal' => 'Normal',
+				'pad-tall' => 'Tall',
+				'pad-no-top' => 'No Top Padding',
+				'pad-botton-top' => 'No Bottom Padding',
+				'pad-side' => 'Side Padding Only',
+			),
+			'default_value' => 'pad-normal',
+			'return_format' => 'value',
+			'multiple' => 0,
+			'allow_null' => 0,
+			'allow_in_bindings' => 0,
+			'ui' => 0,
+			'ajax' => 0,
+			'placeholder' => '',
+			'create_options' => 0,
+			'save_options' => 0,
+			'allow_custom' => 0,
+			'search_placeholder' => '',
+		),
 	),
 	'location' => array(
 		array(
@@ -154,13 +188,12 @@ acf_add_local_field_group(array(
 	'display_title' => '',
 	'allow_ai_access' => false,
 	'ai_description' => '',
-	'acfe_autosync' => array(
-		0 => 'php',
+	'acfe' => array(
+		'autosync' => array(
+			0 => 'php',
+		),
 	),
-	'acfe_form' => 0,
-	'acfe_meta' => '',
-	'acfe_note' => '',
-	'modified' => 1779301260,
+	'modified' => 1781722770,
 ));
 
 endif;
