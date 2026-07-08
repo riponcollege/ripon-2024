@@ -1,39 +1,38 @@
-
-
 .stats-container {
     @include padding;
-
     &.tan {
         background: $tan;
     }
-    
+    &.padding-tall {
+        @include padding-tall;
+    }
+    &.pad-sides {
+        @include padding-side( 0, 0);
+    }
+    &.pad-no-bottom {
+        @include padding-no-bottom;
+    }
     .statistics {
         padding-top: 30px;
-        
-        @include respond-to( $bp-m ) {
+        @include respond-to( $bp-m) {
             display: flex;
-
             .stat {
                 flex: 1;
                 padding: 20px;
             }
         }
-
         .stat {
             text-align: center;
-
             .stat-icon {
                 max-width: 150px;
                 padding: 30px;
                 margin: 0 auto;
                 border-radius: 50%;
                 background: $tan;
-
                 img {
                     display: block;
                 }
             }
-
             h3 {
                 padding-top: 20px;
                 @include font-termina-bold;
@@ -42,16 +41,13 @@
                 line-height: 1em;
                 color: $blue;
                 text-decoration: none;
-            
                 span {
                     opacity: .7;
                 }
-            
-                @include respond-to( $bp-m ) {
+                @include respond-to( $bp-m) {
                     font-size: 2em;
                 }
             }
         }
     }
 }
-

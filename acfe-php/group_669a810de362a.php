@@ -149,7 +149,6 @@ acf_add_local_field_group(array(
 			'choices' => array(
 				'pad-normal' => 'Normal',
 				'pad-tall' => 'Tall',
-				'pad-no-top' => 'No Top Padding',
 				'pad-botton-top' => 'No Bottom Padding',
 				'pad-side' => 'Side Padding Only',
 			),
@@ -193,7 +192,7 @@ acf_add_local_field_group(array(
 			0 => 'php',
 		),
 	),
-	'modified' => 1781722770,
+	'modified' => 1783531756,
 ));
 
 endif;
