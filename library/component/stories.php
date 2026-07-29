@@ -1,13 +1,15 @@
 <?php
 
 $title = get_sub_field( 'title' );
+$title_element = get_sub_field( 'title_element' );
+$title_element = ( empty( $title_element ) ? 'h2' : $title_element );
 $intro = get_sub_field( 'intro' );
 $color = get_sub_field( 'color' );
 
 ?>
 <div class="stories-container <?php print $color ?>">
     <div class="stories-intro">
-        <h2><?php print $title ?></h2>
+		<?php print '<' . $title_element . '>' . $title . '</' . $title_element . '>'; ?>
         <?php print $intro; ?>
         <div class="nav-prev disable"></div>
         <div class="nav-next"></div>

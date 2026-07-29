@@ -5,8 +5,6 @@ $color = get_sub_field( 'color' );
 $category = get_sub_field( 'area_category' );
 $specific = get_sub_field( 'area_specific' );
 
-
-
 if ( ( $type == 'curated' && !empty( $specific ) ) || ( $type == 'filtered' && !empty( $category ) ) ) : 
     ?>
 <div class="areas-container <?php print $color; ?> <?php print $padding ?>">

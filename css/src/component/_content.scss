@@ -1,42 +1,35 @@
-
-
 .content-area {
     padding: 12px 0;
 }
-
 
 .content-one {
     @extend .content-style;
     @include padding;
     background: white;
     color: black;
-
-    &.pad-none { 
+    &.pad-none {
         padding: 0 !important;
     }
-
     &.pad-side {
-        @include padding-side( 0, 0 );
+        @include padding-side( 0, 0);
     }
-
     &.pad-tall {
         @include padding-tall;
     }
-
     &.pad-no-bottom {
         @include padding-no-bottom;
     }
-
+    &.pad-no-top {
+        @include padding-no-top;
+    }
     &.red {
         @extend .white-links;
         background: $red;
         color: white;
     }
-
     &.tan {
         background: $tan;
     }
-
     &.narrow {
         .content-one-inner {
             max-width: $bp-l;
@@ -45,118 +38,95 @@
     }
 }
 
-
 .content-two-container {
     background: white;
     color: black;
     @include padding;
-
-    &.pad-none { 
+    &.pad-none {
         padding: 0 !important;
     }
-
     &.pad-tall {
         @include padding-tall;
     }
-
     &.pad-side {
-        @include padding-side( 0, 0 );
+        @include padding-side( 0, 0);
     }
-
     &.red {
         @extend .white-links;
         background: $red;
         color: white;
     }
-
     &.tan {
         background: $tan;
     }
-
     .content-two {
         @extend .content-style;
-
         &.vcenter {
             align-items: center;
         }
-
         .column {
             padding: 15px 0;
-
-            @include respond-to( $bp-m ) {
+            @include respond-to( $bp-m) {
                 padding: 0;
             }
         }
-
         &.border {
             .column {
-                border: 1px solid rgba( black, .4 );
+                border: 1px solid rgba( black, .4);
                 border-radius: 6px;
                 padding: 25px;
                 margin-bottom: 10px;
             }
         }
-
-        @include respond-to( $bp-m ) {
+        @include respond-to( $bp-m) {
             display: flex;
-
             .column {
                 flex: 1;
             }
-
             &.reverse {
                 flex-direction: row-reverse;
-
                 &.equal .column.one {
                     margin-right: 0;
                     margin-left: 10%;
                 }
             }
-
             &.equal {
                 .column.one {
                     margin-right: 9%;
                 }
             }
-
             &.narrow {
                 max-width: 1220px;
                 margin: 0 auto;
             }
-
             &.right {
                 .column {
                     &:first-child {
                         flex-basis: 28%;
                         margin-right: 9%;
                     }
-
                     &:nth-child(2) {
                         flex-basis: 62%;
                     }
                 }
             }
-
             &.left {
                 .column {
                     &:first-child {
                         flex-basis: 62%;
                         margin-right: 9%;
                     }
-
                     &:nth-child(2) {
                         flex-basis: 28%;
                     }
                 }
             }
-
             &.border {
                 .column {
                     &:first-child {
                         margin-right: 5%;
                     }
-
-                    @include respond-to( $bp-l ) {
+                    @include respond-to( $bp-l) {
                         padding: 35px;
                     }
                 }
@@ -165,71 +135,56 @@
     }
 }
 
-
 .content-three-container {
     @include padding;
     background: white;
-
-    &.pad-none { 
+    &.pad-none {
         padding: 0 !important;
     }
-
     &.pad-tall {
         @include padding-tall;
     }
-
     &.pad-side {
-        @include padding-side( 0, 0 );
+        @include padding-side( 0, 0);
     }
-
     &.red {
         @extend .white-links;
         background: $red;
         color: white;
     }
-
     &.tan {
         background: $tan;
     }
-
     .content-three {
         @extend .content-style;
-
-        @include respond-to( $bp-xl ) {
+        @include respond-to( $bp-xl) {
             display: flex;
         }
-
         &.red {
             background: $red;
             color: white;
         }
-
         .column {
             margin-bottom: 10px;
-
-            @include respond-to( $bp-xl ) {
+            @include respond-to( $bp-xl) {
                 flex: 1;
                 flex-basis: 28.3333%;
                 margin-right: 5%;
-
                 &:last-child {
                     margin-right: 0;
                 }
             }
         }
-
         &.border {
             .column {
-                border: 1px solid rgba( black, .4 );
+                border: 1px solid rgba( black, .4);
                 border-radius: 6px;
                 padding: 25px;
-
-                @include respond-to( $bp-xl ) {
+                @include respond-to( $bp-xl) {
                     flex: 1;
                     flex-basis: 30.3333%;
                     margin-right: 3%;
                     padding: 35px;
-
                     &:last-child {
                         margin-right: 0;
                     }
@@ -238,6 +193,3 @@
         }
     }
 }
-
-
-
