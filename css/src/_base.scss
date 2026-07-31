@@ -1,201 +1,207 @@
-
-
 body {
-	@include font;
-	margin: 0;
-	color: $grey-dark;
-	background: white;
-
-	font-size: 14px;
-	line-height: 100%;
-
-	@include respond-to( $bp-m ) {
-		font-size: 16px;
-		line-height: 100%;
-	}
+    @include font;
+    margin: 0;
+    color: $grey-dark;
+    background: white;
+    font-size: 14px;
+    line-height: 100%;
+    @include respond-to( $bp-m) {
+        font-size: 16px;
+        line-height: 100%;
+    }
 }
 
-h1, h2, h3, h4, h5, h6, p {
-	@include font;
-	line-height: 1.5em;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    @include font;
+    line-height: 1.5em;
 }
 
-h1, h2, h3, h4 {
-	@include font-termina-bold;
-	line-height: 1.3em;
-	text-transform: uppercase;
+h1,
+h2,
+h3,
+h4 {
+    @include font-termina-bold;
+    line-height: 1.3em;
+    text-transform: uppercase;
 }
 
-h5, h6 {
-	@include font-bold;
+h5,
+h6 {
+    @include font-bold;
 }
 
 @mixin large-title {
-	font-size: 2em;
-	line-height: 1em;
-	color: $blue;
-
-	span {
-		opacity: .7;
-	}
-
-	@include respond-to( $bp-m ) {
-		font-size: 2.6em;
-	}
-
-	@include respond-to( $bp-xl ) {
-		font-size: 2.9em;
-	}
+    font-size: 2em;
+    line-height: 1em;
+    color: $blue;
+    span {
+        opacity: .7;
+    }
+    @include respond-to( $bp-m) {
+        font-size: 2.6em;
+    }
+    @include respond-to( $bp-xl) {
+        font-size: 2.9em;
+    }
 }
 
-h1 {
-	@include large-title;
+h1,
+.h1 {
+    @include large-title;
+    @include font-termina-bold;
+    color: black;
+    text-transform: uppercase;
 }
 
-h2 {
-	font-size: 1.8em;
-
-	@include respond-to( $bp-m ) {
-		font-size: 2.1em;
-	}
+h2,
+.h2 {
+    font-size: 1.8em;
+    @include respond-to( $bp-m) {
+        font-size: 2.1em;
+    }
+    color: #233f6c;
 }
 
-h3 {
-	font-size: 1.6em;
-	text-transform: none;
-	@include font-termina-demi;
-
-	@include respond-to( $bp-m ) {
-		font-size: 1.8em;
-	}
+.h2 {
+    @include font-termina-bold;
+    color: #233f6c;
+    text-transform: uppercase;
 }
 
-h4 {
-	font-size: 1.4em;
-	@include font-termina-demi;
-	text-transform: none;
-
-	@include respond-to( $bp-m ) {
-		font-size: 1.45em;
-	}
-
-	@include respond-to( $bp-l ) {
-		font-size: 1.5em;
-	}
+h3,
+.h3 {
+    font-size: 1.6em;
+    text-transform: none;
+    @include font-termina-demi;
+    @include respond-to( $bp-m) {
+        font-size: 1.8em;
+    }
 }
 
-h5 {
-	font-size: 1.3em;
+h4,
+.h4 {
+    font-size: 1.4em;
+    @include font-termina-demi;
+    text-transform: none;
+    @include respond-to( $bp-m) {
+        font-size: 1.45em;
+    }
+    @include respond-to( $bp-l) {
+        font-size: 1.5em;
+    }
+}
+
+h5,
+.h5 {
+    font-size: 1.3em;
+    font-weight: 700;
 }
 
 p {
-	padding: 8px 0;
-
-	@include respond-to( $bp-m ) {
-		padding: 12px 0;
-	}
+    padding: 8px 0;
+    @include respond-to( $bp-m) {
+        padding: 12px 0;
+    }
 }
 
 strong {
-	font-weight: bold;
+    font-weight: bold;
 }
 
-em, i {
-	font-style: italic;
+em,
+i {
+    font-style: italic;
 }
 
 a {
-	@include font-semi;
-	color: black;
-	text-decoration: none;
-
-	&:hover {
-		border-bottom: 1px solid black;
-	}
+    @include font-semi;
+    color: black;
+    text-decoration: none;
+    &:hover {
+        border-bottom: 1px solid black;
+    }
 }
 
-img, .wp-caption {
-	&.alignleft {
-		float: left;
-		margin: 10px 15px 15px 0;
-	}
-
-	&.alignright {
-		float: right;
-		margin: 15px 0 15px 15px;
-	}
-
-	&.aligncenter {
-		display: block;
-		margin: 0 auto;
-	}
-
-	&.size-thumbnail {
-		max-width: 150px;
-	}
-
-	&.size-medium {
-		max-width: 300px;
-	}
-
-	&.rounded {
-		border-radius: 6px;
-	}
+img,
+.wp-caption {
+    &.alignleft {
+        float: left;
+        margin: 10px 15px 15px 0;
+    }
+    &.alignright {
+        float: right;
+        margin: 15px 0 15px 15px;
+    }
+    &.aligncenter {
+        display: block;
+        margin: 0 auto;
+    }
+    &.size-thumbnail {
+        max-width: 150px;
+    }
+    &.size-medium {
+        max-width: 300px;
+    }
+    &.rounded {
+        border-radius: 6px;
+    }
 }
 
-code, pre {
-	font-family: monospace;
-	background-color: #eee;
-	padding: 5px 10px;
-	font-size: 1.1em;
-	line-height: 1.4em;
+code,
+pre {
+    font-family: monospace;
+    background-color: #eee;
+    padding: 5px 10px;
+    font-size: 1.1em;
+    line-height: 1.4em;
 }
 
 pre {
-	max-width: 100%;
-	overflow: auto;
-	margin: 15px 0;
-	font-size: 1em;
-	min-height: 35px;
+    max-width: 100%;
+    overflow: auto;
+    margin: 15px 0;
+    font-size: 1em;
+    min-height: 35px;
 }
 
 .text-center {
-	text-align: center;
+    text-align: center;
 }
 
 .text-right {
-	text-align: right;
+    text-align: right;
 }
 
 .paginate {
-	border-top: 1px solid lighten( $grey, 30% );
-	padding: 15px 0;
-	text-align: center;
-	font-size: 15px;
-	line-height: 15px;
-	background: lighten( $grey, 35% );
-	@include font;
-
-	@include respond-to( $bp-m ) {
-		padding: 40px 0;
-	}
-
-	a {
-		padding: 7px 12px;
-		background: $grey;
-		color: white;
-		text-decoration: none;
-		display: inline-block;
-
-		&:hover {
-			background: lighten( $grey, 5% );
-		}
-	}
-
-	.current {
-		padding: 7px 12px;
-		display: inline-block;
-		background: lighten( $grey, 5% );
-	}
+    border-top: 1px solid lighten( $grey, 30%);
+    padding: 15px 0;
+    text-align: center;
+    font-size: 15px;
+    line-height: 15px;
+    background: lighten( $grey, 35%);
+    @include font;
+    @include respond-to( $bp-m) {
+        padding: 40px 0;
+    }
+    a {
+        padding: 7px 12px;
+        background: $grey;
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+        &:hover {
+            background: lighten( $grey, 5%);
+        }
+    }
+    .current {
+        padding: 7px 12px;
+        display: inline-block;
+        background: lighten( $grey, 5%);
+    }
 }
-

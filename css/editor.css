@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://use.typekit.net/yuw5jit.css");
+h1,
+.h1 {
+    font-family: "termina", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: black;
+    text-transform: uppercase;
+    padding: 0;
+    margin-bottom: 20px;
+    font-size: 45px;
+    line-height: 45px;
+}
+
+h2,
+.h2 {
+    font-family: "termina", sans-serif;
+    font-weight: 700;
+    font-size: 2.1em;
+    color: #233f6c;
+    text-transform: uppercase;
+}
+
+h3,
+.h3 {
+    font-family: "termina", sans-serif;
+    font-weight: 600;
+    font-size: 1.7em;
+    text-transform: none;
+    font-style: normal;
+}
+
+h4,
+.h4 {
+    font-family: "termina", sans-serif;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+h5,
+.h5 {
+    font-family: Montserrat, sans-serif;
+    font-size: 1.3em;
+    font-weight: 700;
+}
+
+p {
+    font-family: Montserrat, sans-serif;
+    font-size: 1em;
+}
