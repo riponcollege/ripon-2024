@@ -2,7 +2,7 @@
 
 $current_yr = ( isset( $_REQUEST['y'] ) ? $_REQUEST['y'] : 0 );
 $current_cat = ( isset( $_REQUEST['c'] ) ? $_REQUEST['c'] : 0 );
-$current_search = ( isset( $_REQUEST['t'] ) ? $_REQUEST['t'] : '' );
+$current_search = htmlspecialchars( ( isset( $_REQUEST['t'] ) ? $_REQUEST['t'] : '' ) );
 
 
 $meta_query = array();
