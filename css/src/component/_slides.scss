@@ -100,9 +100,9 @@
                 }
                 img.slide-logo {
                     margin-bottom: 20px;
-                    max-width: 800px;
                     max-height: 200px;
                     display: block;
+                    max-width: 100%;
                 }
                 h1 {
                     @include font-termina-bold;
