@@ -14,6 +14,8 @@
         $link = get_sub_field( 'link' );
         $image = get_sub_field( 'background' );
         $label = get_sub_field( 'label' );
+        $style = get_sub_field( 'style' );
+        $logo = get_sub_field( 'logo' );
 
         if ( !empty( $image ) ) :
             ?>
@@ -25,10 +27,13 @@
 
             <div class="slide-overlay"></div>
             <div class="slide-content">
-                <?php  if ( !empty( $title ) ) : ?><h1 class="slide-title"><?php print $title; ?></h1><?php endif; ?>
-                <?php if ( !empty( $label ) ) : ?>
-                    <a href="<?php print ( !empty( $link ) ? $link : '#' ); ?>" class="btn white" title="Link: <?php print $title; ?>"><?php print $label; ?></a>
-                <?php endif; ?>
+                <?php 
+                if ( !empty( $title ) && $style == 'text' ) : ?><h1 class="slide-title"><?php print $title; ?></h1><?php endif; 
+                if ( !empty( $logo ) && $style == 'logo' ) : ?><img src="<?php print $logo ?>" class="slide-logo" /><?php endif;
+                if ( !empty( $label ) ) : ?>
+                    <a href="<?php print ( !empty( $link ) ? $link : '#' ); ?>" class="btn white" title="Link: <?php print $title; ?>"><?php print $label; ?></a><?php 
+                endif;
+                ?>
             </div>
         </div>
             <?php
