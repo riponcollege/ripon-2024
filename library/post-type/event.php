@@ -162,6 +162,14 @@ function check_events_url() {
 
 	}
 
+	// verify that we have all the parameters we need in the url
+	if ( isset( $url_parts[4] ) ) {
+		
+		// redirect to the defaults we set with parse_events_url function above
+		wp_redirect( '/events/' . $event_cat . '/' . $event_yr . '/' . $event_mo . '/' );
+
+	}
+
 }
 
 
@@ -1202,4 +1210,185 @@ function event_cleanup() {
 
 }
 
+
+function gcal_events_import() {
+    global $wpdb, $events_import_debug;
+
+	$calendars = get_field( 'calendars', 'options' );
+	foreach ( $calendars as $calendar ) {
+		
+		// load up the calendar id
+		$calendarId = $calendar['calid'];
+		//print_r( $calendar ); die;
+
+		// add formatting for log/debug opton
+		if ( $events_import_debug == 'log' ) print "<pre>";
+
+		// only process calendar if it's activated
+		if ( $calendar['active'] ) :
+
+			// Build the request URL
+			$url = "https://www.googleapis.com/calendar/v3/calendars/" . urlencode($calendarId) . "/events" . 
+				"?key=" . GOOGLE_API_KEY .
+				"&maxResults=1000" .
+				"&singleEvents=true" .  // Expands recurring events into individual instances
+				"&orderBy=startTime";   // Orders results chronologically
+
+			// Make the HTTP request
+			$response = file_get_contents($url);
+			$data = json_decode($response, true);
+			//print_r( $data ); die;
+
+			if ( $events_import_debug == 'log' ) print "Calendar '<strong>" . $calendar['calid'] . "</strong>' activated. Processing..\n";
+
+			// Loop through and display events
+			if (isset($data['items'])) {
+				foreach ($data['items'] as $event) {
+
+					$summary = $event['summary'];
+
+					// format some times
+					$start_time = strtotime( ( isset( $event['start']['dateTime'] ) ? $event['start']['dateTime'] : $event['start']['date'] ) );
+					$end_time = strtotime( ( isset( $event['end']['dateTime'] ) ? $event['end']['dateTime'] : $event['end']['date'] ) );
+					$timezone = isset( $event['start']['timeZone'] ) ? $event['start']['timeZone'] : 'America/Chicago';
+
+					if ( !isset( $event['start']['dateTime'] ) ) {
+						$offsetSeconds = 0;
+					} else {
+						$tz = new DateTimeZone( $timezone );
+						$date = new DateTime('now', $tz);
+						$offsetSeconds = $tz->getOffset($date);
+					}
+
+									// get a previous post if it exists.
+					$previous_post = $wpdb->get_results( "SELECT * FROM `wp_postmeta` WHERE `meta_key`='_p_event_external_id' AND `meta_value`='" . $event['id'] . "' LIMIT 1;" );
+
+					// set up an array of the post data
+					$post_data = array(
+						'post_author' => 24,
+						'post_title' => $event['summary'],
+						'post_content' => $event['description'],
+						'post_type' => 'event',
+						'post_status' => 'publish',
+						'comment_status' => 'closed',
+						'ping_status' => 'closed'
+					);
+
+					// if we're creating this event
+					if ( empty( $previous_post ) ) {
+
+						// insert it first
+						$post_id = wp_insert_post( $post_data );
+
+						// and then add the external event id for our new post id
+						add_post_meta( $post_id, '_p_event_external_id', $event['id'] );
+
+						// log output
+						if ( $events_import_debug == 'log' ) print "Add event: <strong>\"" . $event['summary'] . "\"</strong>\n";
+
+					} else {
+
+						// since the post exists already, set the id
+						$post_id = $previous_post[0]->post_id;
+						
+						// also add that post ID to the $post_data array so we can use it to update the post
+						$post_data['ID'] = $post_id;
+
+						// update the post data from the original
+						wp_update_post( $post_data );
+
+						// log output
+						if ( $events_import_debug == 'log' ) print "Update event: <strong>\"" . $event['summary'] . "\"</strong>\n";
+
+					}
+					
+
+					// set update some event details to postmeta (they'll be added if they don't exist)
+					update_post_meta( $post_id, '_p_event_start', date( 'Y-m-d H:i:s', $start_time+$offsetSeconds ) );
+					update_post_meta( $post_id, '_p_event_end', date( 'Y-m-d H:i:s', $end_time+$offsetSeconds ) );
+					update_post_meta( $post_id, '_p_event_website', $event['htmlLink'] );
+					if ( isset( $event['location'] ) ) update_post_meta( $post_id, '_p_event_location', $event['location'] );
+
+
+					// if we have categories to add it to
+					if ( !empty( $calendar['category'] ) ) {
+
+						// loop through the catgories
+						foreach ( $calendar['category'] as $cat ) {
+
+							// check if our category exists.
+							$cat_info = term_exists( $cat->name, 'event_cat' );
+
+							// if the category doesn't exist
+							if ( !$cat_info ) {
+
+								// create the category (returns new category info)
+								$cat_info = wp_insert_term( $cat->name, 'event_cat' );
+								if ( $cat_info ) {
+									if ( $events_import_debug == 'log' ) print " - Create event category: " . $cat->name . "\n";
+								}
+
+							}
+
+							// add our new post to that category
+							if ( wp_set_post_terms( $post_id, $cat_info['term_id'], 'event_cat', 1 ) ) {
+								if ( $events_import_debug == 'log' ) print " - Add event to category: " . $cat->name . "\n";
+							}
+						}
+
+						
+					} // end if have category
+
+
+				}
+			} else {
+				if ( $events_import_debug == 'log' ) print "No events found or error occurred.\n";
+			}
+		
+		else:
+
+			if ( $events_import_debug == 'log' ) print "Calendar '<strong>" . $calendar['calid'] . "</strong>' not activated.\n";
+
+		endif;
+
+		// add formatting for log/debug opton
+		if ( $events_import_debug == 'log' ) print "</pre>";
+
+	}
+}
+
+
+// 1. Create a custom hook and link it to your execution function
+add_action( 'gcal_import_cron_hook', 'gcal_import_cron_exec' );
+
+// 2. Define what the cron job actually does
+function gcal_import_cron_exec() {
+
+	// run the gcal import function
+	gcal_events_import();
+
+    // return a cron log entry
+    error_log( 'gcal import successful' );
+
+}
+
+
+// if our cron job is not scheduled
+if ( !wp_next_scheduled( 'gcal_import_cron_hook' ) ) {
+
+	// scheduled the import cron
+	wp_schedule_event( time(), 'hourly', 'gcal_import_cron_hook' );
+}
+
+
+// hook when we switch themes
+add_action( 'switch_theme', 'clear_gcal_import_cron' );
+
+// clear the gcal import because it's only relevant for the cron
+function clear_gcal_import_cron() {
+    $timestamp = wp_next_scheduled( 'gcal_import_cron_hook' );
+    if ( $timestamp ) {
+        wp_unschedule_event( $timestamp, 'gcal_import_cron_hook' );
+    }
+}
 
