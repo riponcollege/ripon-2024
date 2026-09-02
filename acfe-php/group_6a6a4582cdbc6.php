@@ -163,7 +163,7 @@ Your calendar needs to be publicly available - to do so, visit your calendar in 
 			0 => 'php',
 		),
 	),
-	'modified' => 1787769487,
+	'modified' => 1788375789,
 ));
 
 endif;
