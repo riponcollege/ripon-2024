@@ -6,7 +6,7 @@
     &.padding-tall {
         @include padding-tall;
     }
-    &.pad-sides {
+    &.pad-side {
         @include padding-side( 0, 0);
     }
     &.pad-no-bottom {
