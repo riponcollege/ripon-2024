@@ -21,8 +21,10 @@ if ( have_rows('quotes') ):
                 <div class="quote-bubble">
                     <?php print wpautop( $content ); ?>
                 </div>
-                <h4><?php print $citation ?></h4>
-                <p class="subtitle"><?php print $subtitle ?></p>
+                <div class="quote-citation">
+                    <h4><?php print $citation ?></h4>
+                    <p class="subtitle"><?php print $subtitle ?></p>
+                </div>
             </div>
             <?php
             $num++;

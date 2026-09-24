@@ -1,28 +1,20 @@
-
-
 .quotes-container {
     background: $tan;
-
     &.white {
         background: white;
-
         .quotes .quotes-inner .quote .quote-bubble {
             background: $tan;
-
             &:after {
                 border-left: 50px solid $tan;
             }
         }
     }
-
     .quotes {
         @include padding-tall;
-
         .quotes-title {
             border-top: 1px solid black;
             padding-bottom: 10px;
             padding-top: 30px;
-
             p.supertitle {
                 @include font-semi;
                 font-size: .75em;
@@ -31,30 +23,27 @@
                 border-bottom: 1px solid black;
                 display: inline-block;
             }
-
             h2 {
                 @include large-title;
                 padding: 10px 0 30px;
             }
         }
-        
         .quotes-inner {
-            @include respond-to( $bp-m ) {
+            @include respond-to( $bp-m) {
                 display: flex;
+                align-items: stretch;
             }
-
             .quote {
                 padding-bottom: 25px;
-
-                @include respond-to( $bp-m ) {
+                @include respond-to( $bp-m) {
                     flex: 1;
                     margin-right: 9%;
-
+                    display: flex;
+                    flex-direction: column;
                     &:last-child {
                         margin-right: 0;
                     }
                 }
-
                 .quote-bubble {
                     position: relative;
                     background: white;
@@ -63,15 +52,15 @@
                     padding: 20px;
                     margin-bottom: 35px;
                     margin-top: 50px;
-
-                    @include respond-to( $bp-l ) {
+                    @include respond-to( $bp-l) {
                         padding: 30px 40px;
+                        flex: 1;
+                        display: flex;
+                        align-items: center;
                     }
-
                     p {
                         @include font-semi;
                     }
-
                     &:before {
                         @include font-termina-bold;
                         position: absolute;
@@ -81,7 +70,6 @@
                         top: -25px;
                         left: 0;
                     }
-
                     &:after {
                         position: absolute;
                         content: '';
@@ -93,7 +81,11 @@
                         border-left: 50px solid white;
                     }
                 }
-
+                .quote-citation {
+                    @include respond-to( $bp-l) {
+                        flex: 0 0 15%;
+                    }
+                }
                 h4 {
                     @include font-termina-bold;
                     text-transform: uppercase;
@@ -103,65 +95,51 @@
                     border-right: 1px solid black;
                     font-size: 1.2em;
                 }
-
                 .subtitle {
                     border-top: 1px solid black;
                     font-size: .9em;
                 }
             }
         }
-        
     }
-
 }
-
 
 .quote-large-container {
     &.tan {
         background: $tan;
     }
-
     .quote-large {
         @include padding-tall;
-
-        @include respond-to( $bp-l ) {
+        @include respond-to( $bp-l) {
             display: flex;
             align-items: center;
         }
-
         .quote-photo {
             text-align: center;
-            
             img {
                 border-radius: 6px;
             }
-
-            @include respond-to( $bp-l ) {
+            @include respond-to( $bp-l) {
                 flex: 1;
                 margin-right: 6%;
             }
-
-            @include respond-to( $bp-xl ) {
+            @include respond-to( $bp-xl) {
                 margin-right: 9%;
             }
         }
-
         .quote-content {
-            @include respond-to( $bp-l ) {
+            @include respond-to( $bp-l) {
                 flex: 1;
             }
-
             .quote-content-inner {
                 position: relative;
                 margin-top: 60px;
                 margin-bottom: 20px;
-
                 p {
                     @include font-semi;
                     font-size: 1.1em;
                     line-height: 1.6em;
                 }
-
                 &:before {
                     @include font-termina-bold;
                     position: absolute;
@@ -171,17 +149,13 @@
                     top: -20px;
                     left: 0;
                 }
-
                 &.no-quotes {
                     margin-top: 0;
-
                     &:before {
                         content: '';
                     }
                 }
-
             }
-
             h4 {
                 @include font-termina-bold;
                 text-transform: uppercase;
@@ -191,15 +165,10 @@
                 border-right: 1px solid black;
                 font-size: 1.2em;
             }
-
             .subtitle {
                 border-top: 1px solid black;
                 font-size: .9em;
             }
-
         }
-        
     }
-
 }
-
