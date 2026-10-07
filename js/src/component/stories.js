@@ -1,89 +1,103 @@
-
-
 // tab controls
-jQuery(document).ready(function($){
+jQuery(document).ready(function($) {
 
-	if ( $( '.stories-container' ).length ) {
+    if ($('.stories-container').length) {
 
-        $( '.stories-container' ).each(function(){
+        $('.stories-container').each(function() {
             var $stories = $(this);
-            var $stories_inner = $stories.find( '.stories-inner' );
-            var $nav_prev = $stories.find( '.nav-prev' );
-            var $nav_next = $stories.find( '.nav-next' );
+            var $stories_inner = $stories.find('.stories-inner');
+            var $nav_prev = $stories.find('.nav-prev');
+            var $nav_next = $stories.find('.nav-next');
 
-            $nav_prev.on( 'click', function(){
+            var show_hide_controls = function() {
+                var num_stories = $stories_inner.find('.story').length;
+                var story_size = $stories_inner.find('.story').width() + parseFloat($stories_inner.find('.story').css('margin-right'));
+                var total_story_width = story_size * num_stories
+                if (total_story_width < $(window).width()) {
+                    $nav_prev.hide();
+                    $nav_next.hide();
+                } else {
+                    $nav_prev.show();
+                    $nav_next.show();
+                }
+            }
 
-                if ( !$( this ).hasClass('disable') ) {
+            $nav_prev.on('click', function() {
+
+                if (!$(this).hasClass('disable')) {
 
                     // get some info
-                    var num_stories = $stories_inner.find( '.story' ).length;
-                    var story_size = $stories_inner.find( '.story' ).width() + parseFloat( $stories_inner.find( '.story' ).css( 'margin-right' ) );
+                    var num_stories = $stories_inner.find('.story').length;
+                    var story_size = $stories_inner.find('.story').width() + parseFloat($stories_inner.find('.story').css('margin-right'));
 
                     // total max story size, with modifier taken into account
                     var stories_total_width = num_stories * story_size;
 
                     // calculate positions
-                    var position_current = parseFloat( $stories_inner.css( 'margin-left' ) );
+                    var position_current = parseFloat($stories_inner.css('margin-left'));
                     var position_new = position_current + story_size;
                     var position_max = stories_total_width - story_size;
 
-                    if ( position_new == 0 ) {
-                        $( this ).addClass( 'disable' );
+                    if (position_new == 0) {
+                        $(this).addClass('disable');
                     } else {
-                        $( this ).removeClass( 'disable' );
+                        $(this).removeClass('disable');
                     }
 
-                    if ( position_new < position_max ) {
-                        $nav_next.removeClass( 'disable' );
+                    if (position_new < position_max) {
+                        $nav_next.removeClass('disable');
                     }
- 
-                    $stories_inner.css( 'margin-left', position_new +'px' );
+
+                    $stories_inner.css('margin-left', position_new + 'px');
                 }
             });
 
-            $nav_next.on( 'click', function(){
+            $nav_next.on('click', function() {
 
-                if ( !$( this ).hasClass('disable') ) {
+                if (!$(this).hasClass('disable')) {
 
                     // window width 
                     var window_width = $(window).width();
-                    
+
                     // get some info
-                    var story_size = $stories_inner.find( '.story' ).width() + parseFloat( $stories_inner.find( '.story' ).css( 'margin-right' ) );
-                    var story_limit_modifier = Math.floor( window_width / story_size );
-                    var num_stories = $stories_inner.find( '.story' ).length - story_limit_modifier;
-                    console.log( num_stories );
-                    
+                    var story_size = $stories_inner.find('.story').width() + parseFloat($stories_inner.find('.story').css('margin-right'));
+                    var story_limit_modifier = Math.floor(window_width / story_size);
+                    var num_stories = $stories_inner.find('.story').length - story_limit_modifier;
+                    console.log(num_stories);
+
                     // total max story size, with modifier taken into account
                     var stories_total_width = num_stories * story_size;
 
                     // calculate positions
-                    var position_current = parseFloat( $stories_inner.css( 'margin-left' ) );
+                    var position_current = parseFloat($stories_inner.css('margin-left'));
                     var position_new = position_current - story_size;
                     var position_max = -(stories_total_width);
 
-                    console.log( position_current + ' ' + position_new + ' ' + position_max );
+                    console.log(position_current + ' ' + position_new + ' ' + position_max);
 
-                    if ( position_new == position_max ) {
-                        $( this ).addClass( 'disable' );
+                    if (position_new == position_max) {
+                        $(this).addClass('disable');
                     } else {
-                        $( this ).removeClass( 'disable' );
+                        $(this).removeClass('disable');
                     }
 
-                    if ( position_new < 0 ) {
-                        $nav_prev.removeClass( 'disable' );
+                    if (position_new < 0) {
+                        $nav_prev.removeClass('disable');
                     }
- 
-                    $stories_inner.css( 'margin-left', position_new +'px' );
+
+                    $stories_inner.css('margin-left', position_new + 'px');
                 }
             });
 
-            $(window).resize(function(){
-                $stories_inner.css( 'margin-left', 0 );
+            $(window).resize(function() {
+                $stories_inner.css('margin-left', 0);
+                show_hide_controls();
             });
+
+            show_hide_controls();
+
         });
 
-	}
+    }
 
 });
-

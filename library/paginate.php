@@ -26,3 +26,13 @@ function paginate( $prev = '&laquo;', $next = '&raquo;' ) {
     }
 }
 
+
+function add_page_number_to_title( $title ) {
+    global $paged, $page;
+    if ( $paged >= 2 || $page >= 2 ) {
+        $title .= ' Page ' . max( $paged, $page ) . ' | ';
+    }
+    return $title;
+}
+add_filter( 'wp_title', 'add_page_number_to_title' );
+
