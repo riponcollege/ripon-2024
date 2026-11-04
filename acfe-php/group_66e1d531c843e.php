@@ -135,8 +135,8 @@ acf_add_local_field_group(array(
 						array(
 							array(
 								'field' => 'field_6a8f17c38d2f4',
-								'operator' => '==',
-								'value' => 'title',
+								'operator' => '!=',
+								'value' => 'logo',
 							),
 						),
 					),
@@ -276,7 +276,7 @@ acf_add_local_field_group(array(
 			0 => 'php',
 		),
 	),
-	'modified' => 1787765622,
+	'modified' => 1793813950,
 ));
 
 endif;
