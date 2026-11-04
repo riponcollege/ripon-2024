@@ -63,7 +63,7 @@ jQuery(document).ready(function($) {
                     var story_size = $stories_inner.find('.story').width() + parseFloat($stories_inner.find('.story').css('margin-right'));
                     var story_limit_modifier = Math.floor(window_width / story_size);
                     var num_stories = $stories_inner.find('.story').length - story_limit_modifier;
-                    console.log(num_stories);
+                    // console.log(num_stories);
 
                     // total max story size, with modifier taken into account
                     var stories_total_width = num_stories * story_size;
@@ -73,7 +73,7 @@ jQuery(document).ready(function($) {
                     var position_new = position_current - story_size;
                     var position_max = -(stories_total_width);
 
-                    console.log(position_current + ' ' + position_new + ' ' + position_max);
+                    // console.log(position_current + ' ' + position_new + ' ' + position_max);
 
                     if (position_new == position_max) {
                         $(this).addClass('disable');

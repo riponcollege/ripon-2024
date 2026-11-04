@@ -6,6 +6,10 @@ $color = get_sub_field( 'color' );
 if ( have_rows('quotes') ): 
     ?>
 <div class="quotes-container <?php print $color; ?>">
+    <div class="quotes-nav">
+        <div class="nav-prev disable"></div>
+        <div class="nav-next"></div>
+    </div>
     <div class="quotes">
         <div class="quotes-inner">
         <?php
