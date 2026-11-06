@@ -359,7 +359,7 @@ function get_month_cache( $month, $year, $category = 'all' ) {
 	if ( file_exists( $event_cache_file ) ) {
 
 		// refresh the cache if the cache file is older than 30 minutes
-		if ( filemtime( $event_cache_file ) < ( time() - ( 60 * 60 ) ) ) {
+		if ( filemtime( $event_cache_file ) < ( time() - ( 60 * 60 * 2 ) ) ) {
 			return false;
 		} else {
 			return file_get_contents( $event_cache_file );
