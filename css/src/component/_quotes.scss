@@ -161,6 +161,56 @@
     &.tan {
         background: $tan;
     }
+    .quote-large-carousel {
+        position: relative;
+        @include respond-to( $bp-xxl) {
+            padding-bottom: 40px;
+        }
+        .quotes-large {
+            .quote-large {
+                display: none;
+                &.visible {
+                    display: block;
+                    @include respond-to( $bp-l) {
+                        display: flex;
+                    }
+                }
+            }
+        }
+        .quotes-large-carousel-nav {
+            text-align: center;
+            padding: 10px 0 40px 0;
+            @include respond-to( $bp-l) {
+                position: absolute;
+                bottom: 10%;
+                left: 0;
+                padding: 0;
+                width: 55%;
+            }
+            @include respond-to( $bp-xxl) {
+                bottom: 5%;
+            }
+            a {
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                background-size: contain;
+                background-position: center center;
+                background-repeat: no-repeat;
+                color: transparent;
+                &:hover {
+                    border-bottom: 0;
+                }
+                &.prev {
+                    background-image: url(../img/icon-arrow-black-left.png);
+                    margin-right: 20px;
+                }
+                &.next {
+                    background-image: url(../img/icon-arrow-black-right.png);
+                }
+            }
+        }
+    }
     .quote-large {
         @include padding-tall;
         @include respond-to( $bp-l) {

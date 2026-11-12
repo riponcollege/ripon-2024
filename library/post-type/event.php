@@ -51,7 +51,6 @@ function event_post_type() {
 	
 }
 
-
 // adding the function to the Wordpress init
 add_action( 'init', 'event_post_type');
 
@@ -139,6 +138,7 @@ function parse_events_url() {
 }
 
 
+
 // checks an event url to see if it's got all the required parameters, and redirect it if not.
 function check_events_url() {
 
@@ -171,6 +171,7 @@ function check_events_url() {
 	}
 
 }
+
 
 
 // get the events for a given month
@@ -229,7 +230,7 @@ function get_month_events( $m, $y, $category='all' ) {
 		$event_info = array();
 		$event_info = get_post_custom( $event->ID );
 
-		foreach ( $event_info as $info_key => $info_item ) {		
+		foreach ( $event_info as $info_key => $info_item ) {
 			$events[$key]->$info_key = $info_item[0];
 		}
 	}
@@ -239,6 +240,7 @@ function get_month_events( $m, $y, $category='all' ) {
 	return $events;
 
 }
+
 
 
 // get upcoming events based on optional category
@@ -310,6 +312,7 @@ function get_upcoming_events( $limit, $category = 0, $exclude = 0 ) {
 }
 
 
+
 // determine the previous month
 function get_previous_month( $month, $year ) {
 	if ( $month == 1 ) {
@@ -318,6 +321,7 @@ function get_previous_month( $month, $year ) {
 		return array( 'month' => $month-1, 'year' => $year );
 	}
 }
+
 
 
 // determine the next month
@@ -350,6 +354,7 @@ function get_month_cache_filename( $month, $year, $category = 'all' ) {
 }
 
 
+
 // get the month cache from month, year, and filename
 function get_month_cache( $month, $year, $category = 'all' ) {
 	
@@ -367,6 +372,7 @@ function get_month_cache( $month, $year, $category = 'all' ) {
 	}
 
 }
+
 
 
 // show month events
@@ -1116,11 +1122,14 @@ function manage_event_columns( $column, $post_id ) {
 
 // enable sortable columns for event post type
 add_filter("manage_edit-event_sortable_columns", 'edit_event_sort');
-function edit_event_sort( $columns ) {
-	// $columns['start'] = '_p_event_start';
-	return array();
+function edit_event_sort($columns) {
+	$custom = array(
+		'start' 	=> '_p_event_start',
+		'end' 		=> '_p_event_end',
+		'category'	=> 'event_cat'
+	);
+	return wp_parse_args($custom, $columns);
 }
-
 
 // add the event data to the RSS feed for event post types.
 function rss_event_date() {

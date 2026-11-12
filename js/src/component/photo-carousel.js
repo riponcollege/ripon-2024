@@ -41,7 +41,6 @@ jQuery(document).ready(function($) {
                 // switch the slides
                 current_slide.removeClass('visible');
                 prev_slide.addClass('visible');
-                prev_slide.beforeAfter();
 
             };
 
@@ -61,7 +60,6 @@ jQuery(document).ready(function($) {
                 // switch the slides
                 current_slide.removeClass('visible');
                 next_slide.addClass('visible');
-                next_slide.beforeAfter();
             };
 
 
